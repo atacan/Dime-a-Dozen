@@ -11,7 +11,7 @@ struct ComingSoonView: View {
                 .font(.title)
             Text("Fork it and add the boilerplate generation tools you need:")
                 .font(.title3)
-            Text("https://github.com/atacan")
+            Text("https://github.com/atacan/Dime-a-Dozen")
                 .font(.body)
         } // <-VStack
     }
