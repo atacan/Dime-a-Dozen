@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "html-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/atacan/html-swift",
+      "state" : {
+        "revision" : "3bdc851a25a8083e7eb22cc99f68b7fe3a05bad5",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swift-html",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/binarybirds/swift-html",
+      "state" : {
+        "revision" : "e07678a77d296e66fa891a9d4d08acc4471d1783",
+        "version" : "1.6.11"
+      }
+    },
+    {
+      "identity" : "swiftformat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat",
+      "state" : {
+        "revision" : "f8e35f6716c369c8412664052a0a7337da2ca0e3",
+        "version" : "0.49.9"
+      }
+    }
+  ],
+  "version" : 2
+}
