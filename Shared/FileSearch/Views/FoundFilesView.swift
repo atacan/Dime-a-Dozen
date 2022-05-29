@@ -6,7 +6,7 @@ import SwiftUI
 
 struct FoundFilesView: View {
     @ObservedObject var fileSearchModel: FileSearch
-    @State private var selectedFiles = Set<FileModel.ID>()
+    @State private var selectedFiles: FileModel.ID? = nil
     @State private var sortOrder = [KeyPathComparator(\FileModel.path)]
 
     var myTable: some View {
@@ -17,8 +17,7 @@ struct FoundFilesView: View {
             fileSearchModel.foundFiles.sort(using: $0)
         }
         .onChange(of: selectedFiles) { newValue in
-            guard newValue.count == 1 else { return }
-            fileSearchModel.selectedFile(newValue.randomElement())
+            fileSearchModel.selectedFile(selectedFiles)
         }
     }
 
