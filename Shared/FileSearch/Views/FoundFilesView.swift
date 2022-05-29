@@ -6,18 +6,18 @@ import SwiftUI
 
 struct FoundFilesView: View {
     @ObservedObject var fileSearchModel: FileSearch
-    @State private var selectedFiles: FileModel.ID? = nil
+    @State private var selectedFile: FileModel.ID? = nil
     @State private var sortOrder = [KeyPathComparator(\FileModel.path)]
 
     var myTable: some View {
-        Table(fileSearchModel.foundFiles, selection: $selectedFiles, sortOrder: $sortOrder) {
+        Table(fileSearchModel.foundFiles, selection: $selectedFile, sortOrder: $sortOrder) {
             TableColumn("File Path", value: \.path)
         }
         .onChange(of: sortOrder) {
             fileSearchModel.foundFiles.sort(using: $0)
         }
-        .onChange(of: selectedFiles) { newValue in
-            fileSearchModel.selectedFile(selectedFiles)
+        .onChange(of: selectedFile) { newValue in
+            fileSearchModel.selectedFile(selectedFile)
         }
     }
 
