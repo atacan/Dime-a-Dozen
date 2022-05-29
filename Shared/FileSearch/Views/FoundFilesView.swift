@@ -6,17 +6,17 @@ import SwiftUI
 
 struct FoundFilesView: View {
     @ObservedObject var fileSearchModel: FileSearch
-    @State private var selectedPeople = Set<FileModel.ID>()
-    @State private var sortOrder = [KeyPathComparator(\FileModel.name)]
+    @State private var selectedFiles = Set<FileModel.ID>()
+    @State private var sortOrder = [KeyPathComparator(\FileModel.path)]
 
     var myTable: some View {
-        Table(fileSearchModel.foundFiles, selection: $selectedPeople, sortOrder: $sortOrder) {
-            TableColumn("File Path", value: \.name)
+        Table(fileSearchModel.foundFiles, selection: $selectedFiles, sortOrder: $sortOrder) {
+            TableColumn("File Path", value: \.path)
         }
         .onChange(of: sortOrder) {
             fileSearchModel.foundFiles.sort(using: $0)
         }
-        .onChange(of: selectedPeople) { newValue in
+        .onChange(of: selectedFiles) { newValue in
             guard newValue.count == 1 else { return }
             fileSearchModel.selectedFile(newValue.randomElement())
         }
@@ -25,7 +25,7 @@ struct FoundFilesView: View {
     var myList: some View {
         List {
             ForEach(fileSearchModel.foundFiles) { file in
-                Text(file.name)
+                Text(file.path)
                     .onTapGesture {
                         fileSearchModel.selectedFile = file
                     }

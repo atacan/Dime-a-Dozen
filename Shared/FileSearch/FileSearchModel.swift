@@ -13,7 +13,7 @@ extension String {
 
 struct FileModel: Identifiable {
     let id = UUID()
-    let name: String
+    let path: String
 }
 
 class FileSearch: ObservableObject {
@@ -32,7 +32,7 @@ class FileSearch: ObservableObject {
 
     func filePicker() {
         guard !searchText.isEmpty else {
-            foundFiles = [FileModel(name: "insert a text to search for")]
+            foundFiles = [FileModel(path: "insert a text to search for")]
             return
         }
         let openPanel = NSOpenPanel()
@@ -49,7 +49,7 @@ class FileSearch: ObservableObject {
                     do {
                         print(command)
                         self?.foundFiles = try safeShell(command).components(separatedBy: "\n").map { name in
-                            FileModel(name: name)
+                            FileModel(path: name)
                         }
                     } catch {
                         print(error)
@@ -69,7 +69,7 @@ class FileSearch: ObservableObject {
         $selectedFile.sink { file in
             do {
                 if let fileUnwrap = file {
-                    self.selectedFileContent = try String(contentsOfFile: fileUnwrap.name)
+                    self.selectedFileContent = try String(contentsOfFile: fileUnwrap.path)
                 }
             } catch {
                 self.selectedFileContent = error.localizedDescription
