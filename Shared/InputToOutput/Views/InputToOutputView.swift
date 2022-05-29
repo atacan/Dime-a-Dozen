@@ -5,7 +5,8 @@
 import SwiftUI
 
 struct InputToOutputView: View {
-    var toolName: String
+    var toolTitle: String
+    let inputToOutputConverter: (String) -> String
     @State var inputText: String = ""
     @State var inputTitle: String = "HTML Input"
     @State var inputFootNote: String = "Enclose the whole code inside one tag"
@@ -19,7 +20,7 @@ struct InputToOutputView: View {
     var body: some View {
         VStack(alignment: .center) {
             Button {
-                outputText = HtmlToSwiftBirds.shared.convert(html: inputText)
+                outputText = inputToOutputConverter(inputText)
             } label: {
                 Text("Convert")
             } // <-Button
@@ -30,13 +31,13 @@ struct InputToOutputView: View {
             } // <-HSplitView
         } // <-VStack
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
-        .navigationTitle(toolName)
+        .navigationTitle(toolTitle)
     }
 }
 
 struct InputToOutputView_Previews: PreviewProvider {
     static var previews: some View {
-        InputToOutputView(toolName: "Converter")
+        InputToOutputView(toolTitle: "Converter", inputToOutputConverter: HtmlToSwiftBirds.shared.convert)
             .preferredColorScheme(.light)
             .previewLayout(.sizeThatFits)
             .padding()

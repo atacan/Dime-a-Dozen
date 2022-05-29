@@ -17,16 +17,24 @@
 		79933CC02842686F0007174B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CBE2842686F0007174B /* MainView.swift */; };
 		79933CC2284268B40007174B /* MainSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC1284268B40007174B /* MainSidebarView.swift */; };
 		79933CC3284268B40007174B /* MainSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC1284268B40007174B /* MainSidebarView.swift */; };
-		79933CC528426C0E0007174B /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC428426C0E0007174B /* Tools.swift */; };
-		79933CC628426C0E0007174B /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC428426C0E0007174B /* Tools.swift */; };
-		79933CC8284272240007174B /* ToolsOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC7284272240007174B /* ToolsOverView.swift */; };
-		79933CC9284272240007174B /* ToolsOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC7284272240007174B /* ToolsOverView.swift */; };
-		79933CCB284273E60007174B /* ToolsOverviewButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CCA284273E60007174B /* ToolsOverviewButtonView.swift */; };
-		79933CCC284273E60007174B /* ToolsOverviewButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CCA284273E60007174B /* ToolsOverviewButtonView.swift */; };
-		79933CD028427DC90007174B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CCF28427DC90007174B /* Route.swift */; };
-		79933CD128427DC90007174B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CCF28427DC90007174B /* Route.swift */; };
+		79933CC528426C0E0007174B /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC428426C0E0007174B /* Tool.swift */; };
+		79933CC628426C0E0007174B /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC428426C0E0007174B /* Tool.swift */; };
 		79933CD3284283F10007174B /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CD2284283F10007174B /* ComingSoonView.swift */; };
 		79933CD4284283F10007174B /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CD2284283F10007174B /* ComingSoonView.swift */; };
+		7998D5062843B03400578C5A /* ShellCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5052843B03400578C5A /* ShellCommand.swift */; };
+		7998D5092843B0A300578C5A /* SearchTextFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5082843B0A300578C5A /* SearchTextFilesView.swift */; };
+		7998D50A2843B10700578C5A /* SearchTextFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5082843B0A300578C5A /* SearchTextFilesView.swift */; };
+		7998D50B2843B11000578C5A /* ShellCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5052843B03400578C5A /* ShellCommand.swift */; };
+		7998D50D2843B44100578C5A /* ButtonFilePickerPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D50C2843B44100578C5A /* ButtonFilePickerPanelView.swift */; };
+		7998D50F2843B4CF00578C5A /* FoundFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D50E2843B4CF00578C5A /* FoundFilesView.swift */; };
+		7998D5102843B52000578C5A /* ButtonFilePickerPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D50C2843B44100578C5A /* ButtonFilePickerPanelView.swift */; };
+		7998D5112843B52500578C5A /* FoundFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D50E2843B4CF00578C5A /* FoundFilesView.swift */; };
+		7998D5132843B5B700578C5A /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5122843B5B700578C5A /* PreviewData.swift */; };
+		7998D5142843B5ED00578C5A /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5122843B5B700578C5A /* PreviewData.swift */; };
+		7998D5182843BDCD00578C5A /* FileSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5172843BDCD00578C5A /* FileSearchModel.swift */; };
+		7998D5192843BDCD00578C5A /* FileSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5172843BDCD00578C5A /* FileSearchModel.swift */; };
+		7998D51B2843C31300578C5A /* FileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D51A2843C31300578C5A /* FileContentView.swift */; };
+		7998D51C2843C31300578C5A /* FileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D51A2843C31300578C5A /* FileContentView.swift */; };
 		79C12BE428423EF000F19A86 /* DimeADozenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */; };
 		79C12BE528423EF000F19A86 /* DimeADozenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */; };
 		79C12BE628423EF000F19A86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BD528423EEF00F19A86 /* ContentView.swift */; };
@@ -35,6 +43,8 @@
 		79C12BE928423EF000F19A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C12BD628423EF000F19A86 /* Assets.xcassets */; };
 		79C12BF828423F8000F19A86 /* UserEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BF728423F8000F19A86 /* UserEditorView.swift */; };
 		79C12BFC2842403800F19A86 /* UserEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BF728423F8000F19A86 /* UserEditorView.swift */; };
+		79C8EBF02842D80200CBD622 /* ToggleSidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */; };
+		79C8EBF12842D80200CBD622 /* ToggleSidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,11 +52,15 @@
 		79933CB528425C490007174B /* HtmlToSwiftBirds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToSwiftBirds.swift; sourceTree = "<group>"; };
 		79933CBE2842686F0007174B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		79933CC1284268B40007174B /* MainSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSidebarView.swift; sourceTree = "<group>"; };
-		79933CC428426C0E0007174B /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tools.swift; path = Shared/Main/Tools.swift; sourceTree = SOURCE_ROOT; };
-		79933CC7284272240007174B /* ToolsOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsOverView.swift; sourceTree = "<group>"; };
-		79933CCA284273E60007174B /* ToolsOverviewButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsOverviewButtonView.swift; sourceTree = "<group>"; };
-		79933CCF28427DC90007174B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		79933CC428426C0E0007174B /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tool.swift; path = Shared/Main/Tool.swift; sourceTree = SOURCE_ROOT; };
 		79933CD2284283F10007174B /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
+		7998D5052843B03400578C5A /* ShellCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommand.swift; sourceTree = "<group>"; };
+		7998D5082843B0A300578C5A /* SearchTextFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFilesView.swift; sourceTree = "<group>"; };
+		7998D50C2843B44100578C5A /* ButtonFilePickerPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFilePickerPanelView.swift; sourceTree = "<group>"; };
+		7998D50E2843B4CF00578C5A /* FoundFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFilesView.swift; sourceTree = "<group>"; };
+		7998D5122843B5B700578C5A /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		7998D5172843BDCD00578C5A /* FileSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSearchModel.swift; sourceTree = "<group>"; };
+		7998D51A2843C31300578C5A /* FileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContentView.swift; sourceTree = "<group>"; };
 		79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimeADozenApp.swift; sourceTree = "<group>"; };
 		79C12BD528423EEF00F19A86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79C12BD628423EF000F19A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +68,7 @@
 		79C12BE128423EF000F19A86 /* DimeADozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DimeADozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C12BE328423EF000F19A86 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		79C12BF728423F8000F19A86 /* UserEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditorView.swift; sourceTree = "<group>"; };
+		79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSidebarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +91,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		79933CCD28427A760007174B /* unused */ = {
+		7998D5042843B00B00578C5A /* FileSearch */ = {
 			isa = PBXGroup;
 			children = (
-				79933CC7284272240007174B /* ToolsOverView.swift */,
-				79933CCA284273E60007174B /* ToolsOverviewButtonView.swift */,
+				7998D5172843BDCD00578C5A /* FileSearchModel.swift */,
+				7998D5072843B07200578C5A /* Views */,
 			);
-			path = unused;
+			path = FileSearch;
+			sourceTree = "<group>";
+		};
+		7998D5072843B07200578C5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7998D50C2843B44100578C5A /* ButtonFilePickerPanelView.swift */,
+				7998D50E2843B4CF00578C5A /* FoundFilesView.swift */,
+				7998D51A2843C31300578C5A /* FileContentView.swift */,
+				7998D5082843B0A300578C5A /* SearchTextFilesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		79C12BCE28423EEF00F19A86 = {
@@ -98,8 +124,10 @@
 		79C12BD328423EEF00F19A86 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7998D5122843B5B700578C5A /* PreviewData.swift */,
 				79C12BF528423F6500F19A86 /* Main */,
 				79C12BF228423F2800F19A86 /* InputToOutput */,
+				7998D5042843B00B00578C5A /* FileSearch */,
 				79C12BD528423EEF00F19A86 /* ContentView.swift */,
 				79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */,
 				79C12BD628423EF000F19A86 /* Assets.xcassets */,
@@ -145,8 +173,8 @@
 		79C12BF528423F6500F19A86 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				79933CCF28427DC90007174B /* Route.swift */,
-				79933CC428426C0E0007174B /* Tools.swift */,
+				79933CC428426C0E0007174B /* Tool.swift */,
+				7998D5052843B03400578C5A /* ShellCommand.swift */,
 				79C12BF628423F6C00F19A86 /* Views */,
 			);
 			path = Main;
@@ -155,9 +183,9 @@
 		79C12BF628423F6C00F19A86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				79933CCD28427A760007174B /* unused */,
 				79933CBE2842686F0007174B /* MainView.swift */,
 				79933CC1284268B40007174B /* MainSidebarView.swift */,
+				79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */,
 				79933CD2284283F10007174B /* ComingSoonView.swift */,
 			);
 			path = Views;
@@ -278,17 +306,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				79933CC2284268B40007174B /* MainSidebarView.swift in Sources */,
+				79C8EBF02842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				79C12BF828423F8000F19A86 /* UserEditorView.swift in Sources */,
-				79933CD028427DC90007174B /* Route.swift in Sources */,
+				7998D50D2843B44100578C5A /* ButtonFilePickerPanelView.swift in Sources */,
+				7998D5062843B03400578C5A /* ShellCommand.swift in Sources */,
+				7998D5132843B5B700578C5A /* PreviewData.swift in Sources */,
 				79933CBF2842686F0007174B /* MainView.swift in Sources */,
+				7998D5182843BDCD00578C5A /* FileSearchModel.swift in Sources */,
+				7998D5092843B0A300578C5A /* SearchTextFilesView.swift in Sources */,
+				7998D50F2843B4CF00578C5A /* FoundFilesView.swift in Sources */,
 				79933CB3284258D10007174B /* InputToOutputView.swift in Sources */,
-				79933CCB284273E60007174B /* ToolsOverviewButtonView.swift in Sources */,
-				79933CC8284272240007174B /* ToolsOverView.swift in Sources */,
 				79C12BE628423EF000F19A86 /* ContentView.swift in Sources */,
+				7998D51B2843C31300578C5A /* FileContentView.swift in Sources */,
 				79C12BE428423EF000F19A86 /* DimeADozenApp.swift in Sources */,
 				79933CB628425C490007174B /* HtmlToSwiftBirds.swift in Sources */,
 				79933CD3284283F10007174B /* ComingSoonView.swift in Sources */,
-				79933CC528426C0E0007174B /* Tools.swift in Sources */,
+				79933CC528426C0E0007174B /* Tool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,17 +330,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				79933CC3284268B40007174B /* MainSidebarView.swift in Sources */,
+				79C8EBF12842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				79C12BE728423EF000F19A86 /* ContentView.swift in Sources */,
-				79933CD128427DC90007174B /* Route.swift in Sources */,
+				7998D5102843B52000578C5A /* ButtonFilePickerPanelView.swift in Sources */,
 				79933CC02842686F0007174B /* MainView.swift in Sources */,
+				7998D5142843B5ED00578C5A /* PreviewData.swift in Sources */,
 				79933CB4284258D10007174B /* InputToOutputView.swift in Sources */,
-				79933CCC284273E60007174B /* ToolsOverviewButtonView.swift in Sources */,
-				79933CC9284272240007174B /* ToolsOverView.swift in Sources */,
+				7998D5192843BDCD00578C5A /* FileSearchModel.swift in Sources */,
 				79C12BFC2842403800F19A86 /* UserEditorView.swift in Sources */,
+				7998D5112843B52500578C5A /* FoundFilesView.swift in Sources */,
+				7998D50A2843B10700578C5A /* SearchTextFilesView.swift in Sources */,
 				79C12BE528423EF000F19A86 /* DimeADozenApp.swift in Sources */,
+				7998D51C2843C31300578C5A /* FileContentView.swift in Sources */,
+				7998D50B2843B11000578C5A /* ShellCommand.swift in Sources */,
 				79933CB728425C490007174B /* HtmlToSwiftBirds.swift in Sources */,
 				79933CD4284283F10007174B /* ComingSoonView.swift in Sources */,
-				79933CC628426C0E0007174B /* Tools.swift in Sources */,
+				79933CC628426C0E0007174B /* Tool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,17 +8,13 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             MainSidebarView()
-            Text("Choose a tool from the Sidebar")
+            Text("⬅️ Choose a tool from the Sidebar")
                 .font(.largeTitle)
         } // <-NavigationView
         .navigationTitle("Tools")
         .toolbar {
             ToolbarItem(placement: .navigation) {
-                Button {
-                    NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
-                } label: {
-                    Label("Toggle sidebar", systemImage: "sidebar.left")
-                }
+                ToggleSidebarButton()
             }
         }
     }

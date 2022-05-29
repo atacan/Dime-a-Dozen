@@ -2,8 +2,8 @@
 // 28.05.22
 //
 
-import SwiftUI
 import HtmlSwift
+import SwiftUI
 
 struct UserEditorView: View {
     @Binding var text: String
@@ -14,7 +14,7 @@ struct UserEditorView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-                .font(.title)
+                .font(.title2)
                 .frame(maxWidth: .infinity)
             myEditor
             Text(footNote)

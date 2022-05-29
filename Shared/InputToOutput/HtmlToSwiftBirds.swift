@@ -3,17 +3,12 @@
 //
 
 import HtmlSwift
+import SwiftUI
+
+let toolHtmlToSwiftBirds = Tool(sidebarName: "Html to Swift", navigationTitle: "Html to Swift-Html Converter")
 
 class HtmlToSwiftBirds {
     static let shared = HtmlToSwiftBirds()
-    
-//    var input: String
-//    var output: String
-//
-//    init(input: String, output: String) {
-//        self.input = input
-//        self.output = output
-//    }
 
     func convert(html input: String) -> String {
         do {
@@ -22,5 +17,17 @@ class HtmlToSwiftBirds {
         } catch {
             return error.localizedDescription
         }
+    }
+}
+
+struct HtmlToSwiftBirdsView: View {
+    @Binding var selectedTool: Tool?
+
+    var body: some View {
+        NavigationLink(destination: InputToOutputView(toolTitle: toolHtmlToSwiftBirds.navigationTitle,
+                                                      inputToOutputConverter: HtmlToSwiftBirds.shared.convert),
+                       tag: toolHtmlToSwiftBirds, selection: $selectedTool) {
+            Text(toolHtmlToSwiftBirds.sidebarName)
+        } // <-NavigationLink
     }
 }
