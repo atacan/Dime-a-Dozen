@@ -14,6 +14,9 @@ extension String {
 struct FileModel: Identifiable {
     let id = UUID()
     let path: String
+    var url: URL  {
+        URL(fileURLWithPath: path)
+    }
 }
 
 class FileSearch: ObservableObject {

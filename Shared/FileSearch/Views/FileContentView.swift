@@ -17,6 +17,16 @@ struct FileContentView: View {
                     .textSelection(.enabled)
                     .padding(.leading)
             } // <-ZStack
+            .overlay(alignment: .topTrailing) {
+                if let selectedFile = fileSearchModel.selectedFile {
+                    Button {
+                        NSWorkspace.shared.open(selectedFile.url)
+                    } label: {
+                        Text("Open")
+                    } // <-Button
+                    .padding()
+                }
+            }
         } // <-ScrollView
     }
 }

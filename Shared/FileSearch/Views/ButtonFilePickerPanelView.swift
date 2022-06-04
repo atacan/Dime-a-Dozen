@@ -11,6 +11,9 @@ struct ButtonFilePickerPanelView: View {
         HStack(alignment: .center) {
             Spacer()
             TextField("Text to search", text: $fileSearchModel.searchText)
+                .onSubmit {
+                    fileSearchModel.filePicker()
+                }
                 .frame(width: 200, alignment: .top)
             Button {
                 fileSearchModel.filePicker()
