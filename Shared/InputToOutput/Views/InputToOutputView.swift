@@ -8,6 +8,7 @@ struct InputToOutputView: View {
     var toolTitle: String
     let inputToOutputConverter: (String) -> String
     @State var inputText: String = ""
+//    @SceneStorage("inputText") var inputText: String = ""
     @State var inputTitle: String = "HTML Input"
     @State var inputFootNote: String = "Enclose the whole code inside one tag"
     @State var inputLanguage: String = ""
@@ -24,6 +25,7 @@ struct InputToOutputView: View {
             } label: {
                 Text("Convert")
             } // <-Button
+            .keyboardShortcut(.return, modifiers: .command)
             .padding(.top)
             HSplitView {
                 UserEditorView(text: $inputText, title: $inputTitle, footNote: $inputFootNote, language: $inputLanguage)
@@ -35,11 +37,11 @@ struct InputToOutputView: View {
     }
 }
 
-struct InputToOutputView_Previews: PreviewProvider {
-    static var previews: some View {
-        InputToOutputView(toolTitle: "Converter", inputToOutputConverter: HtmlToSwiftBirds.shared.convert)
-            .preferredColorScheme(.light)
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
-}
+//struct InputToOutputView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InputToOutputView(toolTitle: "Converter", inputToOutputConverter: HtmlToSwiftBirds.shared.convert)
+//            .preferredColorScheme(.light)
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//    }
+//}

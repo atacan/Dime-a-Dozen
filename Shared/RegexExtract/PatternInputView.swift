@@ -16,6 +16,9 @@ struct PatternInputView: View {
             Spacer()
             TextField("Regex pattern", text: $pattern)
                 .font(.monospaced(.body)())
+                .onSubmit {
+                    regexVM.regexMatches(of: pattern)
+                }
             Button {
                 regexVM.regexMatches(of: pattern)
             } label: {
