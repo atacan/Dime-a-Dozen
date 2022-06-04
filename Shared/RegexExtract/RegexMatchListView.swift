@@ -7,17 +7,61 @@
 
 import SwiftUI
 
+let toolRegexMatchList = Tool(sidebarName: "Regex Matches", navigationTitle: "Extract Regex Matches")
+
 struct RegexMatchListView: View {
+    @StateObject var regexVM = RegexViewModel()
+    @Binding var selectedTool: Tool?
+//    @State var regexPattern: String = ""
+    @SceneStorage("regexPattern") var regexPattern: String = ""
+    
+    var myInputEditor: some View {
+        VStack(alignment: .center) {
+            Text("Input Text")
+                .font(.title2)
+            TextEditor(text: $regexVM.inputText)
+                .font(.monospaced(.body)())
+                .padding(.horizontal)
+                .padding(.bottom)
+        } // <-VStack
+    }
+    
+    var myOutputEditor: some View {
+        VStack(alignment: .center) {
+            Text("Regex Matches")
+                .font(.title2)
+            TextEditor(text: $regexVM.outputText)
+                .font(.monospaced(.body)())
+                .padding(.horizontal)
+                .padding(.bottom)
+        } // <-VStack
+    }
+    
+    var myView: some View {
+        VStack {
+            PatternInputView(regexVM: regexVM, pattern: $regexPattern)
+                .padding()
+            HSplitView {
+                myInputEditor
+                myOutputEditor
+            } // <-HSplitView
+        } // <-VStack
+        .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
+        .navigationTitle(toolRegexMatchList.navigationTitle)
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationLink(destination: myView, tag: toolRegexMatchList, selection: $selectedTool) {
+            Text(toolRegexMatchList.sidebarName)
+        } // <-NavigationLink
     }
 }
 
-struct RegexMatchListView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegexMatchListView()
-            .preferredColorScheme(.light)
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
-}
+// struct RegexMatchListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegexMatchListView()
+//            .preferredColorScheme(.light)
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//    }
+// }

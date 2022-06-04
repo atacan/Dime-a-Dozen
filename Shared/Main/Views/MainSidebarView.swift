@@ -12,6 +12,9 @@ struct MainSidebarView: View {
             Section(header: Text("Server Side Swift")) {
                 HtmlToSwiftBirdsView(selectedTool: $selectedTool)
             }
+            Section(header: Text("Text")) {
+                RegexMatchListView(selectedTool: $selectedTool)
+            }
             Section(header: Text("Files")) {
                 SearchTextFilesView(selectedTool: $selectedTool)
             }

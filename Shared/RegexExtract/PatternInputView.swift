@@ -7,17 +7,30 @@
 
 import SwiftUI
 
-struct View: View {
+struct PatternInputView: View {
+    @ObservedObject var regexVM: RegexViewModel
+    @Binding var pattern: String
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Spacer()
+            TextField("Regex pattern", text: $pattern)
+                .font(.monospaced(.body)())
+            Button {
+                regexVM.regexMatches(of: pattern)
+            } label: {
+                Text("Extract")
+            } // <-Button
+            Spacer()
+        }
     }
 }
 
-struct View_Previews: PreviewProvider {
-    static var previews: some View {
-        View()
-            .preferredColorScheme(.light)
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
-}
+// struct PatternInputView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PatternInputView()
+//            .preferredColorScheme(.light)
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//    }
+// }

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A509F77284B5177006404F2 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A55284B4C2300541959 /* String+Regex.swift */; };
+		5AEB6A53284B4A3700541959 /* RegexMatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */; };
+		5AEB6A54284B4BF000541959 /* RegexMatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */; };
+		5AEB6A56284B4C2300541959 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A55284B4C2300541959 /* String+Regex.swift */; };
+		5AEB6A58284B4D3C00541959 /* PatternInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A57284B4D3C00541959 /* PatternInputView.swift */; };
+		5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A57284B4D3C00541959 /* PatternInputView.swift */; };
+		5AEB6A5B284B4DA500541959 /* RegexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */; };
+		5AEB6A5C284B4DA500541959 /* RegexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */; };
 		79933CB12842573E0007174B /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79933CB02842573E0007174B /* HtmlSwift */; };
 		79933CB3284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
 		79933CB4284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
@@ -48,6 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexMatchListView.swift; sourceTree = "<group>"; };
+		5AEB6A55284B4C2300541959 /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
+		5AEB6A57284B4D3C00541959 /* PatternInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternInputView.swift; sourceTree = "<group>"; };
+		5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexViewModel.swift; sourceTree = "<group>"; };
 		79933CB2284258D10007174B /* InputToOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputToOutputView.swift; sourceTree = "<group>"; };
 		79933CB528425C490007174B /* HtmlToSwiftBirds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToSwiftBirds.swift; sourceTree = "<group>"; };
 		79933CBE2842686F0007174B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -91,6 +103,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AEB6A51284B493000541959 /* RegexExtract */ = {
+			isa = PBXGroup;
+			children = (
+				5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */,
+				5AEB6A55284B4C2300541959 /* String+Regex.swift */,
+				5AEB6A57284B4D3C00541959 /* PatternInputView.swift */,
+				5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */,
+			);
+			path = RegexExtract;
+			sourceTree = "<group>";
+		};
 		7998D5042843B00B00578C5A /* FileSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +151,7 @@
 				79C12BF528423F6500F19A86 /* Main */,
 				79C12BF228423F2800F19A86 /* InputToOutput */,
 				7998D5042843B00B00578C5A /* FileSearch */,
+				5AEB6A51284B493000541959 /* RegexExtract */,
 				79C12BD528423EEF00F19A86 /* ContentView.swift */,
 				79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */,
 				79C12BD628423EF000F19A86 /* Assets.xcassets */,
@@ -309,12 +333,16 @@
 				79C8EBF02842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				79C12BF828423F8000F19A86 /* UserEditorView.swift in Sources */,
 				7998D50D2843B44100578C5A /* ButtonFilePickerPanelView.swift in Sources */,
+				5AEB6A53284B4A3700541959 /* RegexMatchListView.swift in Sources */,
+				5AEB6A5B284B4DA500541959 /* RegexViewModel.swift in Sources */,
 				7998D5062843B03400578C5A /* ShellCommand.swift in Sources */,
+				5AEB6A56284B4C2300541959 /* String+Regex.swift in Sources */,
 				7998D5132843B5B700578C5A /* PreviewData.swift in Sources */,
 				79933CBF2842686F0007174B /* MainView.swift in Sources */,
 				7998D5182843BDCD00578C5A /* FileSearchModel.swift in Sources */,
 				7998D5092843B0A300578C5A /* SearchTextFilesView.swift in Sources */,
 				7998D50F2843B4CF00578C5A /* FoundFilesView.swift in Sources */,
+				5AEB6A58284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				79933CB3284258D10007174B /* InputToOutputView.swift in Sources */,
 				79C12BE628423EF000F19A86 /* ContentView.swift in Sources */,
 				7998D51B2843C31300578C5A /* FileContentView.swift in Sources */,
@@ -333,13 +361,17 @@
 				79C8EBF12842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				79C12BE728423EF000F19A86 /* ContentView.swift in Sources */,
 				7998D5102843B52000578C5A /* ButtonFilePickerPanelView.swift in Sources */,
+				5AEB6A54284B4BF000541959 /* RegexMatchListView.swift in Sources */,
 				79933CC02842686F0007174B /* MainView.swift in Sources */,
+				5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				7998D5142843B5ED00578C5A /* PreviewData.swift in Sources */,
 				79933CB4284258D10007174B /* InputToOutputView.swift in Sources */,
 				7998D5192843BDCD00578C5A /* FileSearchModel.swift in Sources */,
+				5AEB6A5C284B4DA500541959 /* RegexViewModel.swift in Sources */,
 				79C12BFC2842403800F19A86 /* UserEditorView.swift in Sources */,
 				7998D5112843B52500578C5A /* FoundFilesView.swift in Sources */,
 				7998D50A2843B10700578C5A /* SearchTextFilesView.swift in Sources */,
+				5A509F77284B5177006404F2 /* String+Regex.swift in Sources */,
 				79C12BE528423EF000F19A86 /* DimeADozenApp.swift in Sources */,
 				7998D51C2843C31300578C5A /* FileContentView.swift in Sources */,
 				7998D50B2843B11000578C5A /* ShellCommand.swift in Sources */,

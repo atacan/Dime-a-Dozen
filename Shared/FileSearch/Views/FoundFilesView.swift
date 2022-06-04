@@ -16,7 +16,7 @@ struct FoundFilesView: View {
         .onChange(of: sortOrder) {
             fileSearchModel.foundFiles.sort(using: $0)
         }
-        .onChange(of: selectedFile) { newValue in
+        .onChange(of: selectedFile) { _ in
             fileSearchModel.selectedFile(selectedFile)
         }
     }
