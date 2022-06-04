@@ -1,4 +1,6 @@
 # Dime-a-Dozen
+Download on https://github.com/atacan/Dime-a-Dozen/releases
+
 # Tools
 
 ## Html to Swift Converter
