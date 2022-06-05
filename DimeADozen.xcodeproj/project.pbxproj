@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A509F77284B5177006404F2 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A55284B4C2300541959 /* String+Regex.swift */; };
+		5A3256AB284CBB9D00567EA8 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AA284CBB9D00567EA8 /* TextStyle.swift */; };
+		5A3256AC284CBB9D00567EA8 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AA284CBB9D00567EA8 /* TextStyle.swift */; };
+		5A3256AE284CBBD200567EA8 /* TextStyleImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */; };
+		5A3256AF284CBBD200567EA8 /* TextStyleImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */; };
+		5A451E85284BF2120093BFE0 /* CaseConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A451E84284BF2120093BFE0 /* CaseConversionViewModel.swift */; };
+		5A451E86284BF2180093BFE0 /* CaseConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A451E84284BF2120093BFE0 /* CaseConversionViewModel.swift */; };
+		5A451E88284BFA6F0093BFE0 /* CaseConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A451E87284BFA6F0093BFE0 /* CaseConverterView.swift */; };
+		5A451E89284BFB410093BFE0 /* CaseConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A451E87284BFA6F0093BFE0 /* CaseConverterView.swift */; };
 		5AEB6A53284B4A3700541959 /* RegexMatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */; };
 		5AEB6A54284B4BF000541959 /* RegexMatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */; };
-		5AEB6A56284B4C2300541959 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A55284B4C2300541959 /* String+Regex.swift */; };
 		5AEB6A58284B4D3C00541959 /* PatternInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A57284B4D3C00541959 /* PatternInputView.swift */; };
 		5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A57284B4D3C00541959 /* PatternInputView.swift */; };
 		5AEB6A5B284B4DA500541959 /* RegexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */; };
@@ -56,8 +62,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A3256AA284CBB9D00567EA8 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
+		5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleImplement.swift; sourceTree = "<group>"; };
+		5A451E84284BF2120093BFE0 /* CaseConversionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseConversionViewModel.swift; sourceTree = "<group>"; };
+		5A451E87284BFA6F0093BFE0 /* CaseConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseConverterView.swift; sourceTree = "<group>"; };
 		5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexMatchListView.swift; sourceTree = "<group>"; };
-		5AEB6A55284B4C2300541959 /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
 		5AEB6A57284B4D3C00541959 /* PatternInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternInputView.swift; sourceTree = "<group>"; };
 		5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexViewModel.swift; sourceTree = "<group>"; };
 		79933CB2284258D10007174B /* InputToOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputToOutputView.swift; sourceTree = "<group>"; };
@@ -103,11 +112,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A451E83284BF1EB0093BFE0 /* CaseConverter */ = {
+			isa = PBXGroup;
+			children = (
+				5A3256AA284CBB9D00567EA8 /* TextStyle.swift */,
+				5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */,
+				5A451E84284BF2120093BFE0 /* CaseConversionViewModel.swift */,
+				5A451E87284BFA6F0093BFE0 /* CaseConverterView.swift */,
+			);
+			path = CaseConverter;
+			sourceTree = "<group>";
+		};
 		5AEB6A51284B493000541959 /* RegexExtract */ = {
 			isa = PBXGroup;
 			children = (
 				5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */,
-				5AEB6A55284B4C2300541959 /* String+Regex.swift */,
 				5AEB6A57284B4D3C00541959 /* PatternInputView.swift */,
 				5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */,
 			);
@@ -150,6 +169,7 @@
 				7998D5122843B5B700578C5A /* PreviewData.swift */,
 				79C12BF528423F6500F19A86 /* Main */,
 				79C12BF228423F2800F19A86 /* InputToOutput */,
+				5A451E83284BF1EB0093BFE0 /* CaseConverter */,
 				7998D5042843B00B00578C5A /* FileSearch */,
 				5AEB6A51284B493000541959 /* RegexExtract */,
 				79C12BD528423EEF00F19A86 /* ContentView.swift */,
@@ -333,20 +353,23 @@
 				79C8EBF02842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				79C12BF828423F8000F19A86 /* UserEditorView.swift in Sources */,
 				7998D50D2843B44100578C5A /* ButtonFilePickerPanelView.swift in Sources */,
+				5A3256AB284CBB9D00567EA8 /* TextStyle.swift in Sources */,
 				5AEB6A53284B4A3700541959 /* RegexMatchListView.swift in Sources */,
 				5AEB6A5B284B4DA500541959 /* RegexViewModel.swift in Sources */,
 				7998D5062843B03400578C5A /* ShellCommand.swift in Sources */,
-				5AEB6A56284B4C2300541959 /* String+Regex.swift in Sources */,
+				5A451E88284BFA6F0093BFE0 /* CaseConverterView.swift in Sources */,
 				7998D5132843B5B700578C5A /* PreviewData.swift in Sources */,
 				79933CBF2842686F0007174B /* MainView.swift in Sources */,
 				7998D5182843BDCD00578C5A /* FileSearchModel.swift in Sources */,
 				7998D5092843B0A300578C5A /* SearchTextFilesView.swift in Sources */,
+				5A451E85284BF2120093BFE0 /* CaseConversionViewModel.swift in Sources */,
 				7998D50F2843B4CF00578C5A /* FoundFilesView.swift in Sources */,
 				5AEB6A58284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				79933CB3284258D10007174B /* InputToOutputView.swift in Sources */,
 				79C12BE628423EF000F19A86 /* ContentView.swift in Sources */,
 				7998D51B2843C31300578C5A /* FileContentView.swift in Sources */,
 				79C12BE428423EF000F19A86 /* DimeADozenApp.swift in Sources */,
+				5A3256AE284CBBD200567EA8 /* TextStyleImplement.swift in Sources */,
 				79933CB628425C490007174B /* HtmlToSwiftBirds.swift in Sources */,
 				79933CD3284283F10007174B /* ComingSoonView.swift in Sources */,
 				79933CC528426C0E0007174B /* Tool.swift in Sources */,
@@ -361,20 +384,23 @@
 				79C8EBF12842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				79C12BE728423EF000F19A86 /* ContentView.swift in Sources */,
 				7998D5102843B52000578C5A /* ButtonFilePickerPanelView.swift in Sources */,
+				5A3256AC284CBB9D00567EA8 /* TextStyle.swift in Sources */,
 				5AEB6A54284B4BF000541959 /* RegexMatchListView.swift in Sources */,
 				79933CC02842686F0007174B /* MainView.swift in Sources */,
 				5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				7998D5142843B5ED00578C5A /* PreviewData.swift in Sources */,
+				5A451E89284BFB410093BFE0 /* CaseConverterView.swift in Sources */,
 				79933CB4284258D10007174B /* InputToOutputView.swift in Sources */,
 				7998D5192843BDCD00578C5A /* FileSearchModel.swift in Sources */,
 				5AEB6A5C284B4DA500541959 /* RegexViewModel.swift in Sources */,
 				79C12BFC2842403800F19A86 /* UserEditorView.swift in Sources */,
+				5A451E86284BF2180093BFE0 /* CaseConversionViewModel.swift in Sources */,
 				7998D5112843B52500578C5A /* FoundFilesView.swift in Sources */,
 				7998D50A2843B10700578C5A /* SearchTextFilesView.swift in Sources */,
-				5A509F77284B5177006404F2 /* String+Regex.swift in Sources */,
 				79C12BE528423EF000F19A86 /* DimeADozenApp.swift in Sources */,
 				7998D51C2843C31300578C5A /* FileContentView.swift in Sources */,
 				7998D50B2843B11000578C5A /* ShellCommand.swift in Sources */,
+				5A3256AF284CBBD200567EA8 /* TextStyleImplement.swift in Sources */,
 				79933CB728425C490007174B /* HtmlToSwiftBirds.swift in Sources */,
 				79933CD4284283F10007174B /* ComingSoonView.swift in Sources */,
 				79933CC628426C0E0007174B /* Tool.swift in Sources */,
