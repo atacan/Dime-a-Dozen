@@ -12,6 +12,11 @@ The online regex editors highlight the matches but you can't extract them into a
 The following example is useful to extract old class names from an HTML code to generate CSS framework enum.
 <img width="1306" alt="Screenshot 2022-06-04 at 11 26 09" src="https://user-images.githubusercontent.com/765873/171993435-aa4604bd-5d19-4ce1-8543-9824544f8eed.png">
 
+## Text Case Converter
+Convert a list of string from Snake case to Camel case, for example. It is useful for generating enums, static variables etc.  
+The screenshot shows converting Bootstrap CSS classes into camel case to be usable for an CSS framework enum.
+<img width="1552" alt="Screenshot 2022-06-05 at 12 37 41" src="https://user-images.githubusercontent.com/765873/172046642-857139d2-395a-4ff2-8556-68325a9e8767.png">
+
 
 ## Search Inside Files
 Find files that contain a search term in file content, not just the file name, using `grep`
