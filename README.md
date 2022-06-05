@@ -15,7 +15,7 @@ The following example is useful to extract old class names from an HTML code to 
 ## Text Case Converter
 Convert a list of string from Snake case to Camel case, for example. It is useful for generating enums, static variables etc.  
 The screenshot shows converting Bootstrap CSS classes into camel case to be usable for an CSS framework enum.
-<img width="1552" alt="Screenshot 2022-06-05 at 12 37 41" src="https://user-images.githubusercontent.com/765873/172046642-857139d2-395a-4ff2-8556-68325a9e8767.png">
+<img width="1508" alt="Screenshot 2022-06-05 at 12 41 09" src="https://user-images.githubusercontent.com/765873/172046678-9e5a6867-cf79-4d13-b0c0-0c5c7fdfd04d.png">
 
 
 ## Search Inside Files
