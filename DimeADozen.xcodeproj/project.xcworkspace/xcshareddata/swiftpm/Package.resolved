@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/atacan/html-swift",
       "state" : {
-        "revision" : "4816a1e053e514be6225e671ab8df4efa3dac0d2",
-        "version" : "1.0.5"
+        "revision" : "20472b7584acb861e5d2d3117842030eb6a12b62",
+        "version" : "1.1.1"
       }
     },
     {

@@ -667,7 +667,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/atacan/html-swift";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = versionRange;
+				maximumVersion = 3.1.0;
 				minimumVersion = 1.0.0;
 			};
 		};
