@@ -2,7 +2,7 @@
 //  TextStyle.swift
 //  DimeADozen
 //
-//  Created by atacan.durmusoglu on 05.06.22.
+//  Created by atacan on 05.06.22.
 //
 
 enum WordCase {

@@ -2,7 +2,7 @@
 //  RegexViewModel.swift
 //  DimeADozen
 //
-//  Created by atacan.durmusoglu on 04.06.22.
+//  Created by atacan on 04.06.22.
 //
 
 import SwiftUI
