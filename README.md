@@ -1,5 +1,5 @@
 # Dime-a-Dozen
-Download on https://github.com/atacan/Dime-a-Dozen/releases
+Download the release build on https://github.com/atacan/Dime-a-Dozen/releases
 
 # Tools
 
