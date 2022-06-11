@@ -8,15 +8,15 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             MainSidebarView()
-            Text("⬅️ Choose a tool from the Sidebar")
+                .toolbar {
+                    ToolbarItem(placement: .status) {
+                        ToggleSidebarButton()
+                    }
+                }
+            Text("\(Image(systemName: "sidebar.squares.left"))  Choose a tool from the Sidebar")
                 .font(.largeTitle)
         } // <-NavigationView
         .navigationTitle("Tools")
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
-                ToggleSidebarButton()
-            }
-        }
     }
 }
 
