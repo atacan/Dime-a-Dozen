@@ -25,6 +25,7 @@ struct FileContentView: View {
                 } label: {
                     Text("Open")
                 } // <-Button
+                .keyboardShortcut(.return, modifiers: .command)
                 .padding()
             }
         }
