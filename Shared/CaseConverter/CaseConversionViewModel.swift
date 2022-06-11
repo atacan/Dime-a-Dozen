@@ -16,12 +16,12 @@ class CaseConversionViewModel: ObservableObject {
     }
 
     func convertGeneric(InputStyle: TextStyle.Type, OutputStyle: TextStyle.Type) {
-        var outputList = [String]()
-        for word in inputText.split(separator: "\n") {
+//        var outputList = [String]()
+        let outputList = inputText.split(separator: "\n").map { word -> String in
             let input = InputStyle.init(String(word))
             let inputSplit = input.split()
             let output = OutputStyle.init(from: inputSplit)
-            outputList.append(output.content)
+            return output.content
         }
         outputText = outputList.joined(separator: "\n")
     }

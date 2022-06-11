@@ -20,6 +20,7 @@ struct CaseConverterView: View {
             Text("List of Words")
                 .font(.title2)
             TextEditor(text: $caseConversionVM.inputText)
+                .disableAutocorrection(true)
                 .font(.monospaced(.body)())
                 .padding(.horizontal)
                 .padding(.bottom)
