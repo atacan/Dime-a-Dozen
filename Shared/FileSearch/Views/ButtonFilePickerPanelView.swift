@@ -20,6 +20,9 @@ struct ButtonFilePickerPanelView: View {
             } label: {
                 Text("Choose Directory")
             } // <-Button
+            if fileSearchModel.isSearching {
+                ProgressView("Please wait...")
+            }
             Spacer()
         } // <-HStack
         .padding(.top)
