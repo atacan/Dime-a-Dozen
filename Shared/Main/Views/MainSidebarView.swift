@@ -16,6 +16,7 @@ struct MainSidebarView: View {
             Section(header: Text("Text")) {
                 RegexMatchListView(selectedTool: $selectedTool)
                 CaseConverterView(selectedTool: $selectedTool)
+                PrefixSuffixFinalView(selectedTool: $selectedTool)
             }
             Section(header: Text("Files")) {
                 SearchTextFilesView(selectedTool: $selectedTool)

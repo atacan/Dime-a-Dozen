@@ -22,6 +22,12 @@
 		5A3256AE284CBBD200567EA8 /* TextStyleImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */; };
 		5A3256AF284CBBD200567EA8 /* TextStyleImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */; };
 		5A3459BC286743A400C7A351 /* MacSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A3459BB286743A400C7A351 /* MacSwiftUI */; };
+		5A3459BF28677C4F00C7A351 /* UserInputPrefixSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459BE28677C4F00C7A351 /* UserInputPrefixSuffix.swift */; };
+		5A3459C128677D2D00C7A351 /* PrefixSuffixFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459C028677D2D00C7A351 /* PrefixSuffixFinalView.swift */; };
+		5A3459C228677E3000C7A351 /* PrefixSuffixFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459C028677D2D00C7A351 /* PrefixSuffixFinalView.swift */; };
+		5A3459C328677E3300C7A351 /* UserInputPrefixSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459BE28677C4F00C7A351 /* UserInputPrefixSuffix.swift */; };
+		5A3459C52867800400C7A351 /* PrefixSuffixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459C42867800400C7A351 /* PrefixSuffixModel.swift */; };
+		5A3459C6286780D700C7A351 /* PrefixSuffixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459C42867800400C7A351 /* PrefixSuffixModel.swift */; };
 		5A451E85284BF2120093BFE0 /* CaseConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A451E84284BF2120093BFE0 /* CaseConversionViewModel.swift */; };
 		5A451E86284BF2180093BFE0 /* CaseConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A451E84284BF2120093BFE0 /* CaseConversionViewModel.swift */; };
 		5A451E88284BFA6F0093BFE0 /* CaseConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A451E87284BFA6F0093BFE0 /* CaseConverterView.swift */; };
@@ -94,6 +100,9 @@
 		5A1C5A002854971D00A0595D /* VaporCodeFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaporCodeFinalView.swift; sourceTree = "<group>"; };
 		5A3256AA284CBB9D00567EA8 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleImplement.swift; sourceTree = "<group>"; };
+		5A3459BE28677C4F00C7A351 /* UserInputPrefixSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputPrefixSuffix.swift; sourceTree = "<group>"; };
+		5A3459C028677D2D00C7A351 /* PrefixSuffixFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixSuffixFinalView.swift; sourceTree = "<group>"; };
+		5A3459C42867800400C7A351 /* PrefixSuffixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixSuffixModel.swift; sourceTree = "<group>"; };
 		5A451E84284BF2120093BFE0 /* CaseConversionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseConversionViewModel.swift; sourceTree = "<group>"; };
 		5A451E87284BFA6F0093BFE0 /* CaseConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseConverterView.swift; sourceTree = "<group>"; };
 		5A77356A2854BDD600614E2E /* VaporOutputEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaporOutputEditorView.swift; sourceTree = "<group>"; };
@@ -166,6 +175,16 @@
 			path = VaporNewModel;
 			sourceTree = "<group>";
 		};
+		5A3459BD28677C1800C7A351 /* PrefixSuffix */ = {
+			isa = PBXGroup;
+			children = (
+				5A3459BE28677C4F00C7A351 /* UserInputPrefixSuffix.swift */,
+				5A3459C028677D2D00C7A351 /* PrefixSuffixFinalView.swift */,
+				5A3459C42867800400C7A351 /* PrefixSuffixModel.swift */,
+			);
+			path = PrefixSuffix;
+			sourceTree = "<group>";
+		};
 		5A451E83284BF1EB0093BFE0 /* CaseConverter */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +249,7 @@
 		79C12BD328423EEF00F19A86 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5A3459BD28677C1800C7A351 /* PrefixSuffix */,
 				7998D5122843B5B700578C5A /* PreviewData.swift */,
 				79C12BF528423F6500F19A86 /* Main */,
 				79C12BF228423F2800F19A86 /* InputToOutput */,
@@ -420,6 +440,7 @@
 				79933CC2284268B40007174B /* MainSidebarView.swift in Sources */,
 				79C8EBF02842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				5A1C59FE285495BF00A0595D /* FormVaporPropertyView.swift in Sources */,
+				5A3459C52867800400C7A351 /* PrefixSuffixModel.swift in Sources */,
 				79C12BF828423F8000F19A86 /* UserEditorView.swift in Sources */,
 				7998D50D2843B44100578C5A /* ButtonFilePickerPanelView.swift in Sources */,
 				5A3256AB284CBB9D00567EA8 /* TextStyle.swift in Sources */,
@@ -435,11 +456,13 @@
 				7998D5182843BDCD00578C5A /* FileSearchModel.swift in Sources */,
 				7998D5092843B0A300578C5A /* SearchTextFilesView.swift in Sources */,
 				5A451E85284BF2120093BFE0 /* CaseConversionViewModel.swift in Sources */,
+				5A3459BF28677C4F00C7A351 /* UserInputPrefixSuffix.swift in Sources */,
 				5A7735712854E75D00614E2E /* VDKComboBox.swift in Sources */,
 				7998D50F2843B4CF00578C5A /* FoundFilesView.swift in Sources */,
 				5AEB6A58284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				79933CB3284258D10007174B /* InputToOutputView.swift in Sources */,
 				5A77356E2854C1DC00614E2E /* Extensions.swift in Sources */,
+				5A3459C128677D2D00C7A351 /* PrefixSuffixFinalView.swift in Sources */,
 				5A77356B2854BDD600614E2E /* VaporOutputEditorView.swift in Sources */,
 				79C12BE628423EF000F19A86 /* ContentView.swift in Sources */,
 				7998D51B2843C31300578C5A /* FileContentView.swift in Sources */,
@@ -463,11 +486,13 @@
 				79933CC3284268B40007174B /* MainSidebarView.swift in Sources */,
 				79C8EBF12842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				5A1C59FF285495BF00A0595D /* FormVaporPropertyView.swift in Sources */,
+				5A3459C6286780D700C7A351 /* PrefixSuffixModel.swift in Sources */,
 				79C12BE728423EF000F19A86 /* ContentView.swift in Sources */,
 				7998D5102843B52000578C5A /* ButtonFilePickerPanelView.swift in Sources */,
 				5A3256AC284CBB9D00567EA8 /* TextStyle.swift in Sources */,
 				5A1C59F9285490C300A0595D /* VaporProperty.swift in Sources */,
 				5AEB6A54284B4BF000541959 /* RegexMatchListView.swift in Sources */,
+				5A3459C228677E3000C7A351 /* PrefixSuffixFinalView.swift in Sources */,
 				79933CC02842686F0007174B /* MainView.swift in Sources */,
 				5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				7998D5142843B5ED00578C5A /* PreviewData.swift in Sources */,
@@ -493,6 +518,7 @@
 				7998D50B2843B11000578C5A /* ShellCommand.swift in Sources */,
 				5A3256AF284CBBD200567EA8 /* TextStyleImplement.swift in Sources */,
 				79933CB728425C490007174B /* HtmlToSwiftBirds.swift in Sources */,
+				5A3459C328677E3300C7A351 /* UserInputPrefixSuffix.swift in Sources */,
 				79933CD4284283F10007174B /* ComingSoonView.swift in Sources */,
 				79933CC628426C0E0007174B /* Tool.swift in Sources */,
 				5A1C59FC285494C600A0595D /* VaporCodeViewModel.swift in Sources */,
