@@ -4,6 +4,7 @@
 
 import HtmlSwift
 import SwiftUI
+import MacSwiftUI
 
 struct UserEditorView: View {
     @Binding var text: String
@@ -26,8 +27,9 @@ struct UserEditorView: View {
 
 extension UserEditorView {
     private var myEditor: some View {
-        TextEditor(text: $text)
+        MacEditorControllerView(text: $text)
             .font(.monospaced(.body)())
+            .shadow(radius: 2)
             .padding(.horizontal)
     }
 }

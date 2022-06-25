@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import MacSwiftUI
 
 let toolCaseConverter = Tool(sidebarName: "Case Converter", navigationTitle: "Convert Word Case")
 
 struct CaseConverterView: View {
-    @StateObject var caseConversionVM = CaseConversionViewModel()
+    var caseConversionVM = CaseConversionViewModel()
     @Binding var selectedTool: Tool?
+    @State var inputText: String = ""
+    @State var outputText: String = ""
     @State private var inputCase: WordGroupCase = .kebab
     @State private var outputCase: WordGroupCase = .camel
     
@@ -19,9 +22,10 @@ struct CaseConverterView: View {
         VStack(alignment: .center) {
             Text("List of Words")
                 .font(.title2)
-            TextEditor(text: $caseConversionVM.inputText)
+            MacEditorControllerView(text: $inputText)
                 .disableAutocorrection(true)
                 .font(.monospaced(.body)())
+                .shadow(radius: 2)
                 .padding(.horizontal)
                 .padding(.bottom)
         } // <-VStack
@@ -31,8 +35,9 @@ struct CaseConverterView: View {
         VStack(alignment: .center) {
             Text("Converted")
                 .font(.title2)
-            TextEditor(text: $caseConversionVM.outputText)
+            MacEditorControllerView(text: $outputText)
                 .font(.monospaced(.body)())
+                .shadow(radius: 2)
                 .padding(.horizontal)
                 .padding(.bottom)
         } // <-VStack
@@ -40,6 +45,12 @@ struct CaseConverterView: View {
     
     var myView: some View {
         VStack {
+            Button {
+                (inputCase, outputCase) = (outputCase, inputCase)
+            } label: {
+                Image(systemName: "arrow.left.arrow.right")
+            } // <-Button
+            .padding(.top)
             HStack {
                 Spacer()
                 Picker("Input Case", selection: $inputCase) {
@@ -56,9 +67,8 @@ struct CaseConverterView: View {
                 .frame(maxWidth: 250)
                 Spacer()
             }
-            .padding(.top)
             Button {
-                caseConversionVM.convert(from: inputCase, to: outputCase)
+                outputText = caseConversionVM.convert(inputText: inputText, from: inputCase, to: outputCase)
             } label: {
                 Text("Convert")
             } // <-Button

@@ -11,6 +11,7 @@ struct MainSidebarView: View {
         List {
             Section(header: Text("Server Side Swift")) {
                 HtmlToSwiftBirdsView(selectedTool: $selectedTool)
+                VaporCodeFinalView(selectedTool: $selectedTool)
             }
             Section(header: Text("Text")) {
                 RegexMatchListView(selectedTool: $selectedTool)

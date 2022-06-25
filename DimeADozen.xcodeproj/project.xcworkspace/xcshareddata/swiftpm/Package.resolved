@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "macswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/atacan/MacSwiftUI",
+      "state" : {
+        "revision" : "70a56e879c940cad2f95598bb041cb02f5f4235e",
+        "version" : "0.0.2"
+      }
+    },
+    {
       "identity" : "swift-html",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/binarybirds/swift-html",
