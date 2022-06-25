@@ -2,7 +2,7 @@
 //  LazyTextField.swift
 //  DimeADozen
 //
-//  Created by atacan.durmusoglu on 12.06.22.
+//  Created by atacan on 12.06.22.
 //
 
 import AppKit

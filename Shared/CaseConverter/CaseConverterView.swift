@@ -17,6 +17,7 @@ struct CaseConverterView: View {
     @State var outputText: String = ""
     @State private var inputCase: WordGroupCase = .kebab
     @State private var outputCase: WordGroupCase = .camel
+    @State private var seperator: WordGroupSeperator = .newLine
     
     var myInputEditor: some View {
         VStack(alignment: .center) {
@@ -67,6 +68,12 @@ struct CaseConverterView: View {
                 .frame(maxWidth: 250)
                 Spacer()
             }
+            Picker("Word Group Seperator", selection: $seperator) {
+                ForEach(WordGroupSeperator.allCases) { seperator in
+                    Text(caseConversionVM.seperatorDescription(seperator))
+                }
+            }
+            .frame(maxWidth: 250)
             Button {
                 outputText = caseConversionVM.convert(inputText: inputText, from: inputCase, to: outputCase)
             } label: {

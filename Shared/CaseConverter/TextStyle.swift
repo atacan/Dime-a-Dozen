@@ -11,13 +11,16 @@ enum WordCase {
     case allCaps
 }
 
-enum WordGroupCase: String, CaseIterable, Identifiable  {
+enum WordGroupCase: String, CaseIterable, Identifiable {
     case snake
     case kebab
     case camel
     case pascal
-    var id: Self { self }
+    case title
+//    case sentence
     
+    var id: Self { self }
+
     func textStyle() -> TextStyle.Type {
         switch self {
         case .snake:
@@ -28,8 +31,19 @@ enum WordGroupCase: String, CaseIterable, Identifiable  {
             return Camel.self
         case .pascal:
             return Pascal.self
+        case .title:
+            return Title.self
+//        case .sentence:
+//            return Sentence.self
         }
     }
+}
+
+enum WordGroupSeperator: Character, CaseIterable, Identifiable {
+    case newLine = "\n"
+    case space = " "
+    
+    var id: Self { self }
 }
 
 protocol TextStyle {

@@ -128,3 +128,53 @@ struct Snake: TextStyle {
         return content.split(separator: Character(separator))
     }
 }
+
+struct Title: TextStyle {
+    var style = WordGroupCase.title
+    var separator = " "
+    var firstWordCase = WordCase.title
+    var restWordCase = WordCase.title
+    var content: String
+    
+    init(_ content: String) {
+        self.content = content
+    }
+    
+    init(from words: [Substring]) {
+        content = ""
+        let text = words
+            .map { $0.capitalized }
+            .joined(separator: separator)
+        content = text
+    }
+    
+    func split() -> [Substring] {
+        return content.split(separator: Character(separator))
+    }
+}
+
+//struct Sentence: TextStyle {
+//    var style = WordGroupCase.sentence
+//    var separator = "."
+//    var firstWordCase = WordCase.title
+//    var restWordCase = WordCase.allDown
+//    var content: String
+//    
+//    func formatFirstWord(_ word: String) -> String { word.capitalized }
+//    
+//    init(_ content: String) {
+//        self.content = content
+//    }
+//    
+//    init(from words: [Substring]) {
+//        content = ""
+//        let text = words
+//            .map { $0.capitalized }
+//            .joined(separator: separator)
+//        content = text
+//    }
+//    
+//    func split() -> [Substring] {
+//        return content.split(separator: Character(separator))
+//    }
+//}
