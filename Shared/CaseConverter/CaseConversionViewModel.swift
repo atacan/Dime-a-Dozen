@@ -19,8 +19,6 @@ class CaseConversionViewModel: ObservableObject {
         let outputList = inputText.split(separator: wordGroupSeparator.rawValue).map { word -> String in
             let input = InputStyle.init(String(word))
             let inputSplit = input.split()
-            print("word", word)
-            print("inputSplit", inputSplit)
             let output = OutputStyle.init(from: inputSplit)
             return output.content
         }

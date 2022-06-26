@@ -13,7 +13,7 @@ struct MainView: View {
                         ToggleSidebarButton()
                     }
                 }
-            Text("\(Image(systemName: "sidebar.squares.left"))  Choose a tool from the Sidebar")
+            Text("\(Image(systemName: "rectangle.leadinghalf.inset.filled.arrow.leading"))  Choose a tool from the Sidebar")
                 .font(.largeTitle)
         } // <-NavigationView
         .navigationTitle("Tools")

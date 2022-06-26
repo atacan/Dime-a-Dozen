@@ -1,7 +1,6 @@
-// 
+//
 // https://github.com/atacan
 // 25.06.22
-	
 
 import SwiftUI
 
@@ -14,40 +13,65 @@ struct UserInputPrefixSuffix: View {
     @Binding var suffixReplaceWith: String
     @Binding var suffixAdd: String
     @Binding var trimWhiteSpace: Bool
-    
+
     var body: some View {
         Form {
             HStack(alignment: .center) {
                 // replace prefix
                 VStack(alignment: .leading) {
-                    TextField("Replace Prefix", text: $prefixReplace)
-                    // add prefix
-                    TextField("with", text: $prefixReplaceWith)
-                    // replace suffix
+                    TextField(text: $prefixReplace) {
+                        Text("Replace Prefix")
+                            .font(.body)
+                    }
+                    .font(.monospaced(.body)())
+                    TextField(text: $prefixReplaceWith) {
+                        Text("with")
+                            .font(.body)
+                    }
+                    .font(.monospaced(.body)())
                 } // <-VStack
-                TextField("Add Prefix", text: $prefixAdd)
+                // add prefix
+                TextField(text: $prefixAdd) {
+                    Text("Add Prefix")
+                        .font(.body)
+                }
+                .font(.monospaced(.body)())
+                // replace suffix
                 VStack(alignment: .leading) {
-                    TextField("Replace Suffix", text: $suffixReplace)
-                    // add suffix
-                    TextField("with", text: $suffixReplaceWith)
+                    TextField(text: $suffixReplace) {
+                        Text("Replace Suffix")
+                            .font(.body)
+                    }
+                    .font(.monospaced(.body)())
+                    TextField(text: $suffixReplaceWith) {
+                        Text("with")
+                            .font(.body)
+                    }
+                    .font(.monospaced(.body)())
                 } // <-VStack
-                TextField("Add Suffix", text: $suffixAdd)
+                // add suffix
+                TextField(text: $suffixAdd) {
+                    Text("Add Suffix")
+                        .font(.body)
+                }
+                .font(.monospaced(.body)())
             } // <-HStack
             Toggle("Trim White Space", isOn: $vm.trimWhiteSpace)
             Button {
                 vm.convert()
             } label: {
-                Text("Convert")
+                Text("\(Image(systemName: "arrow.turn.down.right")) Convert \(Image(systemName: "arrow.forward"))")
             } // <-Button
+            Text("")
         } // <-Form
     }
 }
 
-//struct UserInputPrefixSuffix_Previews: PreviewProvider {
+// struct UserInputPrefixSuffix_Previews: PreviewProvider {
 //    static var previews: some View {
 //        UserInputPrefixSuffix()
 //            .preferredColorScheme(.light)
 //            .previewLayout(.sizeThatFits)
 //            .padding()
 //    }
-//}
+// }

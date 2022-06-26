@@ -18,7 +18,7 @@ struct ButtonFilePickerPanelView: View {
             Button {
                 fileSearchModel.filePicker()
             } label: {
-                Text("Choose Directory")
+                Text("Search in \(Image(systemName: "folder")) Directory...")
             } // <-Button
             Spacer()
         } // <-HStack

@@ -52,6 +52,10 @@
 		5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A57284B4D3C00541959 /* PatternInputView.swift */; };
 		5AEB6A5B284B4DA500541959 /* RegexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */; };
 		5AEB6A5C284B4DA500541959 /* RegexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */; };
+		5AFD0D6A286889BD00AC5652 /* TemplateMigration.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AFD0D69286889BD00AC5652 /* TemplateMigration.txt */; };
+		5AFD0D6C28688AC500AC5652 /* TemplateModel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6B28688AC500AC5652 /* TemplateModel.txt */; };
+		5AFD0D6E28688FC500AC5652 /* TemplateController.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6D28688FC500AC5652 /* TemplateController.txt */; };
+		5AFD0D702868930000AC5652 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6F2868930000AC5652 /* PopOver.swift */; };
 		79933CB12842573E0007174B /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79933CB02842573E0007174B /* HtmlSwift */; };
 		79933CB3284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
 		79933CB4284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
@@ -115,6 +119,10 @@
 		5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexMatchListView.swift; sourceTree = "<group>"; };
 		5AEB6A57284B4D3C00541959 /* PatternInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternInputView.swift; sourceTree = "<group>"; };
 		5AEB6A5A284B4DA500541959 /* RegexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexViewModel.swift; sourceTree = "<group>"; };
+		5AFD0D69286889BD00AC5652 /* TemplateMigration.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateMigration.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5AFD0D6B28688AC500AC5652 /* TemplateModel.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateModel.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5AFD0D6D28688FC500AC5652 /* TemplateController.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateController.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5AFD0D6F2868930000AC5652 /* PopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		79933CB2284258D10007174B /* InputToOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputToOutputView.swift; sourceTree = "<group>"; };
 		79933CB528425C490007174B /* HtmlToSwiftBirds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToSwiftBirds.swift; sourceTree = "<group>"; };
 		79933CBE2842686F0007174B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -162,15 +170,15 @@
 		5A1C59F3285485DA00A0595D /* VaporNewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5AFD0D65286884CE00AC5652 /* VaporTemplateFiles */,
 				5A7735732855065500614E2E /* InputFieldViews */,
-				5A1C59F42854861800A0595D /* VaporProperty.swift */,
 				5A1C59FA285494C600A0595D /* VaporCodeViewModel.swift */,
-				5A7735702854E75D00614E2E /* VDKComboBox.swift */,
+				5A77357A28550D4C00614E2E /* VaporModel.swift */,
+				5A1C59F42854861800A0595D /* VaporProperty.swift */,
 				5A1C59F62854908100A0595D /* InputVaporPropertyView.swift */,
 				5A1C59FD285495BF00A0595D /* FormVaporPropertyView.swift */,
 				5A77356A2854BDD600614E2E /* VaporOutputEditorView.swift */,
 				5A1C5A002854971D00A0595D /* VaporCodeFinalView.swift */,
-				5A77357A28550D4C00614E2E /* VaporModel.swift */,
 			);
 			path = VaporNewModel;
 			sourceTree = "<group>";
@@ -202,6 +210,8 @@
 				5A7735742855067B00614E2E /* FieldPropertyWrapperView.swift */,
 				5A7735772855071F00614E2E /* FieldTimestampTriggerView.swift */,
 				5A773580285556EA00614E2E /* LazyTextField.swift */,
+				5A7735702854E75D00614E2E /* VDKComboBox.swift */,
+				5AFD0D6F2868930000AC5652 /* PopOver.swift */,
 			);
 			path = InputFieldViews;
 			sourceTree = "<group>";
@@ -214,6 +224,16 @@
 				5AEB6A52284B4A3700541959 /* RegexMatchListView.swift */,
 			);
 			path = RegexExtract;
+			sourceTree = "<group>";
+		};
+		5AFD0D65286884CE00AC5652 /* VaporTemplateFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5AFD0D69286889BD00AC5652 /* TemplateMigration.txt */,
+				5AFD0D6B28688AC500AC5652 /* TemplateModel.txt */,
+				5AFD0D6D28688FC500AC5652 /* TemplateController.txt */,
+			);
+			path = VaporTemplateFiles;
 			sourceTree = "<group>";
 		};
 		7998D5042843B00B00578C5A /* FileSearch */ = {
@@ -249,14 +269,14 @@
 		79C12BD328423EEF00F19A86 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				5A3459BD28677C1800C7A351 /* PrefixSuffix */,
 				7998D5122843B5B700578C5A /* PreviewData.swift */,
 				79C12BF528423F6500F19A86 /* Main */,
+				5A1C59F3285485DA00A0595D /* VaporNewModel */,
 				79C12BF228423F2800F19A86 /* InputToOutput */,
 				5A451E83284BF1EB0093BFE0 /* CaseConverter */,
 				7998D5042843B00B00578C5A /* FileSearch */,
-				5A1C59F3285485DA00A0595D /* VaporNewModel */,
 				5AEB6A51284B493000541959 /* RegexExtract */,
+				5A3459BD28677C1800C7A351 /* PrefixSuffix */,
 				79C12BD528423EEF00F19A86 /* ContentView.swift */,
 				79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */,
 				79C12BD628423EF000F19A86 /* Assets.xcassets */,
@@ -426,7 +446,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFD0D6E28688FC500AC5652 /* TemplateController.txt in Resources */,
 				79C12BE928423EF000F19A86 /* Assets.xcassets in Resources */,
+				5AFD0D6C28688AC500AC5652 /* TemplateModel.txt in Resources */,
+				5AFD0D6A286889BD00AC5652 /* TemplateMigration.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +517,7 @@
 				5AEB6A54284B4BF000541959 /* RegexMatchListView.swift in Sources */,
 				5A3459C228677E3000C7A351 /* PrefixSuffixFinalView.swift in Sources */,
 				79933CC02842686F0007174B /* MainView.swift in Sources */,
+				5AFD0D702868930000AC5652 /* PopOver.swift in Sources */,
 				5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				7998D5142843B5ED00578C5A /* PreviewData.swift in Sources */,
 				5A451E89284BFB410093BFE0 /* CaseConverterView.swift in Sources */,
