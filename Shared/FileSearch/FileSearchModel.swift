@@ -34,7 +34,7 @@ class FileSearch: ObservableObject {
     }
 
     func filePicker() {
-        guard !searchText.isEmpty else {
+        guard !searchText.trimmingCharacters(in: .whitespaces).isEmpty else {
             foundFiles = [FileModel(path: "insert a text to search for")]
             return
         }
