@@ -1,4 +1,4 @@
-// 
+//
 //  VaporCodeFinalView.swift
 //  DimeADozen
 //
@@ -13,13 +13,17 @@ struct VaporCodeFinalView: View {
     @Binding var selectedTool: Tool?
     @StateObject var vm = VaporCodeViewModel()
     
-    @State var modelName: String = ""
     @State var outputModelCode: String = ""
-    
+    @State var outputMigrationCode: String = ""
+    @State var outputControllerCode: String = ""
+    @State var outputAdmin: String = "Coming soon..."
     
     var generateCodeButton: some View {
         Button {
+            vm.createModel()
             outputModelCode = vm.generateModelCode()
+            outputMigrationCode = vm.generateMigration()
+            outputControllerCode = vm.generateController()
         } label: {
             Text("Generate")
         } // <-Button
@@ -27,19 +31,33 @@ struct VaporCodeFinalView: View {
     
     var myView: some View {
         VStack {
-            TextField(text: $modelName, prompt: Text("ModelName")) {
+            TextField(text: $vm.modelName, prompt: Text("ModelName")) {
                 Text("Model Name")
+                    .font(.body)
             }
+            .font(.monospaced(.body)())
             .frame(width: 250, alignment: .center)
             .padding(.top)
             
             Text("Model Properties").font(.title3).padding()
             
-            FormVaporPropertyView(properties: $vm.properties)//.equatable()
+            FormVaporPropertyView(properties: $vm.properties) // .equatable()
             
             generateCodeButton.padding(.top)
             
-            VaporOutputEditorView(text: $outputModelCode, title: "Model")
+            VSplitView {
+                HSplitView {
+                    VaporOutputEditorView(text: $outputModelCode, title: "Model")
+                    VaporOutputEditorView(text: $outputMigrationCode, title: "Migration")
+                } // <-HSplitView
+                HSplitView {
+                    VaporOutputEditorView(text: $outputControllerCode, title: "Controller")
+                    VaporOutputEditorView(text: $outputAdmin, title: "Admin")
+                } // <-HSplitView
+                .padding(.top)
+            } // <-VSplitView
+            PoppedButton()
+                .padding(.bottom)
         } // <-VStack
         .navigationTitle(toolVaporNewMode.navigationTitle)
         .toolbar {
@@ -61,11 +79,11 @@ struct VaporCodeFinalView: View {
     }
 }
 
-//struct VaporCodeFinalView_Previews: PreviewProvider {
+// struct VaporCodeFinalView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        VaporCodeFinalView()
 //            .preferredColorScheme(.light)
 //            .previewLayout(.sizeThatFits)
 //            .padding()
 //    }
-//}
+// }

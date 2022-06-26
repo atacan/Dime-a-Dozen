@@ -28,6 +28,9 @@ struct VaporProperty: Identifiable {
     var optionalSuffix: String {
         isOptional ? "?" : ""
     }
+    var required: String {
+        isOptional ? "" : ", .required"
+    }
 //    var isRequired: Bool = true
 
     var fieldKey: String = ""

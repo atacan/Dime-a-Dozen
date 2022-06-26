@@ -1,0 +1,45 @@
+import Fluent
+import Vapor
+
+struct ___VARIABLE_ModelNameUpper___Controller: RouteCollection {
+    func boot(routes: RoutesBuilder) throws {
+        let ___VARIABLE_ModelNameLower___Routes = routes.grouped("api", ___VARIABLE_ModelNameUpper___.route)
+        ___VARIABLE_ModelNameLower___Routes.get(use: listAll)
+        ___VARIABLE_ModelNameLower___Routes.post(use: create)
+        ___VARIABLE_ModelNameLower___Routes.group(":\(___VARIABLE_ModelNameUpper___.queryParameter)") { route in
+            route.get(use: getThis)
+            route.delete(use: delete)
+        }
+    }
+    
+    func listAll(req: Request) async throws -> [___VARIABLE_ModelNameUpper___] {
+        try await ___VARIABLE_ModelNameUpper___.query(on: req.db).all()
+    }
+    
+    func getThis(_ req: Request) async throws -> ___VARIABLE_ModelNameUpper___ {
+        guard let ___VARIABLE_ModelNameLower___ = try await ___VARIABLE_ModelNameUpper___.find(req.parameters.get(___VARIABLE_ModelNameUpper___.queryParameter), on: req.db) else { throw Abort(.notFound) }
+        return ___VARIABLE_ModelNameLower___
+    }
+    
+    func create(req: Request) async throws -> ___VARIABLE_ModelNameUpper___ {
+        let ___VARIABLE_ModelNameLower___ = try req.content.decode(___VARIABLE_ModelNameUpper___.self)
+        try await ___VARIABLE_ModelNameLower___.save(on: req.db)
+        return ___VARIABLE_ModelNameLower___
+    }
+    
+    func update(_ req: Request) async throws -> ___VARIABLE_ModelNameUpper___ {
+        let updateData = try req.content.decode(___VARIABLE_ModelNameUpper___.self)
+        guard let ___VARIABLE_ModelNameLower___ = try await ___VARIABLE_ModelNameUpper___.find(req.parameters.get(___VARIABLE_ModelNameUpper___.queryParameter), on: req.db) else { throw Abort(.notFound) }
+        // ___VARIABLE_ModelNameLower___ = updateData
+        try await ___VARIABLE_ModelNameLower___.update(on: req.db)
+        return ___VARIABLE_ModelNameLower___
+    }
+    
+    func delete(req: Request) async throws -> HTTPStatus {
+        guard let ___VARIABLE_ModelNameLower___ = try await ___VARIABLE_ModelNameUpper___.find(req.parameters.get(___VARIABLE_ModelNameUpper___.queryParameter), on: req.db) else {
+            throw Abort(.notFound)
+        }
+        try await ___VARIABLE_ModelNameLower___.delete(on: req.db)
+        return .ok
+    }
+}

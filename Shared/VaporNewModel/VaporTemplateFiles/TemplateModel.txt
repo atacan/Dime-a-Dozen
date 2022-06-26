@@ -1,0 +1,22 @@
+import Fluent
+import Vapor
+
+final class ___VARIABLE_ModelNameUpper___: Model, Content {
+    static let schema = "___VARIABLE_ModelNamePlural___"
+    static let route = PathComponent("___VARIABLE_ModelNameLower___")
+    static let queryParameter = "___VARIABLE_ModelNameLower___ID"
+    
+    enum FieldKeys {
+        ___VARIABLE_PropertiesFieldKeys___
+    }
+    
+    ___VARIABLE_Properties___
+    
+    init() {}
+    
+    init(id: UUID? = nil, <#name#>: <#Type#>) {
+        self.id = id
+        self.<#name#> = <#name#>
+    }
+}
+

@@ -1,0 +1,14 @@
+import Fluent
+
+struct ___VARIABLE_ModelNameUpper___Migration: AsyncMigration {
+    func prepare(on database: Database) async throws {
+        try await database.schema(___VARIABLE_ModelNameUpper___.schema)
+            ___VARIABLE_Properties___
+            .create()
+    }
+
+    func revert(on database: Database) async throws {
+        try await database.schema(___VARIABLE_ModelNameUpper___.schema)
+            .delete()
+    }
+}
