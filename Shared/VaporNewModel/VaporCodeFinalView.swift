@@ -12,6 +12,7 @@ let toolVaporNewMode = Tool(sidebarName: "Vapor Code Generator", navigationTitle
 struct VaporCodeFinalView: View {
     @Binding var selectedTool: Tool?
     @StateObject var vm = VaporCodeViewModel()
+    @State var showMoreInfo: Bool = false
     
     @State var outputModelCode: String = ""
     @State var outputMigrationCode: String = ""
@@ -63,10 +64,14 @@ struct VaporCodeFinalView: View {
         .toolbar {
             ToolbarItem {
                 Button {
-                    print("more info clicked")
+                    showMoreInfo.toggle()
                 } label: {
                     Image(systemName: "info")
                 }
+                .popover(isPresented: $showMoreInfo, content: {
+                    Text("It will generate code that you can edit before saving")
+                        .padding()
+                })
                 .help("More info...")
             }
         }

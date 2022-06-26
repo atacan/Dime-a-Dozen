@@ -2,19 +2,34 @@
 // https://github.com/atacan
 // 26.06.22
 	
-
 import SwiftUI
+
+private extension Bool {
+    mutating func toggleIfFalse() {
+        if !self {
+            toggle()
+        }
+    }
+}
 
 struct PoppedButton: View {
     @State private var isVisible: Bool = false
     var body: some View {
         Button("Save to Files") {
-            isVisible.toggle()
+            isVisible.toggleIfFalse()
         }
-        .background(NSPopoverHolderView(isVisible: $isVisible) {
+        .popover(isPresented: $isVisible) {
             Text("Coming soon...")
                 .padding()
-        })
+        }
+//        .popover(isPresented: $isVisible, attachmentAnchor: PopoverAttachmentAnchor.point(UnitPoint.top), arrowEdge: Edge.bottom, content: {
+//            Text("Coming soon...")
+//                .padding()
+//        })
+//        .background(NSPopoverHolderView(isVisible: $isVisible) {
+//            Text("Coming soon...")
+//                .padding()
+//        })
     }
 }
 
@@ -58,7 +73,7 @@ struct NSPopoverHolderView<T: View>: NSViewRepresentable {
         }
         
         func popoverDidClose(_ notification: Notification) {
-            self.state.wrappedValue = false
+            state.wrappedValue = false
         }
         
         func popoverShouldDetach(_ popover: NSPopover) -> Bool {
