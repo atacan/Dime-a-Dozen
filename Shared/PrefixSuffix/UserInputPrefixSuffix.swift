@@ -13,6 +13,7 @@ struct UserInputPrefixSuffix: View {
     @Binding var suffixReplace: String
     @Binding var suffixReplaceWith: String
     @Binding var suffixAdd: String
+    @Binding var trimWhiteSpace: Bool
     
     var body: some View {
         Form {
@@ -32,6 +33,7 @@ struct UserInputPrefixSuffix: View {
                 } // <-VStack
                 TextField("Add Suffix", text: $suffixAdd)
             } // <-HStack
+            Toggle("Trim White Space", isOn: $vm.trimWhiteSpace)
             Button {
                 vm.convert()
             } label: {

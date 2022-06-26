@@ -8,6 +8,22 @@ private extension String {
     mutating func append(prefix: String) {
         self = prefix + self
     }
+    
+    func leadingWhiteSpace() -> Substring {
+        let regexLeadingWhiteSpace = #"^\s*"#
+        if let leadingWhiteRange = range(of: regexLeadingWhiteSpace, options: .regularExpression) {
+            return self[leadingWhiteRange]
+        }
+        return ""
+    }
+    
+    func trailingWhiteSpace() -> Substring {
+        let regexTrailingWhiteSpace = #"\s*$"#
+        if let trailingWhiteRange = range(of: regexTrailingWhiteSpace, options: .regularExpression) {
+            return self[trailingWhiteRange]
+        }
+        return ""
+    }
 }
 
 class PrefixSuffixModel: ObservableObject {
@@ -20,12 +36,16 @@ class PrefixSuffixModel: ObservableObject {
     @Published var suffixReplaceWith = ""
     @Published var suffixAdd = ""
     @Published var separator: WordGroupSeperator = .newLine
+    @Published var trimWhiteSpace = false
 
     func split() -> [String] {
         return inputText.components(separatedBy: .newlines)
     }
 
     func convertEach(input: String) -> String {
+        let leadingWhite = input.leadingWhiteSpace()
+        let trailingWhite = input.trailingWhiteSpace()
+        
         var output = input.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if output.hasPrefix(prefixReplace) {
@@ -42,7 +62,12 @@ class PrefixSuffixModel: ObservableObject {
         if !suffixAdd.isEmpty {
             output.append(suffixAdd)
         }
-        return output
+        
+        if !trimWhiteSpace {
+            return leadingWhite + output + trailingWhite
+        } else {
+            return output
+        }
     }
 
     func convert() {
