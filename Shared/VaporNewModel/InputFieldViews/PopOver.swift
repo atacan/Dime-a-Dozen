@@ -15,11 +15,11 @@ private extension Bool {
 struct PoppedButton: View {
     @State private var isVisible: Bool = false
     var body: some View {
-        Button("Save to Files") {
+        Button("Custom Template...") {
             isVisible.toggleIfFalse()
         }
         .popover(isPresented: $isVisible) {
-            Text("Coming soon...")
+            Text("Coming soon...\nIf you don't want to use the default templates, you'll be able to configure your own.")
                 .padding()
         }
 //        .popover(isPresented: $isVisible, attachmentAnchor: PopoverAttachmentAnchor.point(UnitPoint.top), arrowEdge: Edge.bottom, content: {

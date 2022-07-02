@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import SwiftFormat
+import SwiftUI
 
 private extension String {
     func swiftFormat() -> String {
@@ -21,12 +22,15 @@ private extension String {
 }
 
 class VaporCodeViewModel: ObservableObject {
-    @Published var modelName: String = ""
+    @Published var modelName: String = "ModelName"
     var vaporModel: VaporModel = .init(name: "")
+    var codeModelFieldKeys: String = ""
     var codeModelProperties: String = ""
     var codeMigrationProperties: String = ""
-    var codeModelFieldKeys: String = ""
-    var codeModel: String = ""
+    
+    @Published var codeModel: String = ""
+    @Published var codeMigration: String = ""
+    @Published var codeContoller: String = ""
 
     let caseConversion = CaseConversionViewModel()
 
@@ -44,6 +48,14 @@ class VaporCodeViewModel: ObservableObject {
         }
         .joined(separator: "\n\n")
     }
+    
+    func generate() {
+        createModel()
+        generateModelCode()
+        generateMigration()
+        generateController()
+    }
+
 
     func createModel() {
         vaporModel = VaporModel(name: modelName)
@@ -68,17 +80,23 @@ class VaporCodeViewModel: ObservableObject {
         }
     }
     
+    @discardableResult
     func generateModelCode() -> String {
         // read Model template file
         let fieldKeys =  generateModelFieldKeys()
         let modelProperties = generateModelProperties()
+        let initialiser = generateModelInitialiser()
         if let template = readTemplateFile(name: "TemplateModel") {
-            return template
+            codeModel = template
                 .replacingOccurrences(of: "___VARIABLE_PropertiesFieldKeys___", with: fieldKeys)
                 .replacingOccurrences(of: "___VARIABLE_Properties___", with: modelProperties)
+                .replacingOccurrences(of: "___VARIABLE_Init___", with: initialiser)
                 .swiftFormat()
+            return codeModel
+        } else {
+            codeModel = fieldKeys + "\n\n" + modelProperties
+            return codeModel
         }
-        return fieldKeys + "\n\n" + modelProperties
     }
 
     func generateModelProperties() -> String {
@@ -99,6 +117,24 @@ class VaporCodeViewModel: ObservableObject {
 
         return codeModelProperties
     }
+    
+    func generateModelInitialiser() -> String {
+        var arguments = Array<String>()
+        var initBody = ""
+        properties.forEach { property in
+            let argument = "\(property.name): \(property.propertyType)\(property.optionalSuffix)"
+            arguments.append(argument)
+            
+            let line = "self.\(property.name) = \(property.name)\n"
+            initBody.append(line)
+        }
+        let args = arguments.joined(separator: ", ")
+        return """
+                  init(\(args)) {
+                    \(initBody)
+                  }
+                """
+    }
 
     func generateModelFieldKeys() -> String {
         codeModelFieldKeys = ""
@@ -111,7 +147,8 @@ class VaporCodeViewModel: ObservableObject {
 
         return codeModelFieldKeys
     }
-
+    
+    @discardableResult
     func generateMigration() -> String {
 //        .id()
 //        .field(___VARIABLE_ModelNameUpper___.FieldKeys.createdAt, .datetime, .required)
@@ -130,20 +167,54 @@ class VaporCodeViewModel: ObservableObject {
         .joined(separator: "\n")
 
         if let template = readTemplateFile(name: "TemplateMigration") {
-            return template
+            codeMigration = template
                 .replacingOccurrences(of: "___VARIABLE_Properties___", with: codeMigrationProperties)
                 .swiftFormat()
+            return codeMigration
+        } else {
+            return codeMigrationProperties
         }
-
-        return codeMigrationProperties
     }
     
+    @discardableResult
     func generateController() -> String {
         if let template = readTemplateFile(name: "TemplateController") {
-            return template
+            codeContoller = template
 //                .replacingOccurrences(of: "___VARIABLE_Properties___", with: codeMigrationProperties)
                 .swiftFormat()
+            return codeContoller
         }
         return ""
     }
+    
+    func saveFiles() {
+        func saveFile(_ code: String, directory: URL, fileName: String) {
+            let fileUrl = directory.appendingPathComponent(fileName)
+            do {
+                try code.write(to: fileUrl, atomically: true, encoding: .utf8)
+            } catch {
+                print(error)
+            }
+        }
+
+        let fileManager = FileManager.default
+        let openPanel = NSOpenPanel()
+        openPanel.prompt = "Select"
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = true
+        openPanel.canCreateDirectories = true
+        openPanel.canChooseFiles = false
+        openPanel.begin { [weak self] result in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+                if let selectedUrl = openPanel.url, let vaporModel = self?.vaporModel, let codeModel = self?.codeModel, let codeMigration = self?.codeMigration, let codeContoller = self?.codeContoller {
+                    let directoryToSave = selectedUrl.appendingPathComponent(vaporModel.name)
+                    try? fileManager.createDirectory(at: directoryToSave, withIntermediateDirectories: false)
+                    saveFile(codeModel, directory: directoryToSave, fileName: vaporModel.name + ".swift")
+                    saveFile(codeMigration, directory: directoryToSave, fileName: vaporModel.name + "Migration" + ".swift")
+                    saveFile(codeContoller, directory: directoryToSave, fileName: vaporModel.name + "Controller" + ".swift")
+                }
+            }
+        }
+    }
+
 }

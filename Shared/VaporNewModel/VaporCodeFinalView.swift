@@ -14,20 +14,24 @@ struct VaporCodeFinalView: View {
     @StateObject var vm = VaporCodeViewModel()
     @State var showMoreInfo: Bool = false
     
-    @State var outputModelCode: String = ""
-    @State var outputMigrationCode: String = ""
-    @State var outputControllerCode: String = ""
+//    @State var outputModelCode: String = ""
+//    @State var outputMigrationCode: String = ""
+//    @State var outputControllerCode: String = ""
     @State var outputAdmin: String = "Coming soon..."
+    
+    enum Focus : Hashable {
+        case fieldModelName
+    }
+       
+    @FocusState var focus : Focus?
     
     var generateCodeButton: some View {
         Button {
-            vm.createModel()
-            outputModelCode = vm.generateModelCode()
-            outputMigrationCode = vm.generateMigration()
-            outputControllerCode = vm.generateController()
+            vm.generate()
         } label: {
             Text("Generate")
         } // <-Button
+        .keyboardShortcut(.defaultAction)
     }
     
     var myView: some View {
@@ -37,29 +41,39 @@ struct VaporCodeFinalView: View {
                     .font(.body)
             }
             .font(.monospaced(.body)())
+            .font(.bold(.title3)())
             .frame(width: 250, alignment: .center)
             .padding(.top)
+            .focused($focus, equals: .fieldModelName) // doesn't work
             
             Text("Model Properties").font(.title3).padding()
             
             FormVaporPropertyView(properties: $vm.properties) // .equatable()
             
-            generateCodeButton.padding(.top)
+            HStack(alignment: .bottom) {
+                PoppedButton()
+                generateCodeButton.padding(.top)
+            }
             
             VSplitView {
                 HSplitView {
-                    VaporOutputEditorView(text: $outputModelCode, title: "Model")
-                    VaporOutputEditorView(text: $outputMigrationCode, title: "Migration")
+                    VaporOutputEditorView(text: $vm.codeModel, title: "Model")
+                    VaporOutputEditorView(text: $vm.codeMigration, title: "Migration")
                 } // <-HSplitView
                 HSplitView {
-                    VaporOutputEditorView(text: $outputControllerCode, title: "Controller")
+                    VaporOutputEditorView(text: $vm.codeContoller, title: "Controller")
                     VaporOutputEditorView(text: $outputAdmin, title: "Admin")
                 } // <-HSplitView
                 .padding(.top)
             } // <-VSplitView
-            PoppedButton()
+            Button("Save to Files") {
+                vm.saveFiles()
+            }
                 .padding(.bottom)
         } // <-VStack
+        .onAppear(perform: {
+            self.focus = .fieldModelName
+        })
         .navigationTitle(toolVaporNewMode.navigationTitle)
         .toolbar {
             ToolbarItem {
@@ -69,7 +83,7 @@ struct VaporCodeFinalView: View {
                     Image(systemName: "info")
                 }
                 .popover(isPresented: $showMoreInfo, content: {
-                    Text("It will generate code that you can edit before saving")
+                    Text("It will generate the code that you can edit before saving")
                         .padding()
                 })
                 .help("More info...")

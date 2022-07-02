@@ -8,15 +8,17 @@ final class ___VARIABLE_ModelNameUpper___: Model, Content {
     
     enum FieldKeys {
         ___VARIABLE_PropertiesFieldKeys___
+        
+        enum Deleted {
+            // move the deleted fields here in order to use them in migrations
+        }
     }
     
     ___VARIABLE_Properties___
     
     init() {}
     
-    init(id: UUID? = nil, <#name#>: <#Type#>) {
-        self.id = id
-        self.<#name#> = <#name#>
-    }
+    ___VARIABLE_Init___
+    
 }
 

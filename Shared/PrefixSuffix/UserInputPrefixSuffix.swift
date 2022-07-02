@@ -16,9 +16,9 @@ struct UserInputPrefixSuffix: View {
 
     var body: some View {
         Form {
-            HStack(alignment: .center) {
+            HStack(alignment: .top) {
                 // replace prefix
-                VStack(alignment: .leading) {
+                VStack(alignment: .trailing) {
                     TextField(text: $prefixReplace) {
                         Text("Replace Prefix")
                             .font(.body)
@@ -62,6 +62,7 @@ struct UserInputPrefixSuffix: View {
             } label: {
                 Text("\(Image(systemName: "arrow.turn.down.right")) Convert \(Image(systemName: "arrow.forward"))")
             } // <-Button
+            .keyboardShortcut(.return, modifiers: .command)
             Text("")
         } // <-Form
     }

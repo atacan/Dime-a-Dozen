@@ -73,7 +73,9 @@ struct CaseConverterView: View {
                     Text(caseConversionVM.seperatorDescription(seperator))
                 }
             }
+            .pickerStyle(.inline)
             .frame(maxWidth: 250)
+            
             Button {
                 outputText = caseConversionVM.convert(inputText: inputText, from: inputCase, to: outputCase)
             } label: {
