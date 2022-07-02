@@ -5,7 +5,7 @@
 import HtmlSwift
 import SwiftUI
 
-let toolHtmlToSwiftBirds = Tool(sidebarName: "Html to Swift", navigationTitle: "Html to Swift-Html Converter")
+let toolHtmlToSwiftBirds = Tool(sidebarName: "Html to swift-html", navigationTitle: "Html to Swift-Html Converter")
 
 class HtmlToSwiftBirds {
     static let shared = HtmlToSwiftBirds()

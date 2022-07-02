@@ -272,7 +272,7 @@
 				7998D5122843B5B700578C5A /* PreviewData.swift */,
 				79C12BF528423F6500F19A86 /* Main */,
 				5A1C59F3285485DA00A0595D /* VaporNewModel */,
-				79C12BF228423F2800F19A86 /* InputToOutput */,
+				79C12BF228423F2800F19A86 /* HtmlToSwift */,
 				5A451E83284BF1EB0093BFE0 /* CaseConverter */,
 				7998D5042843B00B00578C5A /* FileSearch */,
 				5AEB6A51284B493000541959 /* RegexExtract */,
@@ -301,13 +301,13 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
-		79C12BF228423F2800F19A86 /* InputToOutput */ = {
+		79C12BF228423F2800F19A86 /* HtmlToSwift */ = {
 			isa = PBXGroup;
 			children = (
 				79C12BF428423F5A00F19A86 /* Views */,
 				79933CB528425C490007174B /* HtmlToSwiftBirds.swift */,
 			);
-			path = InputToOutput;
+			path = HtmlToSwift;
 			sourceTree = "<group>";
 		};
 		79C12BF428423F5A00F19A86 /* Views */ = {
