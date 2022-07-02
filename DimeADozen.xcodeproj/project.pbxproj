@@ -84,6 +84,8 @@
 		7998D5192843BDCD00578C5A /* FileSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5172843BDCD00578C5A /* FileSearchModel.swift */; };
 		7998D51B2843C31300578C5A /* FileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D51A2843C31300578C5A /* FileContentView.swift */; };
 		7998D51C2843C31300578C5A /* FileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D51A2843C31300578C5A /* FileContentView.swift */; };
+		79B886542870F13F008AF9EC /* MacProgressSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B886532870F13F008AF9EC /* MacProgressSpinner.swift */; };
+		79B886552870F13F008AF9EC /* MacProgressSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B886532870F13F008AF9EC /* MacProgressSpinner.swift */; };
 		79C12BE428423EF000F19A86 /* DimeADozenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */; };
 		79C12BE528423EF000F19A86 /* DimeADozenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */; };
 		79C12BE628423EF000F19A86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BD528423EEF00F19A86 /* ContentView.swift */; };
@@ -136,6 +138,7 @@
 		7998D5122843B5B700578C5A /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		7998D5172843BDCD00578C5A /* FileSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSearchModel.swift; sourceTree = "<group>"; };
 		7998D51A2843C31300578C5A /* FileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContentView.swift; sourceTree = "<group>"; };
+		79B886532870F13F008AF9EC /* MacProgressSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacProgressSpinner.swift; sourceTree = "<group>"; };
 		79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimeADozenApp.swift; sourceTree = "<group>"; };
 		79C12BD528423EEF00F19A86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79C12BD628423EF000F19A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 				7998D50E2843B4CF00578C5A /* FoundFilesView.swift */,
 				7998D51A2843C31300578C5A /* FileContentView.swift */,
 				7998D5082843B0A300578C5A /* SearchTextFilesView.swift */,
+				79B886532870F13F008AF9EC /* MacProgressSpinner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -484,6 +488,7 @@
 				7998D50F2843B4CF00578C5A /* FoundFilesView.swift in Sources */,
 				5AEB6A58284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				79933CB3284258D10007174B /* InputToOutputView.swift in Sources */,
+				79B886542870F13F008AF9EC /* MacProgressSpinner.swift in Sources */,
 				5A77356E2854C1DC00614E2E /* Extensions.swift in Sources */,
 				5A3459C128677D2D00C7A351 /* PrefixSuffixFinalView.swift in Sources */,
 				5A77356B2854BDD600614E2E /* VaporOutputEditorView.swift in Sources */,
@@ -527,6 +532,7 @@
 				7998D5192843BDCD00578C5A /* FileSearchModel.swift in Sources */,
 				5A1C59F82854908F00A0595D /* InputVaporPropertyView.swift in Sources */,
 				5AEB6A5C284B4DA500541959 /* RegexViewModel.swift in Sources */,
+				79B886552870F13F008AF9EC /* MacProgressSpinner.swift in Sources */,
 				5A7735722854E75D00614E2E /* VDKComboBox.swift in Sources */,
 				79C12BFC2842403800F19A86 /* UserEditorView.swift in Sources */,
 				5A451E86284BF2180093BFE0 /* CaseConversionViewModel.swift in Sources */,
