@@ -20,6 +20,14 @@ struct ButtonFilePickerPanelView: View {
             } label: {
                 Text("Search in \(Image(systemName: "folder")) Directory...")
             } // <-Button
+            if fileSearchModel.isSearching {
+//                ProgressView("Please wait...")
+                HStack(alignment: .center) {
+                    MacProgressSpinner()
+                    Text("Please wait...")
+                        .foregroundColor(.secondary)
+                } // <-HStack
+            }
             Spacer()
         } // <-HStack
         .padding(.top)

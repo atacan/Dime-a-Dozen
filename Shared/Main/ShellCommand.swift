@@ -24,7 +24,9 @@ func safeShell(_ command: String) throws -> String {
     try task.run() // <--updated
 
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
-    let output = String(data: data, encoding: .utf8)!
+    if let output = String(data: data, encoding: .utf8) {
+        return output
+    }
 
-    return output
+    return ""
 }
