@@ -9,7 +9,7 @@ Using https://github.com/atacan/html-swift, convert HTML code to swift-html DSL.
 
 ## Vapor Code Generator
 For a new Fluent model, generate model, controller and migration code.
-<img width="1470" alt="Screenshot 2022-07-03 at 13 52 03" src="https://user-images.githubusercontent.com/765873/177038331-aa8425fa-3568-483e-843e-fc920c61f121.png">
+<img width="1470" alt="Screenshot 2022-07-03 at 14 00 00" src="https://user-images.githubusercontent.com/765873/177038604-eeb62a41-aeb9-4919-a0b2-041e698aa2d3.png">
 
 ## Extract all the Regex Matches from a Text
 The online regex editors highlight the matches but you can't extract them into a list.  
