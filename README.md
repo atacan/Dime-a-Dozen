@@ -1,5 +1,5 @@
 # Dime-a-Dozen
-Download the release build on https://github.com/atacan/Dime-a-Dozen/releases
+Download the release build on https://github.com/atacan/Dime-a-Dozen/releases. The `.app` file is in "DimeADozen.macOS.*[...]*.zip"
 
 # Tools
 
