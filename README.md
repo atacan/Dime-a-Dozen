@@ -4,7 +4,7 @@ Download the release build on https://github.com/atacan/Dime-a-Dozen/releases. T
 # Tools
 
 ## Html to Swift Converter
-Using https://github.com/atacan/html-swift, convert HTML code to swift-html DSL.
+Using https://github.com/atacan/html-swift, convert HTML code to [swift-html](https://github.com/BinaryBirds/swift-html) DSL.
 <img width="1426" alt="Screenshot 2022-07-03 at 13 50 34" src="https://user-images.githubusercontent.com/765873/177038271-79912909-3a95-401f-8e95-ef0a29b73241.png">
 
 ## Vapor Code Generator
