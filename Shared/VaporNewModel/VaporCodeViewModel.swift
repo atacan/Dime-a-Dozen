@@ -108,7 +108,7 @@ class VaporCodeViewModel: ObservableObject {
                 return "@Field(key: FieldKeys.\(property.name)) var \(property.name): \(property.propertyType)\(property.optionalSuffix)"
             case .timestamp:
                 // @Timestamp(key: FieldKeys.createdAt, on: .create) var createdAt: Date?
-                return "@Timestamp(key: FieldKeys.\(property.name), on \(property.fluentTimeTrigger?.rawValue ?? ".none")) var \(property.name): \(property.propertyType)\(property.optionalSuffix)"
+                return "@Timestamp(key: FieldKeys.\(property.name), on: \(property.fluentTimeTrigger?.rawValue ?? ".none")) var \(property.name): \(property.propertyType)\(property.optionalSuffix)"
             default:
                 return ""
             }
