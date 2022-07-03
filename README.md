@@ -4,8 +4,12 @@ Download the release build on https://github.com/atacan/Dime-a-Dozen/releases
 # Tools
 
 ## Html to Swift Converter
-Using https://github.com/atacan/html-swift  
-<img width="1283" alt="Screenshot 2022-05-29 at 22 38 14" src="https://user-images.githubusercontent.com/765873/170890598-dcb94952-997d-4de6-98fa-804a7e0a62eb.png">
+Using https://github.com/atacan/html-swift, convert HTML code to swift-html DSL.
+<img width="1426" alt="Screenshot 2022-07-03 at 13 50 34" src="https://user-images.githubusercontent.com/765873/177038271-79912909-3a95-401f-8e95-ef0a29b73241.png">
+
+## Vapor Code Generator
+For a new Fluent model, generate model, controller and migration code.
+<img width="1470" alt="Screenshot 2022-07-03 at 13 52 03" src="https://user-images.githubusercontent.com/765873/177038331-aa8425fa-3568-483e-843e-fc920c61f121.png">
 
 ## Extract all the Regex Matches from a Text
 The online regex editors highlight the matches but you can't extract them into a list.  
@@ -17,7 +21,10 @@ Convert a list of string from Snake case to Camel case, for example. It is usefu
 The screenshot shows converting Bootstrap CSS classes into camel case to be usable for an CSS framework enum.
 <img width="1508" alt="Screenshot 2022-06-05 at 12 41 09" src="https://user-images.githubusercontent.com/765873/172046678-9e5a6867-cf79-4d13-b0c0-0c5c7fdfd04d.png">
 
+## Prefix Suffix Manipulator
+In each line, replace a prefix or suffix if it exists with another string. Add a new prefix or suffix.
+<img width="1470" alt="Screenshot 2022-07-03 at 13 56 30" src="https://user-images.githubusercontent.com/765873/177038453-48351570-e33c-4e35-8d89-27a71f754a26.png">
 
 ## Search Inside Files
-Find files that contain a search term in file content, not just the file name, using `grep`
+Find files that contain a search term in the file content, not just the file name, using `grep` command.
 <img width="1283" alt="Screenshot 2022-05-29 at 22 39 12" src="https://user-images.githubusercontent.com/765873/170890590-6aadb51c-7133-4cb3-9003-adaee30a95a6.png">
