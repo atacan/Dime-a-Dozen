@@ -74,8 +74,20 @@ class FileSearch: ObservableObject {
             return [FileModel(path: error.localizedDescription)]
         }
     }
-
-    func readFile(contentsOfFile path: String) async -> String {
+    
+    @MainActor
+    func readFile(contentsOfFile url: URL) async {
+        do {
+            selectedFileContent = ""
+            for try await line in url.lines {
+                selectedFileContent.append(line + "\n")
+            }
+        } catch {
+            selectedFileContent = error.localizedDescription
+        }
+    }
+    
+    func readFile(contentsOfFile path: String) -> String {
         do {
             let content = try String(contentsOfFile: path)
             return content
@@ -86,17 +98,15 @@ class FileSearch: ObservableObject {
 
     func makePublishers() {
         $selectedFile
-            .asyncMap { file -> String in
+//            .receive(on: RunLoop.main)
+            .asyncMap { file in
                 if let fileUnwrap = file {
-                    return await self.readFile(contentsOfFile: fileUnwrap.path)
-                } else {
-                    return "No file selected"
+                    await self.readFile(contentsOfFile: fileUnwrap.url)
                 }
             }
-            .receive(on: RunLoop.main)
-            .sink { [weak self] content in
-                self?.selectedFileContent = content
-            }
+            .sink(receiveValue: { output in
+                //
+            })
             .store(in: &cancellables)
 
         $pickedPath
