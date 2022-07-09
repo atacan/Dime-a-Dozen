@@ -22,9 +22,7 @@ struct FileModel: Identifiable {
 class FileSearch: ObservableObject {
     @Published var searchText: String = ""
     @Published var pickedPath = ""
-//    @Published var foundFiles: [String] = []
     @Published var foundFiles: [FileModel] = []
-//    @Published var selectedFile: String = ""
     @Published var selectedFile: FileModel? = nil // .init(name: "")
     @Published var selectedFileContent: String = ""
     @Published var isSearching = false
