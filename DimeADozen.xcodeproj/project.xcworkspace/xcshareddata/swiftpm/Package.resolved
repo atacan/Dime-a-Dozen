@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "binarybirds-swift-html",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/atacan/BinaryBirds-swift-html",
+      "state" : {
+        "revision" : "e07678a77d296e66fa891a9d4d08acc4471d1783",
+        "version" : "1.6.11"
+      }
+    },
+    {
       "identity" : "html-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/atacan/html-swift",
       "state" : {
-        "revision" : "014ce3684243a27f34b1e215a1e6b386a1eb94bd",
-        "version" : "1.1.3"
+        "branch" : "main",
+        "revision" : "0aa64e1eaeb31044ac98b54a3a794324b1e580ad"
       }
     },
     {
@@ -19,12 +28,21 @@
       }
     },
     {
-      "identity" : "swift-html",
+      "identity" : "pointfreeco-swift-html",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/binarybirds/swift-html",
+      "location" : "https://github.com/atacan/pointfreeco-swift-html",
       "state" : {
-        "revision" : "e07678a77d296e66fa891a9d4d08acc4471d1783",
-        "version" : "1.6.11"
+        "revision" : "f53c38c4b841841f36afa1866093c908cadaa736",
+        "version" : "0.4.0"
+      }
+    },
+    {
+      "identity" : "swift-snapshot-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
+      "state" : {
+        "revision" : "f8a9c997c3c1dab4e216a8ec9014e23144cbab37",
+        "version" : "1.9.0"
       }
     },
     {
@@ -32,8 +50,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nicklockwood/SwiftFormat",
       "state" : {
-        "revision" : "f8e35f6716c369c8412664052a0a7337da2ca0e3",
-        "version" : "0.49.9"
+        "revision" : "665c3c58923ee8ac36d3e44b17dc185229cce301",
+        "version" : "0.49.13"
+      }
+    },
+    {
+      "identity" : "swiftsoup",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scinfu/SwiftSoup.git",
+      "state" : {
+        "revision" : "6778575285177365cbad3e5b8a72f2a20583cfec",
+        "version" : "2.4.3"
       }
     }
   ],

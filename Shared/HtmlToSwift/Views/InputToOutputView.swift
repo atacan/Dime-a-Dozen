@@ -6,22 +6,34 @@ import SwiftUI
 
 struct InputToOutputView: View {
     var toolTitle: String
-    let inputToOutputConverter: (String) -> String
+    @State var libraryChoice: SwiftDSL = .pointFree
+    
     @State var inputText: String = ""
 //    @SceneStorage("inputText") var inputText: String = ""
     @State var inputTitle: String = "HTML Input"
-    @State var inputFootNote: String = "Enclose the whole code inside one tag"
+    @State var inputFootNote: String = ""
     @State var inputLanguage: String = ""
 
     @State var outputText: String = ""
-    @State var outputTitle: String = "SwiftHtml Output"
+    @State var outputTitle: String = "Swift Output"
     @State var outputFootNote: String = " "
     @State var outputLanguage: String = ""
 
     var body: some View {
         VStack(alignment: .center) {
+            Picker("DSL Package:", selection: $libraryChoice) {
+                ForEach(SwiftDSL.allCases) { lib in
+                    Text(lib.rawValue)
+//                        .font(.monospaced(.body)())
+                }
+            }
+            .pickerStyle(.radioGroup)
+            .horizontalRadioGroupLayout()
+            .help("Fluent Property Wrapper")
+            .padding(.top)
+            
             Button {
-                outputText = inputToOutputConverter(inputText)
+                outputText = HtmlToSwift.shared.convert(html: inputText, library: libraryChoice)
             } label: {
                 Text("Convert")
             } // <-Button

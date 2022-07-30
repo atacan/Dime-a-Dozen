@@ -21,7 +21,6 @@
 		5A3256AC284CBB9D00567EA8 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AA284CBB9D00567EA8 /* TextStyle.swift */; };
 		5A3256AE284CBBD200567EA8 /* TextStyleImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */; };
 		5A3256AF284CBBD200567EA8 /* TextStyleImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3256AD284CBBD200567EA8 /* TextStyleImplement.swift */; };
-		5A3459BC286743A400C7A351 /* MacSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A3459BB286743A400C7A351 /* MacSwiftUI */; };
 		5A3459BF28677C4F00C7A351 /* UserInputPrefixSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459BE28677C4F00C7A351 /* UserInputPrefixSuffix.swift */; };
 		5A3459C128677D2D00C7A351 /* PrefixSuffixFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459C028677D2D00C7A351 /* PrefixSuffixFinalView.swift */; };
 		5A3459C228677E3000C7A351 /* PrefixSuffixFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3459C028677D2D00C7A351 /* PrefixSuffixFinalView.swift */; };
@@ -56,12 +55,12 @@
 		5AFD0D6C28688AC500AC5652 /* TemplateModel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6B28688AC500AC5652 /* TemplateModel.txt */; };
 		5AFD0D6E28688FC500AC5652 /* TemplateController.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6D28688FC500AC5652 /* TemplateController.txt */; };
 		5AFD0D702868930000AC5652 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6F2868930000AC5652 /* PopOver.swift */; };
-		79933CB12842573E0007174B /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79933CB02842573E0007174B /* HtmlSwift */; };
+		7931594A2895D18300E12BED /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 793159492895D18300E12BED /* HtmlSwift */; };
+		793E3DCF288C799A008B6AA3 /* MacSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 793E3DCE288C799A008B6AA3 /* MacSwiftUI */; };
 		79933CB3284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
 		79933CB4284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
-		79933CB628425C490007174B /* HtmlToSwiftBirds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB528425C490007174B /* HtmlToSwiftBirds.swift */; };
-		79933CB728425C490007174B /* HtmlToSwiftBirds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB528425C490007174B /* HtmlToSwiftBirds.swift */; };
-		79933CBD284266DC0007174B /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79933CBC284266DC0007174B /* HtmlSwift */; };
+		79933CB628425C490007174B /* HtmlToSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB528425C490007174B /* HtmlToSwift.swift */; };
+		79933CB728425C490007174B /* HtmlToSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB528425C490007174B /* HtmlToSwift.swift */; };
 		79933CBF2842686F0007174B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CBE2842686F0007174B /* MainView.swift */; };
 		79933CC02842686F0007174B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CBE2842686F0007174B /* MainView.swift */; };
 		79933CC2284268B40007174B /* MainSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CC1284268B40007174B /* MainSidebarView.swift */; };
@@ -126,7 +125,7 @@
 		5AFD0D6D28688FC500AC5652 /* TemplateController.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateController.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5AFD0D6F2868930000AC5652 /* PopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		79933CB2284258D10007174B /* InputToOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputToOutputView.swift; sourceTree = "<group>"; };
-		79933CB528425C490007174B /* HtmlToSwiftBirds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToSwiftBirds.swift; sourceTree = "<group>"; };
+		79933CB528425C490007174B /* HtmlToSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToSwift.swift; sourceTree = "<group>"; };
 		79933CBE2842686F0007174B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		79933CC1284268B40007174B /* MainSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSidebarView.swift; sourceTree = "<group>"; };
 		79933CC428426C0E0007174B /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tool.swift; path = Shared/Main/Tool.swift; sourceTree = SOURCE_ROOT; };
@@ -161,9 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A3459BC286743A400C7A351 /* MacSwiftUI in Frameworks */,
-				79933CB12842573E0007174B /* HtmlSwift in Frameworks */,
-				79933CBD284266DC0007174B /* HtmlSwift in Frameworks */,
+				793E3DCF288C799A008B6AA3 /* MacSwiftUI in Frameworks */,
+				7931594A2895D18300E12BED /* HtmlSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				79C12BF428423F5A00F19A86 /* Views */,
-				79933CB528425C490007174B /* HtmlToSwiftBirds.swift */,
+				79933CB528425C490007174B /* HtmlToSwift.swift */,
 			);
 			path = HtmlToSwift;
 			sourceTree = "<group>";
@@ -388,9 +386,8 @@
 			);
 			name = "DimeADozen (macOS)";
 			packageProductDependencies = (
-				79933CB02842573E0007174B /* HtmlSwift */,
-				79933CBC284266DC0007174B /* HtmlSwift */,
-				5A3459BB286743A400C7A351 /* MacSwiftUI */,
+				793E3DCE288C799A008B6AA3 /* MacSwiftUI */,
+				793159492895D18300E12BED /* HtmlSwift */,
 			);
 			productName = "DimeADozen (macOS)";
 			productReference = 79C12BE128423EF000F19A86 /* DimeADozen.app */;
@@ -424,8 +421,8 @@
 			);
 			mainGroup = 79C12BCE28423EEF00F19A86;
 			packageReferences = (
-				79933CBB284266DC0007174B /* XCRemoteSwiftPackageReference "html-swift" */,
-				5A3459BA286743A400C7A351 /* XCRemoteSwiftPackageReference "MacSwiftUI" */,
+				793E3DCD288C799A008B6AA3 /* XCRemoteSwiftPackageReference "MacSwiftUI" */,
+				793159482895D18300E12BED /* XCRemoteSwiftPackageReference "html-swift" */,
 			);
 			productRefGroup = 79C12BDC28423EF000F19A86 /* Products */;
 			projectDirPath = "";
@@ -500,7 +497,7 @@
 				5A7735782855071F00614E2E /* FieldTimestampTriggerView.swift in Sources */,
 				79C12BE428423EF000F19A86 /* DimeADozenApp.swift in Sources */,
 				5A3256AE284CBBD200567EA8 /* TextStyleImplement.swift in Sources */,
-				79933CB628425C490007174B /* HtmlToSwiftBirds.swift in Sources */,
+				79933CB628425C490007174B /* HtmlToSwift.swift in Sources */,
 				79933CD3284283F10007174B /* ComingSoonView.swift in Sources */,
 				79933CC528426C0E0007174B /* Tool.swift in Sources */,
 				5A1C59FB285494C600A0595D /* VaporCodeViewModel.swift in Sources */,
@@ -547,7 +544,7 @@
 				5A7735792855071F00614E2E /* FieldTimestampTriggerView.swift in Sources */,
 				7998D50B2843B11000578C5A /* ShellCommand.swift in Sources */,
 				5A3256AF284CBBD200567EA8 /* TextStyleImplement.swift in Sources */,
-				79933CB728425C490007174B /* HtmlToSwiftBirds.swift in Sources */,
+				79933CB728425C490007174B /* HtmlToSwift.swift in Sources */,
 				5A3459C328677E3300C7A351 /* UserInputPrefixSuffix.swift in Sources */,
 				79933CD4284283F10007174B /* ComingSoonView.swift in Sources */,
 				79933CC628426C0E0007174B /* Tool.swift in Sources */,
@@ -813,40 +810,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5A3459BA286743A400C7A351 /* XCRemoteSwiftPackageReference "MacSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/atacan/MacSwiftUI";
-			requirement = {
-				kind = versionRange;
-				maximumVersion = 5.0.0;
-				minimumVersion = 0.0.2;
-			};
-		};
-		79933CBB284266DC0007174B /* XCRemoteSwiftPackageReference "html-swift" */ = {
+		793159482895D18300E12BED /* XCRemoteSwiftPackageReference "html-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/atacan/html-swift";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 3.1.0;
-				minimumVersion = 1.0.0;
+				branch = main;
+				kind = branch;
+			};
+		};
+		793E3DCD288C799A008B6AA3 /* XCRemoteSwiftPackageReference "MacSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/atacan/MacSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A3459BB286743A400C7A351 /* MacSwiftUI */ = {
+		793159492895D18300E12BED /* HtmlSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A3459BA286743A400C7A351 /* XCRemoteSwiftPackageReference "MacSwiftUI" */;
+			package = 793159482895D18300E12BED /* XCRemoteSwiftPackageReference "html-swift" */;
+			productName = HtmlSwift;
+		};
+		793E3DCE288C799A008B6AA3 /* MacSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 793E3DCD288C799A008B6AA3 /* XCRemoteSwiftPackageReference "MacSwiftUI" */;
 			productName = MacSwiftUI;
-		};
-		79933CB02842573E0007174B /* HtmlSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HtmlSwift;
-		};
-		79933CBC284266DC0007174B /* HtmlSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 79933CBB284266DC0007174B /* XCRemoteSwiftPackageReference "html-swift" */;
-			productName = HtmlSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
