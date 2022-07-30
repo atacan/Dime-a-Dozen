@@ -4,8 +4,13 @@ Download the release build on https://github.com/atacan/Dime-a-Dozen/releases. T
 # Tools
 
 ## Html to Swift Converter
-Using https://github.com/atacan/html-swift, convert HTML code to [swift-html](https://github.com/BinaryBirds/swift-html) DSL.
-<img width="1426" alt="Screenshot 2022-07-03 at 13 50 34" src="https://user-images.githubusercontent.com/765873/177038271-79912909-3a95-401f-8e95-ef0a29b73241.png">
+Using https://github.com/atacan/html-swift, convert HTML code to 
+* <a href="https://github.com/pointfreeco/swift-html">pointfreeco/swift-html</a> 
+* <a href="https://github.com/BinaryBirds/swift-html">BinaryBirds/swift-html</a>  
+
+DSLs.
+<img width="1551" alt="Screenshot 2022-07-31 at 00 05 46" src="https://user-images.githubusercontent.com/765873/182001749-35d82067-8d58-4314-892b-24cb82410342.png">
+
 
 ## Vapor Code Generator
 For a new Fluent model, generate model, controller and migration code.
