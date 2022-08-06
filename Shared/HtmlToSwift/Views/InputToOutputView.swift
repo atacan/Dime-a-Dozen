@@ -3,10 +3,12 @@
 //
 
 import SwiftUI
+import HtmlSwift
 
 struct InputToOutputView: View {
     var toolTitle: String
     @State var libraryChoice: SwiftDSL = .pointFree
+    @State var htmlComponentChoice: HtmlOutputComponent = .fullHtml
     
     @State var inputText: String = ""
 //    @SceneStorage("inputText") var inputText: String = ""
@@ -29,11 +31,22 @@ struct InputToOutputView: View {
             }
             .pickerStyle(.radioGroup)
             .horizontalRadioGroupLayout()
-            .help("Fluent Property Wrapper")
+            .help("DSL library that the output is for")
+            .padding(.top)
+            
+            Picker("HTML Component:", selection: $htmlComponentChoice) {
+                ForEach(HtmlOutputComponent.allCases) { comp in
+                    Text(comp.rawValue)
+//                        .font(.monospaced(.body)())
+                }
+            }
+            .pickerStyle(.inline)
+            .horizontalRadioGroupLayout()
+            .help("DSL library that the output is for")
             .padding(.top)
             
             Button {
-                outputText = HtmlToSwift.shared.convert(html: inputText, library: libraryChoice)
+                outputText = HtmlToSwift.shared.convert(html: inputText, library: libraryChoice, htmlComponent: htmlComponentChoice)
             } label: {
                 Text("Convert")
             } // <-Button

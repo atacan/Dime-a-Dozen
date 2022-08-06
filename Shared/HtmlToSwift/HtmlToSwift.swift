@@ -10,11 +10,11 @@ let toolHtmlToSwift = Tool(sidebarName: "Html to Swift", navigationTitle: "Html 
 class HtmlToSwift {
     static let shared = HtmlToSwift()
 
-    func convert(html input: String, library: SwiftDSL) -> String {
+    func convert(html input: String, library: SwiftDSL, htmlComponent: HtmlOutputComponent = .fullHtml) -> String {
         do {
             switch library {
             case .pointFree:
-                return try convertToPointFree(html: input)
+                return try convertToPointFree(html: input, component: htmlComponent)
             case .binaryBirds:
                 return try convertToBinaryBirds(html: input)
             }
