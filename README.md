@@ -9,8 +9,7 @@ Using https://github.com/atacan/html-swift, convert HTML code to
 * <a href="https://github.com/BinaryBirds/swift-html">BinaryBirds/swift-html</a>  
 
 DSLs.
-<img width="1551" alt="Screenshot 2022-07-31 at 00 05 46" src="https://user-images.githubusercontent.com/765873/182001749-35d82067-8d58-4314-892b-24cb82410342.png">
-
+<img width="1541" alt="Screenshot 2022-08-06 at 11 16 20" src="https://user-images.githubusercontent.com/765873/183242821-0a93ffec-0de3-4d04-8b7f-a27f153924ce.png">
 
 ## Vapor Code Generator
 For a new Fluent model, generate model, controller and migration code.
