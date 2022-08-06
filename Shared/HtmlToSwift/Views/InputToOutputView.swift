@@ -51,6 +51,7 @@ struct InputToOutputView: View {
                 Text("Convert")
             } // <-Button
             .keyboardShortcut(.return, modifiers: .command)
+            .help("Convert to Swift ⌘↵")
             .padding(.top)
             HSplitView {
                 UserEditorView(text: $inputText, title: $inputTitle, footNote: $inputFootNote, language: $inputLanguage)

@@ -63,6 +63,7 @@ struct UserInputPrefixSuffix: View {
                 Text("\(Image(systemName: "arrow.turn.down.right")) Convert \(Image(systemName: "arrow.forward"))")
             } // <-Button
             .keyboardShortcut(.return, modifiers: .command)
+            .help("Apply transformations from left to right ⌘↵")
             Text("")
         } // <-Form
     }

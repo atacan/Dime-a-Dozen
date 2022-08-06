@@ -81,6 +81,7 @@ struct CaseConverterView: View {
             } label: {
                 Text("Convert")
             } // <-Button
+            .help("Convert the cases ⌘↵")
             .padding(.top)
             .keyboardShortcut(.return, modifiers: .command)
             HSplitView {
