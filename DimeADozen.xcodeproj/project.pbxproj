@@ -57,6 +57,9 @@
 		5AFD0D702868930000AC5652 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6F2868930000AC5652 /* PopOver.swift */; };
 		7931594A2895D18300E12BED /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 793159492895D18300E12BED /* HtmlSwift */; };
 		793E3DCF288C799A008B6AA3 /* MacSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 793E3DCE288C799A008B6AA3 /* MacSwiftUI */; };
+		79807F35289FDA9600018B8A /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79807F34289FDA9600018B8A /* HtmlSwift */; };
+		79807F37289FDCD400018B8A /* TextViewMultiPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807F36289FDCD400018B8A /* TextViewMultiPlatform.swift */; };
+		79807F38289FDCD400018B8A /* TextViewMultiPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807F36289FDCD400018B8A /* TextViewMultiPlatform.swift */; };
 		79933CB3284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
 		79933CB4284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
 		79933CB628425C490007174B /* HtmlToSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB528425C490007174B /* HtmlToSwift.swift */; };
@@ -124,6 +127,7 @@
 		5AFD0D6B28688AC500AC5652 /* TemplateModel.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateModel.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5AFD0D6D28688FC500AC5652 /* TemplateController.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateController.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5AFD0D6F2868930000AC5652 /* PopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
+		79807F36289FDCD400018B8A /* TextViewMultiPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewMultiPlatform.swift; sourceTree = "<group>"; };
 		79933CB2284258D10007174B /* InputToOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputToOutputView.swift; sourceTree = "<group>"; };
 		79933CB528425C490007174B /* HtmlToSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToSwift.swift; sourceTree = "<group>"; };
 		79933CBE2842686F0007174B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79807F35289FDA9600018B8A /* HtmlSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				7998D5122843B5B700578C5A /* PreviewData.swift */,
+				79807F36289FDCD400018B8A /* TextViewMultiPlatform.swift */,
 				79C12BF528423F6500F19A86 /* Main */,
 				5A1C59F3285485DA00A0595D /* VaporNewModel */,
 				79C12BF228423F2800F19A86 /* HtmlToSwift */,
@@ -367,6 +373,7 @@
 			);
 			name = "DimeADozen (iOS)";
 			packageProductDependencies = (
+				79807F34289FDA9600018B8A /* HtmlSwift */,
 			);
 			productName = "DimeADozen (iOS)";
 			productReference = 79C12BDB28423EF000F19A86 /* DimeADozen.app */;
@@ -469,6 +476,7 @@
 				7998D50D2843B44100578C5A /* ButtonFilePickerPanelView.swift in Sources */,
 				5A3256AB284CBB9D00567EA8 /* TextStyle.swift in Sources */,
 				5AEB6A53284B4A3700541959 /* RegexMatchListView.swift in Sources */,
+				79807F37289FDCD400018B8A /* TextViewMultiPlatform.swift in Sources */,
 				5AEB6A5B284B4DA500541959 /* RegexViewModel.swift in Sources */,
 				7998D5062843B03400578C5A /* ShellCommand.swift in Sources */,
 				5A451E88284BFA6F0093BFE0 /* CaseConverterView.swift in Sources */,
@@ -542,6 +550,7 @@
 				5A773582285556EA00614E2E /* LazyTextField.swift in Sources */,
 				5A1C5A022854971D00A0595D /* VaporCodeFinalView.swift in Sources */,
 				5A7735792855071F00614E2E /* FieldTimestampTriggerView.swift in Sources */,
+				79807F38289FDCD400018B8A /* TextViewMultiPlatform.swift in Sources */,
 				7998D50B2843B11000578C5A /* ShellCommand.swift in Sources */,
 				5A3256AF284CBBD200567EA8 /* TextStyleImplement.swift in Sources */,
 				79933CB728425C490007174B /* HtmlToSwift.swift in Sources */,
@@ -838,6 +847,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 793E3DCD288C799A008B6AA3 /* XCRemoteSwiftPackageReference "MacSwiftUI" */;
 			productName = MacSwiftUI;
+		};
+		79807F34289FDA9600018B8A /* HtmlSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 793159482895D18300E12BED /* XCRemoteSwiftPackageReference "html-swift" */;
+			productName = HtmlSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

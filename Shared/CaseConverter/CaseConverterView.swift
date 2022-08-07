@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MacSwiftUI
 
 let toolCaseConverter = Tool(sidebarName: "Case Converter", navigationTitle: "Convert Word Case")
 
@@ -23,7 +22,7 @@ struct CaseConverterView: View {
         VStack(alignment: .center) {
             Text("List of Words")
                 .font(.title2)
-            MacEditorControllerView(text: $inputText)
+            TextViewMultiPlatform(text: $inputText)
                 .disableAutocorrection(true)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
@@ -36,7 +35,7 @@ struct CaseConverterView: View {
         VStack(alignment: .center) {
             Text("Converted")
                 .font(.title2)
-            MacEditorControllerView(text: $outputText)
+            TextViewMultiPlatform(text: $outputText)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
                 .padding(.horizontal)

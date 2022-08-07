@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MacSwiftUI
 
 let toolRegexMatchList = Tool(sidebarName: "Regex Matches", navigationTitle: "Extract Regex Matches")
 
@@ -20,7 +19,7 @@ struct RegexMatchListView: View {
         VStack(alignment: .center) {
             Text("Input Text")
                 .font(.title2)
-            MacEditorControllerView(text: $regexVM.inputText)
+            TextViewMultiPlatform(text: $regexVM.inputText)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
                 .padding(.horizontal)
@@ -32,7 +31,7 @@ struct RegexMatchListView: View {
         VStack(alignment: .center) {
             Text("Regex Matches")
                 .font(.title2)
-            MacEditorControllerView(text: $regexVM.outputText)
+            TextViewMultiPlatform(text: $regexVM.outputText)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
                 .padding(.horizontal)

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MacSwiftUI
 
 struct VaporOutputEditorView: View {
     @Binding var text: String
@@ -17,7 +16,7 @@ struct VaporOutputEditorView: View {
             Text(title)
                 .font(.title2)
                 .frame(maxWidth: .infinity)
-            MacEditorControllerView(text: $text)
+            TextViewMultiPlatform(text: $text)
                 .disableAutocorrection(true)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)

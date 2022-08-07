@@ -2,7 +2,6 @@
 // https://github.com/atacan
 // 25.06.22
 
-import MacSwiftUI
 import SwiftUI
 
 let toolPrefixSuffix = Tool(sidebarName: "Prefix Suffix Replace", navigationTitle: "Replace and Add Prefix and Suffix")
@@ -16,9 +15,9 @@ struct PrefixSuffixFinalView: View {
             UserInputPrefixSuffix(vm: vm, prefixReplace: $vm.prefixReplace, prefixReplaceWith: $vm.prefixReplaceWith, prefixAdd: $vm.prefixAdd, suffixReplace: $vm.suffixReplace, suffixReplaceWith: $vm.suffixReplaceWith, suffixAdd: $vm.suffixAdd, trimWhiteSpace: $vm.trimWhiteSpace)
                 .padding()
             HSplitView {
-                MacEditorControllerView(text: $vm.inputText)
+                TextViewMultiPlatform(text: $vm.inputText)
                     .padding()
-                MacEditorControllerView(text: $vm.outputText)
+                TextViewMultiPlatform(text: $vm.outputText)
                     .padding()
             } // <-HSplitView
         } // <-VStack

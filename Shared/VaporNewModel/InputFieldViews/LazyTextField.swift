@@ -4,9 +4,10 @@
 //
 //  Created by atacan on 12.06.22.
 //
-
-import AppKit
 import SwiftUI
+
+#if os(macOS)
+import AppKit
 
 struct LazyTextField: NSViewRepresentable {
     typealias NSViewType = NSTextField
@@ -59,10 +60,24 @@ struct LazyTextField: NSViewRepresentable {
     }
 }
 
-extension LazyTextField  {
-    public func fontFromNSFont(_ font: NSFont) -> LazyTextField {
+public extension LazyTextField {
+    func fontFromNSFont(_ font: NSFont) -> LazyTextField {
         var view = self
         view.font = font
         return view
     }
 }
+
+#elseif os(iOS)
+struct LazyTextField: View {
+    @Binding var text: String
+    var placeholder: String
+
+    var body: some View {
+        TextField(
+                "",
+                text: $text
+            )
+    }
+}
+#endif
