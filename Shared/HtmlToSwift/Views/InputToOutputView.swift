@@ -2,14 +2,15 @@
 // 28.05.22
 //
 
-import SwiftUI
 import HtmlSwift
+import SwiftUI
 
 struct InputToOutputView: View {
     var toolTitle: String
     @State var libraryChoice: SwiftDSL = .pointFree
     @State var htmlComponentChoice: HtmlOutputComponent = .fullHtml
-    
+    @State var formatHtml: Bool = false
+
     @State var inputText: String = ""
 //    @SceneStorage("inputText") var inputText: String = ""
     @State var inputTitle: String = "HTML Input"
@@ -33,7 +34,7 @@ struct InputToOutputView: View {
             .horizontalRadioGroupLayout()
             .help("DSL library that the output is for")
             .padding(.top)
-            
+
             Picker("HTML Component:", selection: $htmlComponentChoice) {
                 ForEach(HtmlOutputComponent.allCases) { comp in
                     Text(comp.rawValue)
@@ -44,9 +45,15 @@ struct InputToOutputView: View {
             .horizontalRadioGroupLayout()
             .help("DSL library that the output is for")
             .padding(.top)
-            
+
+            Toggle("Reformat Html", isOn: $formatHtml)
+                .help("DSL library that the output is for")
+                .padding(.top)
+
             Button {
                 outputText = HtmlToSwift.shared.convert(html: inputText, library: libraryChoice, htmlComponent: htmlComponentChoice)
+
+                if formatHtml { inputText = HtmlToSwift.shared.pretty(html: inputText, htmlComponent: htmlComponentChoice) }
             } label: {
                 Text("Convert")
             } // <-Button
@@ -63,11 +70,11 @@ struct InputToOutputView: View {
     }
 }
 
-//struct InputToOutputView_Previews: PreviewProvider {
+// struct InputToOutputView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        InputToOutputView(toolTitle: "Converter", inputToOutputConverter: HtmlToSwiftBirds.shared.convert)
 //            .preferredColorScheme(.light)
 //            .previewLayout(.sizeThatFits)
 //            .padding()
 //    }
-//}
+// }

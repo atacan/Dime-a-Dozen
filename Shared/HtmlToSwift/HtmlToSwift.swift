@@ -3,6 +3,7 @@
 //
 
 import HtmlSwift
+import SwiftSoup
 import SwiftUI
 
 let toolHtmlToSwift = Tool(sidebarName: "Html to Swift", navigationTitle: "Html to Swift DSL Converter")
@@ -16,11 +17,34 @@ class HtmlToSwift {
             case .pointFree:
                 return try convertToPointFree(html: input, component: htmlComponent)
             case .binaryBirds:
-                return try convertToBinaryBirds(html: input)
+                return try convertToBinaryBirds(html: input, component: htmlComponent)
             }
             
         } catch {
             return error.localizedDescription
+        }
+    }
+    
+    func pretty(html: String, htmlComponent: HtmlOutputComponent = .fullHtml) -> String {
+        do {
+            let doc = try SwiftSoup.parse(html)
+            let root: SwiftSoup.Element?
+            
+            switch htmlComponent {
+            case .fullHtml:
+                root = doc.child(0)
+            case .onlyBody:
+                root = doc.body()
+            case .onlyHead:
+                root = doc.head()
+            }
+            if let root = root {
+                return try root.html()
+            } else {
+                return html
+            }
+        } catch {
+            return html
         }
     }
 }
