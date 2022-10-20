@@ -18,6 +18,7 @@ struct MainSidebarView: View {
                 RegexMatchListView(selectedTool: $selectedTool)
                 CaseConverterView(selectedTool: $selectedTool)
                 PrefixSuffixFinalView(selectedTool: $selectedTool)
+                JsonPrettyView(selectedTool: $selectedTool, store: jsonStore)
             }
             Section(header: Text("Files")) {
                 SearchTextFilesView(selectedTool: $selectedTool)

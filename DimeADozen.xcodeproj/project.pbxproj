@@ -56,6 +56,12 @@
 		5AFD0D6E28688FC500AC5652 /* TemplateController.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6D28688FC500AC5652 /* TemplateController.txt */; };
 		5AFD0D702868930000AC5652 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6F2868930000AC5652 /* PopOver.swift */; };
 		7931594A2895D18300E12BED /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 793159492895D18300E12BED /* HtmlSwift */; };
+		7938ED362901C22C00986003 /* Highlight in Frameworks */ = {isa = PBXBuildFile; productRef = 7938ED352901C22C00986003 /* Highlight */; };
+		7938ED3C2901C28D00986003 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7938ED3B2901C28D00986003 /* ComposableArchitecture */; };
+		7938ED3E2901C28D00986003 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 7938ED3D2901C28D00986003 /* Dependencies */; };
+		7938ED3F2901C2B500986003 /* JsonPrettyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7938ED382901C25300986003 /* JsonPrettyView.swift */; };
+		7938ED412901C35300986003 /* JsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7938ED402901C35300986003 /* JsonClient.swift */; };
+		7938ED422901C35300986003 /* JsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7938ED402901C35300986003 /* JsonClient.swift */; };
 		793E3DCF288C799A008B6AA3 /* MacSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 793E3DCE288C799A008B6AA3 /* MacSwiftUI */; };
 		79933CB3284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
 		79933CB4284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
@@ -124,6 +130,8 @@
 		5AFD0D6B28688AC500AC5652 /* TemplateModel.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateModel.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5AFD0D6D28688FC500AC5652 /* TemplateController.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateController.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5AFD0D6F2868930000AC5652 /* PopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
+		7938ED382901C25300986003 /* JsonPrettyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyView.swift; sourceTree = "<group>"; };
+		7938ED402901C35300986003 /* JsonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClient.swift; sourceTree = "<group>"; };
 		79933CB2284258D10007174B /* InputToOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputToOutputView.swift; sourceTree = "<group>"; };
 		79933CB528425C490007174B /* HtmlToSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToSwift.swift; sourceTree = "<group>"; };
 		79933CBE2842686F0007174B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -160,8 +168,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7938ED3E2901C28D00986003 /* Dependencies in Frameworks */,
 				793E3DCF288C799A008B6AA3 /* MacSwiftUI in Frameworks */,
 				7931594A2895D18300E12BED /* HtmlSwift in Frameworks */,
+				7938ED3C2901C28D00986003 /* ComposableArchitecture in Frameworks */,
+				7938ED362901C22C00986003 /* Highlight in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +248,15 @@
 			path = VaporTemplateFiles;
 			sourceTree = "<group>";
 		};
+		7938ED372901C23100986003 /* JsonPretty */ = {
+			isa = PBXGroup;
+			children = (
+				7938ED382901C25300986003 /* JsonPrettyView.swift */,
+				7938ED402901C35300986003 /* JsonClient.swift */,
+			);
+			path = JsonPretty;
+			sourceTree = "<group>";
+		};
 		7998D5042843B00B00578C5A /* FileSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,11 +269,11 @@
 		7998D5072843B07200578C5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				79B886532870F13F008AF9EC /* MacProgressSpinner.swift */,
 				7998D50C2843B44100578C5A /* ButtonFilePickerPanelView.swift */,
 				7998D50E2843B4CF00578C5A /* FoundFilesView.swift */,
 				7998D51A2843C31300578C5A /* FileContentView.swift */,
 				7998D5082843B0A300578C5A /* SearchTextFilesView.swift */,
-				79B886532870F13F008AF9EC /* MacProgressSpinner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +298,7 @@
 				5A451E83284BF1EB0093BFE0 /* CaseConverter */,
 				7998D5042843B00B00578C5A /* FileSearch */,
 				5AEB6A51284B493000541959 /* RegexExtract */,
+				7938ED372901C23100986003 /* JsonPretty */,
 				5A3459BD28677C1800C7A351 /* PrefixSuffix */,
 				79C12BD528423EEF00F19A86 /* ContentView.swift */,
 				79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */,
@@ -388,6 +409,9 @@
 			packageProductDependencies = (
 				793E3DCE288C799A008B6AA3 /* MacSwiftUI */,
 				793159492895D18300E12BED /* HtmlSwift */,
+				7938ED352901C22C00986003 /* Highlight */,
+				7938ED3B2901C28D00986003 /* ComposableArchitecture */,
+				7938ED3D2901C28D00986003 /* Dependencies */,
 			);
 			productName = "DimeADozen (macOS)";
 			productReference = 79C12BE128423EF000F19A86 /* DimeADozen.app */;
@@ -423,6 +447,8 @@
 			packageReferences = (
 				793E3DCD288C799A008B6AA3 /* XCRemoteSwiftPackageReference "MacSwiftUI" */,
 				793159482895D18300E12BED /* XCRemoteSwiftPackageReference "html-swift" */,
+				7938ED342901C22C00986003 /* XCRemoteSwiftPackageReference "Highlight" */,
+				7938ED3A2901C28D00986003 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 79C12BDC28423EF000F19A86 /* Products */;
 			projectDirPath = "";
@@ -478,6 +504,7 @@
 				5A7735752855067B00614E2E /* FieldPropertyWrapperView.swift in Sources */,
 				79933CBF2842686F0007174B /* MainView.swift in Sources */,
 				7998D5182843BDCD00578C5A /* FileSearchModel.swift in Sources */,
+				7938ED412901C35300986003 /* JsonClient.swift in Sources */,
 				7998D5092843B0A300578C5A /* SearchTextFilesView.swift in Sources */,
 				5A451E85284BF2120093BFE0 /* CaseConversionViewModel.swift in Sources */,
 				5A3459BF28677C4F00C7A351 /* UserInputPrefixSuffix.swift in Sources */,
@@ -513,11 +540,13 @@
 				5A1C59FF285495BF00A0595D /* FormVaporPropertyView.swift in Sources */,
 				5A3459C6286780D700C7A351 /* PrefixSuffixModel.swift in Sources */,
 				79C12BE728423EF000F19A86 /* ContentView.swift in Sources */,
+				7938ED422901C35300986003 /* JsonClient.swift in Sources */,
 				7998D5102843B52000578C5A /* ButtonFilePickerPanelView.swift in Sources */,
 				5A3256AC284CBB9D00567EA8 /* TextStyle.swift in Sources */,
 				5A1C59F9285490C300A0595D /* VaporProperty.swift in Sources */,
 				5AEB6A54284B4BF000541959 /* RegexMatchListView.swift in Sources */,
 				5A3459C228677E3000C7A351 /* PrefixSuffixFinalView.swift in Sources */,
+				7938ED3F2901C2B500986003 /* JsonPrettyView.swift in Sources */,
 				79933CC02842686F0007174B /* MainView.swift in Sources */,
 				5AFD0D702868930000AC5652 /* PopOver.swift in Sources */,
 				5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */,
@@ -818,6 +847,22 @@
 				kind = branch;
 			};
 		};
+		7938ED342901C22C00986003 /* XCRemoteSwiftPackageReference "Highlight" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nkristek/Highlight";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7938ED3A2901C28D00986003 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		793E3DCD288C799A008B6AA3 /* XCRemoteSwiftPackageReference "MacSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/atacan/MacSwiftUI";
@@ -833,6 +878,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 793159482895D18300E12BED /* XCRemoteSwiftPackageReference "html-swift" */;
 			productName = HtmlSwift;
+		};
+		7938ED352901C22C00986003 /* Highlight */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7938ED342901C22C00986003 /* XCRemoteSwiftPackageReference "Highlight" */;
+			productName = Highlight;
+		};
+		7938ED3B2901C28D00986003 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7938ED3A2901C28D00986003 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		7938ED3D2901C28D00986003 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7938ED3A2901C28D00986003 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = Dependencies;
 		};
 		793E3DCE288C799A008B6AA3 /* MacSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
