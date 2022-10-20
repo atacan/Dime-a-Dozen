@@ -29,6 +29,11 @@ The screenshot shows converting Bootstrap CSS classes into camel case to be usab
 In each line, replace a prefix or suffix if it exists with another string. Add a new prefix or suffix.
 <img width="1470" alt="Screenshot 2022-07-03 at 13 56 30" src="https://user-images.githubusercontent.com/765873/177038453-48351570-e33c-4e35-8d89-27a71f754a26.png">
 
+## Json Pretty Formatter with Syntax Highlight
+Pretty print the json input and highlight the syntax using [nkristek/Highlight](https://github.com/nkristek/Highlight). It returns an error if the json is invalid.
+<img width="1431" alt="Screenshot 2022-10-20 at 22 21 38" src="https://user-images.githubusercontent.com/765873/197050576-fc810fb9-455a-4213-9eb5-acf71686f7ed.png">
+
+
 ## Search Inside Files
 Find files that contain a search term in the file content, not just the file name, using `grep` command.
 <img width="1283" alt="Screenshot 2022-05-29 at 22 39 12" src="https://user-images.githubusercontent.com/765873/170890590-6aadb51c-7133-4cb3-9003-adaee30a95a6.png">
