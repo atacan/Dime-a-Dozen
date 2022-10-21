@@ -63,6 +63,7 @@
 		7938ED412901C35300986003 /* JsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7938ED402901C35300986003 /* JsonClient.swift */; };
 		7938ED422901C35300986003 /* JsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7938ED402901C35300986003 /* JsonClient.swift */; };
 		793E3DCF288C799A008B6AA3 /* MacSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 793E3DCE288C799A008B6AA3 /* MacSwiftUI */; };
+		795D8D9D29033842009CEBA6 /* CopyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D8D9B2903383A009CEBA6 /* CopyClient.swift */; };
 		79933CB3284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
 		79933CB4284258D10007174B /* InputToOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB2284258D10007174B /* InputToOutputView.swift */; };
 		79933CB628425C490007174B /* HtmlToSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79933CB528425C490007174B /* HtmlToSwift.swift */; };
@@ -132,6 +133,7 @@
 		5AFD0D6F2868930000AC5652 /* PopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		7938ED382901C25300986003 /* JsonPrettyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyView.swift; sourceTree = "<group>"; };
 		7938ED402901C35300986003 /* JsonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClient.swift; sourceTree = "<group>"; };
+		795D8D9B2903383A009CEBA6 /* CopyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyClient.swift; sourceTree = "<group>"; };
 		79933CB2284258D10007174B /* InputToOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputToOutputView.swift; sourceTree = "<group>"; };
 		79933CB528425C490007174B /* HtmlToSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToSwift.swift; sourceTree = "<group>"; };
 		79933CBE2842686F0007174B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				7938ED382901C25300986003 /* JsonPrettyView.swift */,
 				7938ED402901C35300986003 /* JsonClient.swift */,
+				795D8D9B2903383A009CEBA6 /* CopyClient.swift */,
 			);
 			path = JsonPretty;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				7998D5102843B52000578C5A /* ButtonFilePickerPanelView.swift in Sources */,
 				5A3256AC284CBB9D00567EA8 /* TextStyle.swift in Sources */,
 				5A1C59F9285490C300A0595D /* VaporProperty.swift in Sources */,
+				795D8D9D29033842009CEBA6 /* CopyClient.swift in Sources */,
 				5AEB6A54284B4BF000541959 /* RegexMatchListView.swift in Sources */,
 				5A3459C228677E3000C7A351 /* PrefixSuffixFinalView.swift in Sources */,
 				7938ED3F2901C2B500986003 /* JsonPrettyView.swift in Sources */,

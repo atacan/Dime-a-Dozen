@@ -18,9 +18,11 @@ struct JsonPrettifier: ReducerProtocol {
         case binding(BindingAction<State>)
         case convertRequested
         case convertResponse(TaskResult<NSAttributedString>)
+        case copyToClipboard
     }
 
     @Dependency(\.jsonClient) var jsonClient
+    @Dependency(\.copyClient) var copyClient
 
     var body: some ReducerProtocol<State, Action> {
         BindingReducer()
@@ -37,10 +39,13 @@ struct JsonPrettifier: ReducerProtocol {
             case let .convertResponse(.failure(error)):
 //                let textColor = NSColor.labelColor
                 let textColor = NSColor.systemGreen
-                let attributes = [NSAttributedString.Key.foregroundColor : textColor, NSAttributedString.Key.font: NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: NSFont.Weight.regular)]
+                let attributes = [NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.font: NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: NSFont.Weight.regular)]
                 let attributedString = NSAttributedString(string: error.localizedDescription, attributes: attributes)
 
                 state.output = attributedString
+                return .none
+            case .copyToClipboard:
+                copyClient.copyToClipboard(state.output)
                 return .none
             case .binding:
                 return .none
@@ -70,11 +75,15 @@ struct JsonPrettyView: View {
                 ZStack(alignment: .topLeading) {
                     Rectangle()
                         .foregroundColor(Color(NSColor.textBackgroundColor))
-//                        Text(viewStore.output.string)
                     TextWithAttributedString(attributedString: viewStore.output)
-                        .font(.monospaced(.body)())
-                        .textSelection(.enabled)
                         .padding()
+
+//                        Text(AttributedString(viewStore.output))
+                }
+                .overlay(alignment: .topTrailing) {
+                    Button("Copy") {
+                        viewStore.send(.copyToClipboard)
+                    }.padding().padding(.trailing).padding(.trailing)
                 }
             }
         }
