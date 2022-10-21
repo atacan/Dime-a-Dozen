@@ -31,8 +31,7 @@ In each line, replace a prefix or suffix if it exists with another string. Add a
 
 ## Json Pretty Formatter with Syntax Highlight
 Pretty print the json input and highlight the syntax using [nkristek/Highlight](https://github.com/nkristek/Highlight). It returns an error if the json is invalid.
-<img width="1431" alt="Screenshot 2022-10-20 at 22 21 38" src="https://user-images.githubusercontent.com/765873/197050576-fc810fb9-455a-4213-9eb5-acf71686f7ed.png">
-
+<img width="1431" alt="Screenshot 2022-10-21 at 22 24 48" src="https://user-images.githubusercontent.com/765873/197282825-a80bd9ee-5183-4fb1-b6a2-65847abc4fe5.png">
 
 ## Search Inside Files
 Find files that contain a search term in the file content, not just the file name, using `grep` command.
