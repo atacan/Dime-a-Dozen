@@ -41,6 +41,14 @@ struct CaseConverterView: View {
                 .shadow(radius: 2)
                 .padding(.horizontal)
                 .padding(.bottom)
+                .overlay(alignment: .topTrailing) {
+                    Button("\(Image(systemName: "doc.on.clipboard"))Copy") {
+                        CopyClient.liveValue.copyToClipboard(NSAttributedString(string: outputText))
+                    }
+                    .padding(.trailing, 22).padding(.top, 12)
+                    .keyboardShortcut("c", modifiers: [.command, .shift])
+                    .help("Copy rich text ⌘ ⇧ c")
+                }
         } // <-VStack
     }
     

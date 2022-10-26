@@ -47,6 +47,14 @@ struct RegexMatchListView: View {
             HSplitView {
                 myInputEditor
                 myOutputEditor
+                    .overlay(alignment: .topTrailing) {
+                        Button("\(Image(systemName: "doc.on.clipboard"))Copy") {
+                            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: regexVM.outputText))
+                        }
+                        .padding(.trailing, 22).padding(.top, 38)
+                        .keyboardShortcut("c", modifiers: [.command, .shift])
+                        .help("Copy rich text ⌘ ⇧ c")
+                    }
             } // <-HSplitView
         } // <-VStack
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)

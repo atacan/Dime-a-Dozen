@@ -12,6 +12,7 @@ struct JsonPrettifier: ReducerProtocol {
     struct State: Equatable {
         @BindableState var input: String = ""
         @BindableState var output: NSAttributedString = .init()
+        var copyButtonAnimating = false
     }
 
     enum Action: Equatable, BindableAction {
@@ -19,10 +20,12 @@ struct JsonPrettifier: ReducerProtocol {
         case convertRequested
         case convertResponse(TaskResult<NSAttributedString>)
         case copyToClipboard
+        case copyButtonAnimationCompleted
     }
 
     @Dependency(\.jsonClient) var jsonClient
     @Dependency(\.copyClient) var copyClient
+    @Dependency(\.mainQueue) var mainQueue
 
     var body: some ReducerProtocol<State, Action> {
         BindingReducer()
@@ -45,7 +48,14 @@ struct JsonPrettifier: ReducerProtocol {
                 state.output = attributedString
                 return .none
             case .copyToClipboard:
+                state.copyButtonAnimating = true
                 copyClient.copyToClipboard(state.output)
+                return .task {
+                    try await self.mainQueue.sleep(for: .milliseconds(200))
+                    return .copyButtonAnimationCompleted
+                }
+            case .copyButtonAnimationCompleted:
+                state.copyButtonAnimating = false
                 return .none
             case .binding:
                 return .none
@@ -54,7 +64,7 @@ struct JsonPrettifier: ReducerProtocol {
     }
 }
 
-let jsonStore = Store(initialState: .init(), reducer: JsonPrettifier()._printChanges())
+let jsonStore = Store(initialState: .init(), reducer: JsonPrettifier())
 
 struct JsonPrettyView: View {
     @Binding var selectedTool: Tool?
@@ -71,6 +81,8 @@ struct JsonPrettyView: View {
                         viewStore.send(.convertRequested)
                     }
                     .padding(.bottom)
+                    .keyboardShortcut(.return, modifiers: .command)
+                    .help("Format and highliht ⌘ + ↵")
                 }
                 ZStack(alignment: .topLeading) {
                     Rectangle()
@@ -81,9 +93,17 @@ struct JsonPrettyView: View {
 //                        Text(AttributedString(viewStore.output))
                 }
                 .overlay(alignment: .topTrailing) {
-                    Button("Copy") {
+                    Button {
                         viewStore.send(.copyToClipboard)
-                    }.padding().padding(.trailing).padding(.trailing)
+                    } label: {
+                        Text("\(Image(systemName: "doc.on.clipboard")) Copy")
+                            
+                    }
+                    .foregroundColor(viewStore.copyButtonAnimating ? .green : Color(nsColor: .textColor))
+                    .padding(.trailing, 18).padding()
+                    .keyboardShortcut("c", modifiers: [.command, .shift])
+                    .help("Copy rich text ⌘ ⇧ c")
+                    .animation(.default, value: viewStore.copyButtonAnimating)
                 }
             }
         }

@@ -10,6 +10,7 @@ let toolPrefixSuffix = Tool(sidebarName: "Prefix Suffix Replace", navigationTitl
 struct PrefixSuffixFinalView: View {
     @Binding var selectedTool: Tool?
     @StateObject var vm = PrefixSuffixModel()
+    @State var copyButtonAnimating = false
 
     var myView: some View {
         VStack(alignment: .center) {
@@ -20,6 +21,23 @@ struct PrefixSuffixFinalView: View {
                     .padding()
                 MacEditorControllerView(text: $vm.outputText)
                     .padding()
+                    .overlay(alignment: .topTrailing) {
+                        Button {
+                            copyButtonAnimating = true
+                            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: vm.outputText))
+                            Task {
+                                try await Task.sleep(nanoseconds: 200_000_000)
+                                copyButtonAnimating = false
+                            }
+                        } label: {
+                            Text("\(Image(systemName: "doc.on.clipboard")) Copy")
+                        }
+                        .foregroundColor(copyButtonAnimating ? .green : Color(nsColor: .textColor))
+                        .animation(.default, value: copyButtonAnimating)
+                        .padding(.trailing, 22).padding(.top, 22)
+                        .keyboardShortcut("c", modifiers: [.command, .shift])
+                        .help("Copy rich text ⌘ ⇧ c")
+                    }
             } // <-HSplitView
         } // <-VStack
     }
@@ -32,11 +50,11 @@ struct PrefixSuffixFinalView: View {
     }
 }
 
-//struct PrefixSuffixFinalView_Previews: PreviewProvider {
+// struct PrefixSuffixFinalView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        PrefixSuffixFinalView()
 //            .preferredColorScheme(.light)
 //            .previewLayout(.sizeThatFits)
 //            .padding()
 //    }
-//}
+// }
