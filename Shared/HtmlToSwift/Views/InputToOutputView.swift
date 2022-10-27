@@ -45,11 +45,11 @@ struct InputToOutputView: View {
             }
             .pickerStyle(.inline)
             .horizontalRadioGroupLayout()
-            .help("DSL library that the output is for")
+            .help("what the result should contain from the inputted Html code")
             .padding(.top)
 
             Toggle("Reformat Html", isOn: $formatHtml)
-                .help("DSL library that the output is for")
+                .help("pretty format the Html input")
                 .padding(.top)
 
             Button {
