@@ -27,6 +27,9 @@ struct PrefixSuffixFinalView: View {
                     }
             } // <-HSplitView
         } // <-VStack
+        .onReceive(topMenu.copyOutputCommand) { _ in
+            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: vm.outputText))
+        }
     }
 
     var body: some View {

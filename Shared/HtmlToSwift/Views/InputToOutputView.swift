@@ -73,6 +73,9 @@ struct InputToOutputView: View {
         } // <-VStack
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
         .navigationTitle(toolTitle)
+        .onReceive(topMenu.copyOutputCommand) { _ in
+            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: outputText))
+        }
     }
 }
 

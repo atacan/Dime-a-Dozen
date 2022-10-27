@@ -106,6 +106,9 @@ struct JsonPrettyView: View {
                     .animation(.default, value: viewStore.copyButtonAnimating)
                 }
             }
+            .onReceive(topMenu.copyOutputCommand) { _ in
+                viewStore.send(.copyToClipboard)
+            }
         }
     }
 

@@ -54,6 +54,9 @@ struct RegexMatchListView: View {
                     }
             } // <-HSplitView
         } // <-VStack
+        .onReceive(topMenu.copyOutputCommand) { _ in
+            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: regexVM.outputText))
+        }
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
         .navigationTitle(toolRegexMatchList.navigationTitle)
     }
