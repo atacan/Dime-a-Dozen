@@ -22,21 +22,8 @@ struct PrefixSuffixFinalView: View {
                 MacEditorControllerView(text: $vm.outputText)
                     .padding()
                     .overlay(alignment: .topTrailing) {
-                        Button {
-                            copyButtonAnimating = true
-                            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: vm.outputText))
-                            Task {
-                                try await Task.sleep(nanoseconds: 200_000_000)
-                                copyButtonAnimating = false
-                            }
-                        } label: {
-                            Text("\(Image(systemName: "doc.on.clipboard")) Copy")
-                        }
-                        .foregroundColor(copyButtonAnimating ? .green : Color(nsColor: .textColor))
-                        .animation(.default, value: copyButtonAnimating)
-                        .padding(.trailing, 22).padding(.top, 22)
-                        .keyboardShortcut("c", modifiers: [.command, .shift])
-                        .help("Copy rich text ⌘ ⇧ c")
+                        AnimatingCopyButton(copyButtonAnimating: $copyButtonAnimating, outputText: $vm.outputText)
+                            .padding(.trailing, 22).padding(.top, 22)
                     }
             } // <-HSplitView
         } // <-VStack

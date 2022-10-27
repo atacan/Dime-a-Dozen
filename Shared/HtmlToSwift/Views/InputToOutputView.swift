@@ -22,6 +22,8 @@ struct InputToOutputView: View {
     @State var outputFootNote: String = " "
     @State var outputLanguage: String = ""
 
+    @State var copyButtonAnimating = false
+
     var body: some View {
         VStack(alignment: .center) {
             Picker("DSL Package:", selection: $libraryChoice) {
@@ -64,14 +66,9 @@ struct InputToOutputView: View {
                 UserEditorView(text: $inputText, title: $inputTitle, footNote: $inputFootNote, language: $inputLanguage)
                 UserEditorView(text: $outputText, title: $outputTitle, footNote: $outputFootNote, language: $outputLanguage)
                     .overlay(alignment: .topTrailing) {
-                        Button("\(Image(systemName: "doc.on.clipboard"))Copy") {
-                            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: outputText))
-                        }
-                        .padding(.trailing, 22).padding(.top, 38)
-                        .keyboardShortcut("c", modifiers: [.command, .shift])
-                        .help("Copy rich text ⌘ ⇧ c")
+                        AnimatingCopyButton(copyButtonAnimating: $copyButtonAnimating, outputText: $outputText)
+                            .padding(.trailing, 22).padding(.top, 38)
                     }
-                
             } // <-HSplitView
         } // <-VStack
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)

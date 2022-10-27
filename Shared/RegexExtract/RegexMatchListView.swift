@@ -5,8 +5,8 @@
 //  Created by atacan on 04.06.22.
 //
 
-import SwiftUI
 import MacSwiftUI
+import SwiftUI
 
 let toolRegexMatchList = Tool(sidebarName: "Regex Matches", navigationTitle: "Extract Regex Matches")
 
@@ -15,7 +15,8 @@ struct RegexMatchListView: View {
     @Binding var selectedTool: Tool?
 //    @State var regexPattern: String = ""
     @SceneStorage("regexPattern") var regexPattern: String = ""
-    
+    @State var copyButtonAnimating = false
+
     var myInputEditor: some View {
         VStack(alignment: .center) {
             Text("Input Text")
@@ -27,7 +28,7 @@ struct RegexMatchListView: View {
                 .padding(.bottom)
         } // <-VStack
     }
-    
+
     var myOutputEditor: some View {
         VStack(alignment: .center) {
             Text("Regex Matches")
@@ -39,7 +40,7 @@ struct RegexMatchListView: View {
                 .padding(.bottom)
         } // <-VStack
     }
-    
+
     var myView: some View {
         VStack {
             PatternInputView(regexVM: regexVM, pattern: $regexPattern)
@@ -48,19 +49,15 @@ struct RegexMatchListView: View {
                 myInputEditor
                 myOutputEditor
                     .overlay(alignment: .topTrailing) {
-                        Button("\(Image(systemName: "doc.on.clipboard"))Copy") {
-                            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: regexVM.outputText))
-                        }
-                        .padding(.trailing, 22).padding(.top, 38)
-                        .keyboardShortcut("c", modifiers: [.command, .shift])
-                        .help("Copy rich text ⌘ ⇧ c")
+                        AnimatingCopyButton(copyButtonAnimating: $copyButtonAnimating, outputText: $regexVM.outputText)
+                            .padding(.trailing, 22).padding(.top, 38)
                     }
             } // <-HSplitView
         } // <-VStack
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
         .navigationTitle(toolRegexMatchList.navigationTitle)
     }
-    
+
     var body: some View {
         NavigationLink(destination: myView, tag: toolRegexMatchList, selection: $selectedTool) {
             Text(toolRegexMatchList.sidebarName)

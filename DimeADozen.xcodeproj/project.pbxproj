@@ -55,6 +55,7 @@
 		5AFD0D6C28688AC500AC5652 /* TemplateModel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6B28688AC500AC5652 /* TemplateModel.txt */; };
 		5AFD0D6E28688FC500AC5652 /* TemplateController.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6D28688FC500AC5652 /* TemplateController.txt */; };
 		5AFD0D702868930000AC5652 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFD0D6F2868930000AC5652 /* PopOver.swift */; };
+		792913A6290AFCAB00311BE2 /* AnimatingCopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792913A4290AFC6B00311BE2 /* AnimatingCopyButton.swift */; };
 		7931594A2895D18300E12BED /* HtmlSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 793159492895D18300E12BED /* HtmlSwift */; };
 		7938ED362901C22C00986003 /* Highlight in Frameworks */ = {isa = PBXBuildFile; productRef = 7938ED352901C22C00986003 /* Highlight */; };
 		7938ED3C2901C28D00986003 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7938ED3B2901C28D00986003 /* ComposableArchitecture */; };
@@ -131,6 +132,7 @@
 		5AFD0D6B28688AC500AC5652 /* TemplateModel.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateModel.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5AFD0D6D28688FC500AC5652 /* TemplateController.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateController.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5AFD0D6F2868930000AC5652 /* PopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
+		792913A4290AFC6B00311BE2 /* AnimatingCopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingCopyButton.swift; sourceTree = "<group>"; };
 		7938ED382901C25300986003 /* JsonPrettyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyView.swift; sourceTree = "<group>"; };
 		7938ED402901C35300986003 /* JsonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClient.swift; sourceTree = "<group>"; };
 		795D8D9B2903383A009CEBA6 /* CopyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyClient.swift; sourceTree = "<group>"; };
@@ -250,6 +252,14 @@
 			path = VaporTemplateFiles;
 			sourceTree = "<group>";
 		};
+		792913A3290AFC5600311BE2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				792913A4290AFC6B00311BE2 /* AnimatingCopyButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		7938ED372901C23100986003 /* JsonPretty */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				7998D5122843B5B700578C5A /* PreviewData.swift */,
+				79C12BD528423EEF00F19A86 /* ContentView.swift */,
+				79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */,
 				79C12BF528423F6500F19A86 /* Main */,
 				5A1C59F3285485DA00A0595D /* VaporNewModel */,
 				79C12BF228423F2800F19A86 /* HtmlToSwift */,
@@ -303,8 +315,6 @@
 				5AEB6A51284B493000541959 /* RegexExtract */,
 				7938ED372901C23100986003 /* JsonPretty */,
 				5A3459BD28677C1800C7A351 /* PrefixSuffix */,
-				79C12BD528423EEF00F19A86 /* ContentView.swift */,
-				79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */,
 				79C12BD628423EF000F19A86 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -359,6 +369,7 @@
 		79C12BF628423F6C00F19A86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				792913A3290AFC5600311BE2 /* Components */,
 				79933CBE2842686F0007174B /* MainView.swift */,
 				79933CC1284268B40007174B /* MainSidebarView.swift */,
 				79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */,
@@ -566,6 +577,7 @@
 				5A7735722854E75D00614E2E /* VDKComboBox.swift in Sources */,
 				79C12BFC2842403800F19A86 /* UserEditorView.swift in Sources */,
 				5A451E86284BF2180093BFE0 /* CaseConversionViewModel.swift in Sources */,
+				792913A6290AFCAB00311BE2 /* AnimatingCopyButton.swift in Sources */,
 				7998D5112843B52500578C5A /* FoundFilesView.swift in Sources */,
 				5A77356F2854C1DC00614E2E /* Extensions.swift in Sources */,
 				5A77356C2854BDD600614E2E /* VaporOutputEditorView.swift in Sources */,

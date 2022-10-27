@@ -5,8 +5,8 @@
 //  Created by atacan on 04.06.22.
 //
 
-import SwiftUI
 import MacSwiftUI
+import SwiftUI
 
 let toolCaseConverter = Tool(sidebarName: "Case Converter", navigationTitle: "Convert Word Case")
 
@@ -18,7 +18,8 @@ struct CaseConverterView: View {
     @State private var inputCase: WordGroupCase = .kebab
     @State private var outputCase: WordGroupCase = .camel
     @State private var seperator: WordGroupSeperator = .newLine
-    
+    @State var copyButtonAnimating = false
+
     var myInputEditor: some View {
         VStack(alignment: .center) {
             Text("List of Words")
@@ -31,7 +32,7 @@ struct CaseConverterView: View {
                 .padding(.bottom)
         } // <-VStack
     }
-    
+
     var myOutputEditor: some View {
         VStack(alignment: .center) {
             Text("Converted")
@@ -42,16 +43,12 @@ struct CaseConverterView: View {
                 .padding(.horizontal)
                 .padding(.bottom)
                 .overlay(alignment: .topTrailing) {
-                    Button("\(Image(systemName: "doc.on.clipboard"))Copy") {
-                        CopyClient.liveValue.copyToClipboard(NSAttributedString(string: outputText))
-                    }
-                    .padding(.trailing, 22).padding(.top, 12)
-                    .keyboardShortcut("c", modifiers: [.command, .shift])
-                    .help("Copy rich text ⌘ ⇧ c")
+                    AnimatingCopyButton(copyButtonAnimating: $copyButtonAnimating, outputText: $outputText)
+                        .padding(.trailing, 22).padding(.top, 12)
                 }
         } // <-VStack
     }
-    
+
     var myView: some View {
         VStack {
             Button {
@@ -83,7 +80,7 @@ struct CaseConverterView: View {
             }
             .pickerStyle(.inline)
             .frame(maxWidth: 250)
-            
+
             Button {
                 outputText = caseConversionVM.convert(inputText: inputText, from: inputCase, to: outputCase)
             } label: {
@@ -100,7 +97,7 @@ struct CaseConverterView: View {
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
         .navigationTitle(toolCaseConverter.navigationTitle)
     }
-    
+
     var body: some View {
         NavigationLink(destination: myView, tag: toolCaseConverter, selection: $selectedTool) {
             Text(toolCaseConverter.sidebarName)
