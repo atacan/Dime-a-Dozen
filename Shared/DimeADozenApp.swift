@@ -10,5 +10,11 @@ struct DimeADozenApp: App {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            CommandGroup(after: CommandGroupPlacement.sidebar) {
+                ToggleSidebarButton()
+                    .keyboardShortcut("l", modifiers: [.command, .shift])
+            }
+        }
     }
 }
