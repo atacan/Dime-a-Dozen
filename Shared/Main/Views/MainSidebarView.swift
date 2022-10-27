@@ -5,7 +5,11 @@
 import SwiftUI
 
 struct MainSidebarView: View {
-    @State private var selectedTool: Tool?
+    #if DEBUG
+        @State private var selectedTool: Tool? = toolHtmlToSwift
+    #else
+        @State private var selectedTool: Tool?
+    #endif
 
     var body: some View {
         List {
@@ -25,7 +29,7 @@ struct MainSidebarView: View {
             }
         }
         // <-List
-        .listStyle(.sidebar)
+            .listStyle(.sidebar)
     }
 }
 
