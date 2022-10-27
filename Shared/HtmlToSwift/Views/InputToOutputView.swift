@@ -7,9 +7,10 @@ import SwiftUI
 
 struct InputToOutputView: View {
     var toolTitle: String
-    @State var libraryChoice: SwiftDSL = .pointFree
-    @State var htmlComponentChoice: HtmlOutputComponent = .fullHtml
-    @State var formatHtml: Bool = false
+//    @State var libraryChoice: SwiftDSL = .pointFree
+    @AppStorage("libraryChoice") var libraryChoice: SwiftDSL = .pointFree
+    @AppStorage("htmlComponentChoice") var htmlComponentChoice: HtmlOutputComponent = .fullHtml
+    @AppStorage("formatHtml") var formatHtml: Bool = false
 
     @State var inputText: String = ""
 //    @SceneStorage("inputText") var inputText: String = ""
