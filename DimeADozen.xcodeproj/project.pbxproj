@@ -91,6 +91,7 @@
 		7998D5192843BDCD00578C5A /* FileSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D5172843BDCD00578C5A /* FileSearchModel.swift */; };
 		7998D51B2843C31300578C5A /* FileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D51A2843C31300578C5A /* FileContentView.swift */; };
 		7998D51C2843C31300578C5A /* FileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998D51A2843C31300578C5A /* FileContentView.swift */; };
+		79A33B50291456F4002DB115 /* Prelude in Frameworks */ = {isa = PBXBuildFile; productRef = 79A33B4F291456F4002DB115 /* Prelude */; };
 		79B886542870F13F008AF9EC /* MacProgressSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B886532870F13F008AF9EC /* MacProgressSpinner.swift */; };
 		79B886552870F13F008AF9EC /* MacProgressSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B886532870F13F008AF9EC /* MacProgressSpinner.swift */; };
 		79C12BE428423EF000F19A86 /* DimeADozenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */; };
@@ -172,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A33B50291456F4002DB115 /* Prelude in Frameworks */,
 				7938ED3E2901C28D00986003 /* Dependencies in Frameworks */,
 				793E3DCF288C799A008B6AA3 /* MacSwiftUI in Frameworks */,
 				7931594A2895D18300E12BED /* HtmlSwift in Frameworks */,
@@ -426,6 +428,7 @@
 				7938ED352901C22C00986003 /* Highlight */,
 				7938ED3B2901C28D00986003 /* ComposableArchitecture */,
 				7938ED3D2901C28D00986003 /* Dependencies */,
+				79A33B4F291456F4002DB115 /* Prelude */,
 			);
 			productName = "DimeADozen (macOS)";
 			productReference = 79C12BE128423EF000F19A86 /* DimeADozen.app */;
@@ -463,6 +466,7 @@
 				793159482895D18300E12BED /* XCRemoteSwiftPackageReference "html-swift" */,
 				7938ED342901C22C00986003 /* XCRemoteSwiftPackageReference "Highlight" */,
 				7938ED3A2901C28D00986003 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				79A33B4E291456F4002DB115 /* XCRemoteSwiftPackageReference "swift-prelude" */,
 			);
 			productRefGroup = 79C12BDC28423EF000F19A86 /* Products */;
 			projectDirPath = "";
@@ -883,8 +887,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/atacan/MacSwiftUI";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.2;
+				branch = main;
+				kind = branch;
+			};
+		};
+		79A33B4E291456F4002DB115 /* XCRemoteSwiftPackageReference "swift-prelude" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-prelude";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -914,6 +926,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 793E3DCD288C799A008B6AA3 /* XCRemoteSwiftPackageReference "MacSwiftUI" */;
 			productName = MacSwiftUI;
+		};
+		79A33B4F291456F4002DB115 /* Prelude */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79A33B4E291456F4002DB115 /* XCRemoteSwiftPackageReference "swift-prelude" */;
+			productName = Prelude;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

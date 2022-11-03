@@ -74,7 +74,7 @@ struct JsonPrettyView: View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             VSplitView {
                 VStack {
-                    MacEditorControllerView(text: viewStore.binding(\.$input))
+                    TextEditor(text: viewStore.binding(\.$input))
                         .shadow(radius: 2)
                         .padding()
                     Button("Prettify") {

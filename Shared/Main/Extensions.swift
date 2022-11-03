@@ -18,3 +18,9 @@ public extension Binding where Value: Equatable {
         )
     }
 }
+
+func standardNSAttributed(_ input: String) -> NSMutableAttributedString {
+    NSMutableAttributedString(string: input,
+                              attributes: [.font: NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: NSFont.Weight.regular),
+                                           .foregroundColor: NSColor.textColor])
+}

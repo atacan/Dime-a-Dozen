@@ -17,7 +17,7 @@ struct VaporOutputEditorView: View {
             Text(title)
                 .font(.title2)
                 .frame(maxWidth: .infinity)
-            MacEditorControllerView(text: $text)
+            TextEditor(text: $text)
                 .disableAutocorrection(true)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)

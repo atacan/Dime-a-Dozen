@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/atacan/MacSwiftUI",
       "state" : {
-        "revision" : "70a56e879c940cad2f95598bb041cb02f5f4235e",
-        "version" : "0.0.2"
+        "branch" : "main",
+        "revision" : "921591ccfc0139fdeb26092e3b69a6dc392f2295"
       }
     },
     {
@@ -97,6 +97,15 @@
       "state" : {
         "revision" : "bfb0d43e75a15b6dfac770bf33479e8393884a36",
         "version" : "0.4.1"
+      }
+    },
+    {
+      "identity" : "swift-prelude",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-prelude",
+      "state" : {
+        "branch" : "main",
+        "revision" : "8d26fe5be7ca9b67f735ea1c83f46cfbe3009df9"
       }
     },
     {

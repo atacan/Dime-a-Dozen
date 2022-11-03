@@ -24,7 +24,7 @@ struct CaseConverterView: View {
         VStack(alignment: .center) {
             Text("List of Words")
                 .font(.title2)
-            MacEditorControllerView(text: $inputText)
+            TextEditor(text: $inputText)
                 .disableAutocorrection(true)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
@@ -37,7 +37,7 @@ struct CaseConverterView: View {
         VStack(alignment: .center) {
             Text("Converted")
                 .font(.title2)
-            MacEditorControllerView(text: $outputText)
+            TextEditor(text: $outputText)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
                 .padding(.horizontal)

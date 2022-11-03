@@ -12,13 +12,13 @@ struct InputToOutputView: View {
     @AppStorage("htmlComponentChoice") var htmlComponentChoice: HtmlOutputComponent = .fullHtml
     @AppStorage("formatHtml") var formatHtml: Bool = false
 
-    @State var inputText: String = ""
+    @State var inputText = NSMutableAttributedString(attributedString: standardNSAttributed(""))
 //    @SceneStorage("inputText") var inputText: String = ""
     @State var inputTitle: String = "HTML Input"
     @State var inputFootNote: String = ""
     @State var inputLanguage: String = ""
 
-    @State var outputText: String = ""
+    @State var outputText = NSMutableAttributedString(attributedString: standardNSAttributed(""))
     @State var outputTitle: String = "Swift Output"
     @State var outputFootNote: String = " "
     @State var outputLanguage: String = ""
@@ -75,7 +75,7 @@ struct InputToOutputView: View {
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
         .navigationTitle(toolTitle)
         .onReceive(topMenu.copyOutputCommand) { _ in
-            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: outputText))
+            CopyClient.liveValue.copyToClipboard(outputText)
         }
     }
 }

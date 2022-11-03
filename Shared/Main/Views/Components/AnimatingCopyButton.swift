@@ -7,12 +7,12 @@ import SwiftUI
 
 struct AnimatingCopyButton: View {
     @Binding var copyButtonAnimating: Bool
-    @Binding var outputText: String
+    @Binding var outputText: NSMutableAttributedString
     
     var body: some View {
         Button {
             copyButtonAnimating = true
-            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: outputText))
+            CopyClient.liveValue.copyToClipboard(outputText)
             Task {
                 try await Task.sleep(nanoseconds: 200_000_000)
                 copyButtonAnimating = false

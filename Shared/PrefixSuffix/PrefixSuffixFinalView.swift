@@ -17,9 +17,9 @@ struct PrefixSuffixFinalView: View {
             UserInputPrefixSuffix(vm: vm, prefixReplace: $vm.prefixReplace, prefixReplaceWith: $vm.prefixReplaceWith, prefixAdd: $vm.prefixAdd, suffixReplace: $vm.suffixReplace, suffixReplaceWith: $vm.suffixReplaceWith, suffixAdd: $vm.suffixAdd, trimWhiteSpace: $vm.trimWhiteSpace)
                 .padding()
             HSplitView {
-                MacEditorControllerView(text: $vm.inputText)
+                TextEditor(text: $vm.inputText)
                     .padding()
-                MacEditorControllerView(text: $vm.outputText)
+                TextEditor(text: $vm.outputText)
                     .padding()
                     .overlay(alignment: .topTrailing) {
                         AnimatingCopyButton(copyButtonAnimating: $copyButtonAnimating, outputText: $vm.outputText)

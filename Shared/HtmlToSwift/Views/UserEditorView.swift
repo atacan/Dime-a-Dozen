@@ -7,7 +7,7 @@ import SwiftUI
 import MacSwiftUI
 
 struct UserEditorView: View {
-    @Binding var text: String
+    @Binding var text: NSMutableAttributedString
     @Binding var title: String
     @Binding var footNote: String
     @Binding var language: String
@@ -27,17 +27,10 @@ struct UserEditorView: View {
 
 extension UserEditorView {
     private var myEditor: some View {
-        MacEditorControllerView(text: $text)
+        MacEditorView(text: $text)
             .font(.monospaced(.body)())
             .shadow(radius: 2)
             .padding(.horizontal)
     }
 }
 
-struct InputView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserEditorView(text: .constant("type or paste HTML code"), title: .constant("HTML Input"), footNote: .constant("Enclose the whole code inside one tag"), language: .constant("html"))
-            .preferredColorScheme(.light)
-            .previewLayout(.sizeThatFits)
-    }
-}

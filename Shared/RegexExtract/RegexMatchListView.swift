@@ -21,7 +21,7 @@ struct RegexMatchListView: View {
         VStack(alignment: .center) {
             Text("Input Text")
                 .font(.title2)
-            MacEditorControllerView(text: $regexVM.inputText)
+            TextEditor(text: $regexVM.inputText)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
                 .padding(.horizontal)
@@ -33,7 +33,7 @@ struct RegexMatchListView: View {
         VStack(alignment: .center) {
             Text("Regex Matches")
                 .font(.title2)
-            MacEditorControllerView(text: $regexVM.outputText)
+            TextEditor(text: $regexVM.outputText)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
                 .padding(.horizontal)

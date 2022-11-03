@@ -5,6 +5,7 @@
 import HtmlSwift
 import SwiftSoup
 import SwiftUI
+//import Prelude
 
 let toolHtmlToSwift = Tool(sidebarName: "Html to Swift", navigationTitle: "Html to Swift DSL Converter")
 
@@ -23,6 +24,10 @@ class HtmlToSwift {
         } catch {
             return error.localizedDescription
         }
+    }
+    
+    func convert(html input: NSMutableAttributedString, library: SwiftDSL, htmlComponent: HtmlOutputComponent = .fullHtml) -> NSMutableAttributedString {
+        convert(html: input.string, library: library) |> standardNSAttributed
     }
     
     func pretty(html: String, htmlComponent: HtmlOutputComponent = .fullHtml) -> String {
@@ -46,6 +51,10 @@ class HtmlToSwift {
         } catch {
             return html
         }
+    }
+    
+    func pretty(html: NSMutableAttributedString, htmlComponent: HtmlOutputComponent = .fullHtml) -> NSMutableAttributedString {
+        pretty(html: html.string, htmlComponent: htmlComponent) |> standardNSAttributed
     }
 }
 
