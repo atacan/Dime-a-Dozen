@@ -6,6 +6,7 @@
 //
 
 import MacSwiftUI
+import Prelude
 import SwiftUI
 
 let toolCaseConverter = Tool(sidebarName: "Case Converter", navigationTitle: "Convert Word Case")
@@ -13,8 +14,8 @@ let toolCaseConverter = Tool(sidebarName: "Case Converter", navigationTitle: "Co
 struct CaseConverterView: View {
     var caseConversionVM = CaseConversionViewModel()
     @Binding var selectedTool: Tool?
-    @State var inputText: String = ""
-    @State var outputText: String = ""
+    @State var inputText = NSMutableAttributedString()
+    @State var outputText = NSMutableAttributedString()
     @State private var inputCase: WordGroupCase = .kebab
     @State private var outputCase: WordGroupCase = .camel
     @State private var seperator: WordGroupSeperator = .newLine
@@ -24,7 +25,7 @@ struct CaseConverterView: View {
         VStack(alignment: .center) {
             Text("List of Words")
                 .font(.title2)
-            TextEditor(text: $inputText)
+            MacEditorView(text: $inputText)
                 .disableAutocorrection(true)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
@@ -37,7 +38,7 @@ struct CaseConverterView: View {
         VStack(alignment: .center) {
             Text("Converted")
                 .font(.title2)
-            TextEditor(text: $outputText)
+            MacEditorView(text: $outputText, isRichText: false)
                 .font(.monospaced(.body)())
                 .shadow(radius: 2)
                 .padding(.horizontal)
@@ -82,7 +83,7 @@ struct CaseConverterView: View {
             .frame(maxWidth: 250)
 
             Button {
-                outputText = caseConversionVM.convert(inputText: inputText, from: inputCase, to: outputCase)
+                outputText = caseConversionVM.convert(inputText: inputText.string, from: inputCase, to: outputCase) |> standardNSAttributed
             } label: {
                 Text("Convert")
             } // <-Button
@@ -97,7 +98,7 @@ struct CaseConverterView: View {
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
         .navigationTitle(toolCaseConverter.navigationTitle)
         .onReceive(topMenu.copyOutputCommand) { _ in
-            CopyClient.liveValue.copyToClipboard(NSAttributedString(string: outputText))
+            CopyClient.liveValue.copyToClipboard(outputText)
         }
     }
 

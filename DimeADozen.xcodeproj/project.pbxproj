@@ -315,8 +315,8 @@
 				5A451E83284BF1EB0093BFE0 /* CaseConverter */,
 				7998D5042843B00B00578C5A /* FileSearch */,
 				5AEB6A51284B493000541959 /* RegexExtract */,
-				7938ED372901C23100986003 /* JsonPretty */,
 				5A3459BD28677C1800C7A351 /* PrefixSuffix */,
+				7938ED372901C23100986003 /* JsonPretty */,
 				79C12BD628423EF000F19A86 /* Assets.xcassets */,
 			);
 			path = Shared;

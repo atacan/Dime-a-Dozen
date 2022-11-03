@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Prelude
 
 extension String {
     func parts(like pattern: String) -> [String]? {
@@ -23,12 +24,18 @@ extension String {
 }
 
 class RegexViewModel: ObservableObject {
-    @Published var inputText: String = ""
-    @Published var outputText: String = ""
+    @Published var input = NSMutableAttributedString()
+    var inputText: String {
+        input.string
+    }
+    @Published var output = NSMutableAttributedString()
+    var outputText: String{
+        output.string
+    }
 
     func regexMatches(of pattern: String) {
         if let matches = inputText.parts(like: pattern) {
-            outputText = matches.joined(separator: "\n")
+            output = matches.joined(separator: "\n") |> standardNSAttributed
         }
     }
 }

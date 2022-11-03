@@ -10,8 +10,8 @@ let jsonPrettifyTool = Tool(sidebarName: "Json Pretty", navigationTitle: "Format
 
 struct JsonPrettifier: ReducerProtocol {
     struct State: Equatable {
-        @BindableState var input: String = ""
-        @BindableState var output: NSAttributedString = .init()
+        @BindableState var input = NSMutableAttributedString()
+        @BindableState var output: NSMutableAttributedString = .init()
         var copyButtonAnimating = false
     }
 
@@ -34,10 +34,10 @@ struct JsonPrettifier: ReducerProtocol {
             case .convertRequested:
 
                 return .task { [input = state.input] in
-                    await .convertResponse(TaskResult { try await self.jsonClient.convert(input) })
+                    await .convertResponse(TaskResult { try await self.jsonClient.convert(input.string) })
                 }
             case let .convertResponse(.success(pretty)):
-                state.output = pretty
+                state.output = NSMutableAttributedString(attributedString: pretty)
                 return .none
             case let .convertResponse(.failure(error)):
 //                let textColor = NSColor.labelColor
@@ -45,7 +45,7 @@ struct JsonPrettifier: ReducerProtocol {
                 let attributes = [NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.font: NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: NSFont.Weight.regular)]
                 let attributedString = NSAttributedString(string: error.localizedDescription, attributes: attributes)
 
-                state.output = attributedString
+                state.output = NSMutableAttributedString(attributedString: attributedString)
                 return .none
             case .copyToClipboard:
                 state.copyButtonAnimating = true
@@ -74,7 +74,7 @@ struct JsonPrettyView: View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             VSplitView {
                 VStack {
-                    TextEditor(text: viewStore.binding(\.$input))
+                    MacEditorView(text: viewStore.binding(\.$input))
                         .shadow(radius: 2)
                         .padding()
                     Button("Prettify") {
@@ -87,7 +87,8 @@ struct JsonPrettyView: View {
                 ZStack(alignment: .topLeading) {
                     Rectangle()
                         .foregroundColor(Color(NSColor.textBackgroundColor))
-                    TextWithAttributedString(attributedString: viewStore.output)
+//                    TextWithAttributedString(attributedString: viewStore.output)
+                    MacEditorView(text: viewStore.binding(\.$output))
                         .padding()
 
 //                        Text(AttributedString(viewStore.output))

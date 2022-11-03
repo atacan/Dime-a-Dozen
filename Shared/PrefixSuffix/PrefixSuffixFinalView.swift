@@ -17,12 +17,12 @@ struct PrefixSuffixFinalView: View {
             UserInputPrefixSuffix(vm: vm, prefixReplace: $vm.prefixReplace, prefixReplaceWith: $vm.prefixReplaceWith, prefixAdd: $vm.prefixAdd, suffixReplace: $vm.suffixReplace, suffixReplaceWith: $vm.suffixReplaceWith, suffixAdd: $vm.suffixAdd, trimWhiteSpace: $vm.trimWhiteSpace)
                 .padding()
             HSplitView {
-                TextEditor(text: $vm.inputText)
+                MacEditorView(text: $vm.input)
                     .padding()
-                TextEditor(text: $vm.outputText)
+                MacEditorView(text: $vm.output)
                     .padding()
                     .overlay(alignment: .topTrailing) {
-                        AnimatingCopyButton(copyButtonAnimating: $copyButtonAnimating, outputText: $vm.outputText)
+                        AnimatingCopyButton(copyButtonAnimating: $copyButtonAnimating, outputText: $vm.output)
                             .padding(.trailing, 22).padding(.top, 22)
                     }
             } // <-HSplitView

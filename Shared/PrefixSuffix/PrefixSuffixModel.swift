@@ -2,13 +2,15 @@
 // https://github.com/atacan
 // 25.06.22
 
+import Cocoa
 import Combine
+import Prelude
 
 private extension String {
     mutating func append(prefix: String) {
         self = prefix + self
     }
-    
+
     func leadingWhiteSpace() -> Substring {
         let regexLeadingWhiteSpace = #"^\s*"#
         if let leadingWhiteRange = range(of: regexLeadingWhiteSpace, options: .regularExpression) {
@@ -16,7 +18,7 @@ private extension String {
         }
         return ""
     }
-    
+
     func trailingWhiteSpace() -> Substring {
         let regexTrailingWhiteSpace = #"\s*$"#
         if let trailingWhiteRange = range(of: regexTrailingWhiteSpace, options: .regularExpression) {
@@ -27,8 +29,16 @@ private extension String {
 }
 
 class PrefixSuffixModel: ObservableObject {
-    @Published var inputText = ""
-    @Published var outputText = ""
+    @Published var input = NSMutableAttributedString()
+    var inputText: String {
+        input.string
+    }
+
+    @Published var output = NSMutableAttributedString()
+    var outputText: String {
+        output.string
+    }
+
     @Published var prefixReplace = ""
     @Published var prefixReplaceWith = ""
     @Published var prefixAdd = ""
@@ -45,9 +55,9 @@ class PrefixSuffixModel: ObservableObject {
     func convertEach(input: String) -> String {
         let leadingWhite = input.leadingWhiteSpace()
         let trailingWhite = input.trailingWhiteSpace()
-        
+
         var output = input.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+
         if output.hasPrefix(prefixReplace) {
             output = String(output.dropFirst(prefixReplace.count))
             output.append(prefix: prefixReplaceWith)
@@ -62,7 +72,7 @@ class PrefixSuffixModel: ObservableObject {
         if !suffixAdd.isEmpty {
             output.append(suffixAdd)
         }
-        
+
         if !trimWhiteSpace {
             return leadingWhite + output + trailingWhite
         } else {
@@ -72,9 +82,8 @@ class PrefixSuffixModel: ObservableObject {
 
     func convert() {
         let inputs = split()
-        outputText = ""
-        inputs.forEach { input in
-            outputText.append(convertEach(input: input) + "\n")
-        }
+        output = inputs.map(convertEach)
+            .joined(separator: "\n")
+            |> standardNSAttributed
     }
 }

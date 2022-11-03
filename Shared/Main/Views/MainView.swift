@@ -9,7 +9,7 @@ struct MainView: View {
         NavigationView {
             MainSidebarView()
                 .toolbar {
-                    ToolbarItem(placement: .status) {
+                    ToolbarItem(placement: .automatic) {
                         ToggleSidebarButton()
                     }
                 }
