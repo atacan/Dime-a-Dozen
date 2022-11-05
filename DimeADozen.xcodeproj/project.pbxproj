@@ -104,6 +104,9 @@
 		79C12BFC2842403800F19A86 /* UserEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C12BF728423F8000F19A86 /* UserEditorView.swift */; };
 		79C8EBF02842D80200CBD622 /* ToggleSidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */; };
 		79C8EBF12842D80200CBD622 /* ToggleSidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */; };
+		79E52FDD2916729C00758E82 /* HighlightSwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 79E52FDC2916729C00758E82 /* HighlightSwiftSyntax */; };
+		79E52FDF291673BD00758E82 /* SwiftHighlightClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E52FDE291673BD00758E82 /* SwiftHighlightClient.swift */; };
+		79E52FE0291673BD00758E82 /* SwiftHighlightClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E52FDE291673BD00758E82 /* SwiftHighlightClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,6 +162,7 @@
 		79C12BE328423EF000F19A86 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		79C12BF728423F8000F19A86 /* UserEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditorView.swift; sourceTree = "<group>"; };
 		79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSidebarButton.swift; sourceTree = "<group>"; };
+		79E52FDE291673BD00758E82 /* SwiftHighlightClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHighlightClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E52FDD2916729C00758E82 /* HighlightSwiftSyntax in Frameworks */,
 				79A33B50291456F4002DB115 /* Prelude in Frameworks */,
 				7938ED3E2901C28D00986003 /* Dependencies in Frameworks */,
 				793E3DCF288C799A008B6AA3 /* MacSwiftUI in Frameworks */,
@@ -306,7 +311,6 @@
 		79C12BD328423EEF00F19A86 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				7998D5122843B5B700578C5A /* PreviewData.swift */,
 				79C12BD528423EEF00F19A86 /* ContentView.swift */,
 				79C12BD428423EEF00F19A86 /* DimeADozenApp.swift */,
 				79C12BF528423F6500F19A86 /* Main */,
@@ -360,10 +364,12 @@
 		79C12BF528423F6500F19A86 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7998D5122843B5B700578C5A /* PreviewData.swift */,
 				79933CC428426C0E0007174B /* Tool.swift */,
 				5A77356D2854C1DC00614E2E /* Extensions.swift */,
 				7998D5052843B03400578C5A /* ShellCommand.swift */,
 				79C12BF628423F6C00F19A86 /* Views */,
+				79E52FDE291673BD00758E82 /* SwiftHighlightClient.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 				7938ED3B2901C28D00986003 /* ComposableArchitecture */,
 				7938ED3D2901C28D00986003 /* Dependencies */,
 				79A33B4F291456F4002DB115 /* Prelude */,
+				79E52FDC2916729C00758E82 /* HighlightSwiftSyntax */,
 			);
 			productName = "DimeADozen (macOS)";
 			productReference = 79C12BE128423EF000F19A86 /* DimeADozen.app */;
@@ -467,6 +474,7 @@
 				7938ED342901C22C00986003 /* XCRemoteSwiftPackageReference "Highlight" */,
 				7938ED3A2901C28D00986003 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				79A33B4E291456F4002DB115 /* XCRemoteSwiftPackageReference "swift-prelude" */,
+				79E52FDB2916729C00758E82 /* XCRemoteSwiftPackageReference "HighlightSwiftSyntax" */,
 			);
 			productRefGroup = 79C12BDC28423EF000F19A86 /* Products */;
 			projectDirPath = "";
@@ -532,6 +540,7 @@
 				79933CB3284258D10007174B /* InputToOutputView.swift in Sources */,
 				79B886542870F13F008AF9EC /* MacProgressSpinner.swift in Sources */,
 				5A77356E2854C1DC00614E2E /* Extensions.swift in Sources */,
+				79E52FDF291673BD00758E82 /* SwiftHighlightClient.swift in Sources */,
 				5A3459C128677D2D00C7A351 /* PrefixSuffixFinalView.swift in Sources */,
 				5A77356B2854BDD600614E2E /* VaporOutputEditorView.swift in Sources */,
 				79C12BE628423EF000F19A86 /* ContentView.swift in Sources */,
@@ -570,6 +579,7 @@
 				5AFD0D702868930000AC5652 /* PopOver.swift in Sources */,
 				5AEB6A59284B4D3C00541959 /* PatternInputView.swift in Sources */,
 				7998D5142843B5ED00578C5A /* PreviewData.swift in Sources */,
+				79E52FE0291673BD00758E82 /* SwiftHighlightClient.swift in Sources */,
 				5A451E89284BFB410093BFE0 /* CaseConverterView.swift in Sources */,
 				5A77357C28550D4C00614E2E /* VaporModel.swift in Sources */,
 				5A7735762855067B00614E2E /* FieldPropertyWrapperView.swift in Sources */,
@@ -899,6 +909,14 @@
 				kind = branch;
 			};
 		};
+		79E52FDB2916729C00758E82 /* XCRemoteSwiftPackageReference "HighlightSwiftSyntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/atacan/HighlightSwiftSyntax";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -931,6 +949,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 79A33B4E291456F4002DB115 /* XCRemoteSwiftPackageReference "swift-prelude" */;
 			productName = Prelude;
+		};
+		79E52FDC2916729C00758E82 /* HighlightSwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E52FDB2916729C00758E82 /* XCRemoteSwiftPackageReference "HighlightSwiftSyntax" */;
+			productName = HighlightSwiftSyntax;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

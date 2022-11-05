@@ -5,12 +5,14 @@
 import HtmlSwift
 import SwiftSoup
 import SwiftUI
+import Dependencies
 //import Prelude
 
 let toolHtmlToSwift = Tool(sidebarName: "Html to Swift", navigationTitle: "Html to Swift DSL Converter")
 
 class HtmlToSwift {
     static let shared = HtmlToSwift()
+    @Dependency(\.swiftHighlightClient) var swiftHighlightClient
 
     func convert(html input: String, library: SwiftDSL, htmlComponent: HtmlOutputComponent = .fullHtml) -> String {
         do {
@@ -27,7 +29,12 @@ class HtmlToSwift {
     }
     
     func convert(html input: NSMutableAttributedString, library: SwiftDSL, htmlComponent: HtmlOutputComponent = .fullHtml) -> NSMutableAttributedString {
-        convert(html: input.string, library: library) |> standardNSAttributed
+//        convert(html: input.string, library: library) |> swiftHighlightClient.convert >>> NSMutableAttributedString.init(attributedString:)
+        do {
+            return try NSMutableAttributedString.init(attributedString: convert(html: input.string, library: library) |> swiftHighlightClient.convert)
+        } catch {
+            return error.localizedDescription |> standardNSAttributed(_:)
+        }
     }
     
     func pretty(html: String, htmlComponent: HtmlOutputComponent = .fullHtml) -> String {

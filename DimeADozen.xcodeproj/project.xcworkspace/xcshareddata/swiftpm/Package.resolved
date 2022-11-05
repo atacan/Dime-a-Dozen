@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "binarybirds-swift-css",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/atacan/BinaryBirds-swift-css",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "985ff75c77857fd68d317d730280eddbf0d392ff"
+      }
+    },
+    {
       "identity" : "binarybirds-swift-html",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/atacan/BinaryBirds-swift-html",
       "state" : {
-        "revision" : "e07678a77d296e66fa891a9d4d08acc4471d1783",
-        "version" : "1.6.11"
+        "branch" : "main",
+        "revision" : "1fd007c23f0d6e47763e7f3c6b64488b1ac91459"
       }
     },
     {
@@ -25,6 +34,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "8e0908cb4b88f629fd8041b361f081ec8486c056"
+      }
+    },
+    {
+      "identity" : "highlightswiftsyntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/atacan/HighlightSwiftSyntax",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d512eddf83a397669ce80044a4b760e13d9770a3"
       }
     },
     {
@@ -115,6 +133,15 @@
       "state" : {
         "revision" : "f8a9c997c3c1dab4e216a8ec9014e23144cbab37",
         "version" : "1.9.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "72d3da66b085c2299dd287c2be3b92b5ebd226de",
+        "version" : "0.50700.1"
       }
     },
     {

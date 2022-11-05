@@ -3,6 +3,8 @@
 //
 
 import Combine
+import Dependencies
+import Prelude
 import SwiftUI
 
 extension String {
@@ -24,9 +26,14 @@ class FileSearch: ObservableObject {
     @Published var pickedPath = ""
     @Published var foundFiles: [FileModel] = []
     @Published var selectedFile: FileModel? = nil // .init(name: "")
-    @Published var selectedFileContent: String = ""
+//    @Published var selectedFileContent: String = ""
+    @Published var selectedFileContent: AttributedString = ""
     @Published var isSearching = false
+    @Published var contentBackgroundColor = Color(nsColor: .textBackgroundColor)
     var cancellables: Set<AnyCancellable> = []
+
+    @Dependency(\.swiftHighlightClient) var swiftHighlightClient
+    @Dependency(\.jsonClient) var jsonClient
 
     init() {
         makePublishers()
@@ -72,19 +79,30 @@ class FileSearch: ObservableObject {
             return [FileModel(path: error.localizedDescription)]
         }
     }
-    
+
     @MainActor
     func readFile(contentsOfFile url: URL) async {
         do {
             selectedFileContent = ""
             for try await line in url.lines {
-                selectedFileContent.append(line + "\n")
+//                selectedFileContent.append(line + "\n")
+                selectedFileContent.append(AttributedString(stringLiteral: line + "\n"))
+            }
+            switch selectedFile?.url.pathExtension {
+            case "swift":
+                let text = (selectedFileContent |> String.init).removingSuffix("{\n}")
+                selectedFileContent = try AttributedString(swiftHighlightClient.convert(text))
+            case "json", "resolved":
+                let text = (selectedFileContent |> String.init).removingSuffix("{\n}")
+                selectedFileContent = try await AttributedString(jsonClient.convert(text))
+            default:
+                break
             }
         } catch {
-            selectedFileContent = error.localizedDescription
+            selectedFileContent = AttributedString(stringLiteral: error.localizedDescription)
         }
     }
-    
+
     func readFile(contentsOfFile path: String) -> String {
         do {
             let content = try String(contentsOfFile: path)
@@ -97,15 +115,15 @@ class FileSearch: ObservableObject {
     func makePublishers() {
         $selectedFile
 //            .receive(on: RunLoop.main)
-            .asyncMap { file in
-                if let fileUnwrap = file {
-                    await self.readFile(contentsOfFile: fileUnwrap.url)
+                .asyncMap { file in
+                    if let fileUnwrap = file {
+                        await self.readFile(contentsOfFile: fileUnwrap.url)
+                    }
                 }
-            }
-            .sink(receiveValue: { output in
-                //
-            })
-            .store(in: &cancellables)
+                .sink(receiveValue: { _ in
+                    //
+                })
+                .store(in: &cancellables)
 
         $pickedPath
             .asyncMap { selectedPath -> [FileModel] in

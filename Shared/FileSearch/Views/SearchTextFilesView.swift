@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-let searchTextFilesTool = Tool(sidebarName: "Search File Content", navigationTitle: "Find Files that Contain a Text")
+let toolSearchTextFiles = Tool(sidebarName: "Search File Content", navigationTitle: "Find Files that Contain a Text")
 
 struct SearchTextFilesView: View {
     @Binding var selectedTool: Tool?
@@ -20,12 +20,12 @@ struct SearchTextFilesView: View {
                 FileContentView(fileSearchModel: fileSearchModel)
             } // <-VSplitView
         } // <-VStack
-        .navigationTitle(searchTextFilesTool.navigationTitle)
+        .navigationTitle(toolSearchTextFiles.navigationTitle)
     }
 
     var body: some View {
-        NavigationLink(destination: myView, tag: searchTextFilesTool, selection: $selectedTool) {
-            Text(searchTextFilesTool.sidebarName)
+        NavigationLink(destination: myView, tag: toolSearchTextFiles, selection: $selectedTool) {
+            Text(toolSearchTextFiles.sidebarName)
         } // <-NavigationLink
     }
 }

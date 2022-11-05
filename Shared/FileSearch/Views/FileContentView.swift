@@ -11,13 +11,14 @@ struct FileContentView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ZStack(alignment: .leading) {
                 Rectangle()
-                    .foregroundColor(Color(NSColor.textBackgroundColor))
+                    .foregroundColor(fileSearchModel.contentBackgroundColor)
                 Text(fileSearchModel.selectedFileContent)
                     .font(.monospaced(.body)())
                     .textSelection(.enabled)
                     .padding(.leading)
             } // <-ZStack
         } // <-ScrollView
+        .colorScheme(.dark)
         .overlay(alignment: .topTrailing) {
             if let selectedFile = fileSearchModel.selectedFile {
                 Button {

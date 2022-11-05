@@ -24,3 +24,17 @@ func standardNSAttributed(_ input: String) -> NSMutableAttributedString {
                               attributes: [.font: NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: NSFont.Weight.regular),
                                            .foregroundColor: NSColor.textColor])
 }
+
+extension String {
+    func deletingPrefix(_ prefix: String) -> String {
+        guard self.hasPrefix(prefix) else { return self }
+        return String(self.dropFirst(prefix.count))
+    }
+}
+
+extension String {
+    func deletingSuffix(_ suffix: String) -> String {
+        guard self.hasSuffix(suffix) else { return self }
+        return String(self.dropFirst(suffix.count))
+    }
+}
