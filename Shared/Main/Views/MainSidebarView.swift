@@ -6,7 +6,7 @@ import SwiftUI
 
 struct MainSidebarView: View {
     #if DEBUG
-        @State private var selectedTool: Tool? = toolSearchTextFiles
+        @State private var selectedTool: Tool? = swiftPrettifyTool
     #else
         @State private var selectedTool: Tool?
     #endif
@@ -22,6 +22,9 @@ struct MainSidebarView: View {
                 RegexMatchListView(selectedTool: $selectedTool)
                 CaseConverterView(selectedTool: $selectedTool)
                 PrefixSuffixFinalView(selectedTool: $selectedTool)
+            }
+            Section(header: Text("Pretty")) {
+                SwiftPrettyView(selectedTool: $selectedTool, store: swiftStore)
                 JsonPrettyView(selectedTool: $selectedTool, store: jsonStore)
             }
             Section(header: Text("Files")) {

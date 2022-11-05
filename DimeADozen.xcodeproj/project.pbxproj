@@ -107,6 +107,10 @@
 		79E52FDD2916729C00758E82 /* HighlightSwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 79E52FDC2916729C00758E82 /* HighlightSwiftSyntax */; };
 		79E52FDF291673BD00758E82 /* SwiftHighlightClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E52FDE291673BD00758E82 /* SwiftHighlightClient.swift */; };
 		79E52FE0291673BD00758E82 /* SwiftHighlightClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E52FDE291673BD00758E82 /* SwiftHighlightClient.swift */; };
+		79E52FE429168C8400758E82 /* SwiftPrettyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E52FE229168C7600758E82 /* SwiftPrettyView.swift */; };
+		79E52FE729168E2C00758E82 /* SwiftHighlightAsyncClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E52FE529168D9900758E82 /* SwiftHighlightAsyncClient.swift */; };
+		79E52FEB29169C1000758E82 /* StringImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E52FEA29169C1000758E82 /* StringImageClient.swift */; };
+		79E52FED2916AE7800758E82 /* WindowClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E52FEC2916AE7800758E82 /* WindowClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +167,10 @@
 		79C12BF728423F8000F19A86 /* UserEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditorView.swift; sourceTree = "<group>"; };
 		79C8EBEF2842D80200CBD622 /* ToggleSidebarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSidebarButton.swift; sourceTree = "<group>"; };
 		79E52FDE291673BD00758E82 /* SwiftHighlightClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHighlightClient.swift; sourceTree = "<group>"; };
+		79E52FE229168C7600758E82 /* SwiftPrettyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPrettyView.swift; sourceTree = "<group>"; };
+		79E52FE529168D9900758E82 /* SwiftHighlightAsyncClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHighlightAsyncClient.swift; sourceTree = "<group>"; };
+		79E52FEA29169C1000758E82 /* StringImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringImageClient.swift; sourceTree = "<group>"; };
+		79E52FEC2916AE7800758E82 /* WindowClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +328,7 @@
 				7998D5042843B00B00578C5A /* FileSearch */,
 				5AEB6A51284B493000541959 /* RegexExtract */,
 				5A3459BD28677C1800C7A351 /* PrefixSuffix */,
+				79E52FE129168C5300758E82 /* SwiftPretty */,
 				7938ED372901C23100986003 /* JsonPretty */,
 				79C12BD628423EF000F19A86 /* Assets.xcassets */,
 			);
@@ -384,6 +393,17 @@
 				79933CD2284283F10007174B /* ComingSoonView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		79E52FE129168C5300758E82 /* SwiftPretty */ = {
+			isa = PBXGroup;
+			children = (
+				79E52FE229168C7600758E82 /* SwiftPrettyView.swift */,
+				79E52FE529168D9900758E82 /* SwiftHighlightAsyncClient.swift */,
+				79E52FEA29169C1000758E82 /* StringImageClient.swift */,
+				79E52FEC2916AE7800758E82 /* WindowClient.swift */,
+			);
+			path = SwiftPretty;
 			sourceTree = "<group>";
 		};
 		79F0D1DC2842519E005F121A /* Frameworks */ = {
@@ -565,6 +585,7 @@
 				79933CC3284268B40007174B /* MainSidebarView.swift in Sources */,
 				79C8EBF12842D80200CBD622 /* ToggleSidebarButton.swift in Sources */,
 				5A1C59FF285495BF00A0595D /* FormVaporPropertyView.swift in Sources */,
+				79E52FE429168C8400758E82 /* SwiftPrettyView.swift in Sources */,
 				5A3459C6286780D700C7A351 /* PrefixSuffixModel.swift in Sources */,
 				79C12BE728423EF000F19A86 /* ContentView.swift in Sources */,
 				7938ED422901C35300986003 /* JsonClient.swift in Sources */,
@@ -595,11 +616,14 @@
 				7998D5112843B52500578C5A /* FoundFilesView.swift in Sources */,
 				5A77356F2854C1DC00614E2E /* Extensions.swift in Sources */,
 				5A77356C2854BDD600614E2E /* VaporOutputEditorView.swift in Sources */,
+				79E52FEB29169C1000758E82 /* StringImageClient.swift in Sources */,
 				7998D50A2843B10700578C5A /* SearchTextFilesView.swift in Sources */,
 				79C12BE528423EF000F19A86 /* DimeADozenApp.swift in Sources */,
 				7998D51C2843C31300578C5A /* FileContentView.swift in Sources */,
 				5A773582285556EA00614E2E /* LazyTextField.swift in Sources */,
 				5A1C5A022854971D00A0595D /* VaporCodeFinalView.swift in Sources */,
+				79E52FED2916AE7800758E82 /* WindowClient.swift in Sources */,
+				79E52FE729168E2C00758E82 /* SwiftHighlightAsyncClient.swift in Sources */,
 				5A7735792855071F00614E2E /* FieldTimestampTriggerView.swift in Sources */,
 				7998D50B2843B11000578C5A /* ShellCommand.swift in Sources */,
 				5A3256AF284CBBD200567EA8 /* TextStyleImplement.swift in Sources */,

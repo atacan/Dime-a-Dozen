@@ -70,6 +70,8 @@ struct InputToOutputView: View {
                         AnimatingCopyButton(copyButtonAnimating: $copyButtonAnimating, outputText: $outputText)
                             .padding(.trailing, 22).padding(.top, 38)
                     }
+//                    .colorScheme(.dark)
+//                    .preferredColorScheme(.dark)
             } // <-HSplitView
         } // <-VStack
         .frame(minWidth: 200, idealWidth: 400, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)

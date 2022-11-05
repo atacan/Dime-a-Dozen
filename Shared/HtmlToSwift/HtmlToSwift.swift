@@ -29,12 +29,15 @@ class HtmlToSwift {
     }
     
     func convert(html input: NSMutableAttributedString, library: SwiftDSL, htmlComponent: HtmlOutputComponent = .fullHtml) -> NSMutableAttributedString {
-//        convert(html: input.string, library: library) |> swiftHighlightClient.convert >>> NSMutableAttributedString.init(attributedString:)
-        do {
-            return try NSMutableAttributedString.init(attributedString: convert(html: input.string, library: library) |> swiftHighlightClient.convert)
-        } catch {
-            return error.localizedDescription |> standardNSAttributed(_:)
-        }
+        return convert(html: input.string, library: library) |> standardNSAttributed
+        // highlight takes too much time
+//        do {
+//            let swiftCode = convert(html: input.string, library: library)
+//            print("swiftCode done \(Date())")
+//            return try NSMutableAttributedString.init(attributedString: swiftCode |> swiftHighlightClient.convert)
+//        } catch {
+//            return error.localizedDescription |> standardNSAttributed(_:)
+//        }
     }
     
     func pretty(html: String, htmlComponent: HtmlOutputComponent = .fullHtml) -> String {

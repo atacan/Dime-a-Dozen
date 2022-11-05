@@ -38,7 +38,7 @@ extension DependencyValues {
 extension SwiftHighlightClient: DependencyKey {
     static let liveValue = Self(
         convert: { input in
-            try SwiftHighlighter.init(inputCode: input).highlight()
+            try SwiftHighlighter(inputCode: input).highlight()
         }
     )
 
