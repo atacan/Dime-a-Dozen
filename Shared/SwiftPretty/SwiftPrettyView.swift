@@ -23,7 +23,7 @@ struct SwiftPretty
     enum Action: Equatable, BindableAction {
         case binding(BindingAction<State>)
         case convertRequested
-        case convertResponse(TaskResult<NSAttributedString>)
+        case convertResponse(TaskResult<SwiftOutput>)
         case copyToClipboard
         case saveAsImage
         case copyButtonAnimationCompleted
@@ -56,7 +56,8 @@ struct SwiftPretty
                 .cancellable(id: SwiftHighlightRequestID.self)
             case let .convertResponse(.success(pretty)):
                 state.isSwiftRequestInFlight = false
-                state.output = NSMutableAttributedString(attributedString: pretty)
+                state.output = NSMutableAttributedString(attributedString: pretty.attributed)
+                state.htmlOutput = pretty.html
                 return .none
             case let .convertResponse(.failure(error)):
                 state.isSwiftRequestInFlight = false
@@ -85,7 +86,7 @@ struct SwiftPretty
                 state.saveButtonAnimating = false
                 return .none
             case .htmlView:
-                windowClient.show(HtmlView(text: state.htmlOutput), state.htmlOutput.components(separatedBy: "\n").count)
+                windowClient.show(HtmlView(text: state.htmlOutput))
                 return .none
             }
         }

@@ -8,9 +8,16 @@ import Highlight
 import HighlightSwiftSyntax
 import SwiftFormat
 import XCTestDynamicOverlay
+import SwiftHtml
+import Prelude
 
 struct SwiftHighlightAsyncClient {
-    var convert: @Sendable (String) async throws -> NSAttributedString
+    var convert: @Sendable (String) async throws -> SwiftOutput
+}
+
+struct SwiftOutput: Equatable {
+    let attributed: NSAttributedString
+    let html: String
 }
 
 extension DependencyValues {
@@ -32,8 +39,12 @@ extension SwiftHighlightAsyncClient: DependencyKey {
                                                             wrapCollections: .beforeFirst
                                                         ),
                                                         lineRange: nil)
-                    let highlighted = try SwiftHighlighter(inputCode: pretty).highlight()
-                    return continuation.resume(returning: highlighted)
+                    let highlighter = SwiftHighlighter(inputCode: pretty)
+                    let highlighted = try highlighter.highlight()
+                    let style = highlighter.styleContent()
+                    let body = try highlighter.html()
+                    let html = html(style: style, body: body)
+                    return continuation.resume(returning: SwiftOutput(attributed: highlighted, html: html))
                 } catch {
                     return continuation.resume(throwing: error)
                 }
@@ -44,4 +55,21 @@ extension SwiftHighlightAsyncClient: DependencyKey {
     static let testValue = Self(
         convert: unimplemented("\(Self.self).convert")
     )
+}
+
+func html(style: String, body: String) -> String {
+    Html {
+        Head {
+            Style(style)
+        }
+        Body {
+            Text(body)
+        }
+    }
+    |> render
+}
+
+private func render(_ tag: Tag) -> String {
+    let doc = Document(.unspecified) { tag }
+    return DocumentRenderer(minify: true, indent: 2).render(doc)
 }

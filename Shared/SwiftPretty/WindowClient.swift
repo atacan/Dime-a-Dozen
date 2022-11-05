@@ -12,7 +12,7 @@ import UniformTypeIdentifiers
 import XCTestDynamicOverlay
 
 struct WindowClient {
-    var show: (any View, Int) -> Void
+    var show: (any View) -> Void
 }
 
 extension DependencyValues {
@@ -24,16 +24,19 @@ extension DependencyValues {
 
 extension WindowClient: DependencyKey {
     static let liveValue = Self(
-        show: { view, height in
+        show: { view in
+            let height = 450.0
+            let width = height * 1.618
             let window = NSWindow(
-                contentRect: NSRect(x: 20, y: 20, width: 680, height: 35 * height),
+                contentRect: NSRect(x: 20, y: 20, width: width, height: height),
                 styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
                 backing: .buffered,
                 defer: false
             )
             window.center()
             window.isReleasedWhenClosed = false
-            window.title = String(describing: view.self)
+            window.title = "Html Output"
+            window.backgroundColor = .textBackgroundColor
             window.makeKeyAndOrderFront(nil)
             window.contentView = NSHostingView(rootView: AnyView(view))
         }
