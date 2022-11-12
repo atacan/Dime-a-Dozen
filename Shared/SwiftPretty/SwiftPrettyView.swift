@@ -179,6 +179,7 @@ struct SwiftPrettyView: View {
                 viewStore.send(.copyToClipboard)
             }
         }
+        .navigationTitle(swiftPrettifyTool.navigationTitle)
     }
 
     var body: some View {

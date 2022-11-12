@@ -6,7 +6,7 @@ import ComposableArchitecture
 import MacSwiftUI
 import SwiftUI
 
-let jsonPrettifyTool = Tool(sidebarName: "Json Pretty", navigationTitle: "Format and highlight json")
+let jsonPrettifyTool = Tool(sidebarName: "Json Pretty", navigationTitle: "Format and highlight JSON")
 
 struct JsonPrettifier: ReducerProtocol {
     struct State: Equatable {
@@ -111,6 +111,7 @@ struct JsonPrettyView: View {
                 viewStore.send(.copyToClipboard)
             }
         }
+        .navigationTitle(jsonPrettifyTool.navigationTitle)
     }
 
     var body: some View {

@@ -85,8 +85,8 @@ func saveImage(_ image: CGImage) {
         if result.rawValue == NSApplication.ModalResponse.OK.rawValue,
            let selectedUrl = openPanel.url
         {
-//            let imageUrl = selectedUrl.appendingPathComponent("\(UUID()).png")
-            let imageUrl = selectedUrl.appendingPathComponent("test.png")
+            let imageUrl = selectedUrl.appendingPathComponent("\(UUID()).png")
+//            let imageUrl = selectedUrl.appendingPathComponent("test.png")
             image.write(to: imageUrl)
         }
     }
