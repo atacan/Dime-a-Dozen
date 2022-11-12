@@ -29,6 +29,10 @@ The screenshot shows converting Bootstrap CSS classes into camel case to be usab
 In each line, replace a prefix or suffix if it exists with another string. Add a new prefix or suffix.
 <img width="1470" alt="Screenshot 2022-07-03 at 13 56 30" src="https://user-images.githubusercontent.com/765873/177038453-48351570-e33c-4e35-8d89-27a71f754a26.png">
 
+## Swift Pretty Formatter with Syntax Highlight
+Format and highlight swift code. Convert it to png image or html code with properly classed tokens.
+<img width="2195" alt="Screenshot 2022-11-12 at 14 28 25" src="https://user-images.githubusercontent.com/765873/201476348-1a44a921-f132-4821-ba14-d1d3580826c3.png">
+
 ## Json Pretty Formatter with Syntax Highlight
 Pretty print the json input and highlight the syntax using [nkristek/Highlight](https://github.com/nkristek/Highlight). It returns an error if the json is invalid.
 <img width="1431" alt="Screenshot 2022-10-21 at 22 24 48" src="https://user-images.githubusercontent.com/765873/197282825-a80bd9ee-5183-4fb1-b6a2-65847abc4fe5.png">
