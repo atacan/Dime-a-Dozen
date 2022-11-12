@@ -36,7 +36,8 @@ extension SwiftHighlightAsyncClient: DependencyKey {
                                                         rules: FormatRules.all(except: ["linebreakAtEndOfFile"]),
                                                         options: FormatOptions(
                                                             wrapArguments: .beforeFirst,
-                                                            wrapCollections: .beforeFirst
+                                                            wrapCollections: .beforeFirst,
+                                                            maxWidth: 100
                                                         ),
                                                         lineRange: nil)
                     let highlighter = SwiftHighlighter(inputCode: pretty)
@@ -73,3 +74,4 @@ private func render(_ tag: Tag) -> String {
     let doc = Document(.unspecified) { tag }
     return DocumentRenderer(minify: true, indent: 2).render(doc)
 }
+

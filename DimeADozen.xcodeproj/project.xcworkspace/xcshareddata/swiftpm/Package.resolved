@@ -42,7 +42,7 @@
       "location" : "https://github.com/atacan/HighlightSwiftSyntax",
       "state" : {
         "branch" : "main",
-        "revision" : "1e4eb4959e26b4190fc1777b8f88aae77c859522"
+        "revision" : "c8b9421c9918cc9d7a6ef82b50168a4513652fea"
       }
     },
     {
@@ -51,7 +51,7 @@
       "location" : "https://github.com/atacan/html-swift",
       "state" : {
         "branch" : "main",
-        "revision" : "8f51892b1a3ec63f86171fb00d0ee2a5d10e79f1"
+        "revision" : "3405f60027b6bf5eb57e5e2b3403901c86e56cb4"
       }
     },
     {
