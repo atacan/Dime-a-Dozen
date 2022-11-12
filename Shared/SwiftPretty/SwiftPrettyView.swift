@@ -1,16 +1,15 @@
 //
 // https://github.com/atacan
 // 05.11.22
-	
 
-import SwiftUI
 import ComposableArchitecture
 import MacSwiftUI
+import SwiftUI
 
 let swiftPrettifyTool = Tool(sidebarName: "Swift Pretty", navigationTitle: "Format and highlight Swift Code")
 
-struct SwiftPretty
-: ReducerProtocol {
+struct SwiftPretty:
+ReducerProtocol {
     struct State: Equatable {
         @BindableState var input = NSMutableAttributedString()
         @BindableState var output = NSMutableAttributedString()
@@ -24,6 +23,7 @@ struct SwiftPretty
         case binding(BindingAction<State>)
         case convertRequested
         case convertResponse(TaskResult<SwiftOutput>)
+        case cancelRequest
         case copyToClipboard
         case saveAsImage
         case copyButtonAnimationCompleted
@@ -38,19 +38,18 @@ struct SwiftPretty
     @Dependency(\.mainQueue) var mainQueue
     private enum SwiftHighlightRequestID {}
 
-    
     var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in
             switch action {
-                //
-            case .binding(_):
+            //
+            case .binding:
                 return .none
             case .convertRequested:
                 state.isSwiftRequestInFlight = true
                 return .task { [input = state.input.string] in
-                    return await .convertResponse(TaskResult {
+                    await .convertResponse(TaskResult {
                         try await self.swiftHighlightAsyncClient.convert(input)
-                        
+
                     })
                 }
                 .cancellable(id: SwiftHighlightRequestID.self)
@@ -88,6 +87,9 @@ struct SwiftPretty
             case .htmlView:
                 windowClient.show(HtmlView(text: state.htmlOutput))
                 return .none
+            case .cancelRequest:
+                state.isSwiftRequestInFlight = false
+                return .cancel(id: SwiftHighlightRequestID.self)
             }
         }
     }
@@ -106,20 +108,30 @@ struct SwiftPrettyView: View {
                     MacEditorView(text: viewStore.binding(\.$input))
                         .shadow(radius: 2)
                         .padding()
-                    
-                    Button(action: {
-                        viewStore.send(.convertRequested)
-                    }, label: {
-                        HStack {
+
+                    HStack {
+                        Button(action: {
+                            viewStore.send(.convertRequested)
+                        }, label: {
                             Text("Prettify")
-                            if viewStore.isSwiftRequestInFlight {
-                                MacProgressSpinner()
-                            }
+                        })
+                        .keyboardShortcut(.return, modifiers: .command)
+                        .help("Format and highliht ⌘ + ↵")
+
+                        if viewStore.isSwiftRequestInFlight {
+                            MacProgressSpinner()
+
+                            Button(action: {
+                                viewStore.send(.cancelRequest)
+                            }, label: {
+                                Text("Cancel")
+                            })
+                            
+//                            .keyboardShortcut(.return, modifiers: .command)
+                            .help("cancel the prettify request")
                         }
-                    })
+                    }
                     .padding(.bottom)
-                    .keyboardShortcut(.return, modifiers: .command)
-                    .help("Format and highliht ⌘ + ↵")
                 }
                 ZStack(alignment: .topLeading) {
                     Rectangle()
@@ -138,18 +150,16 @@ struct SwiftPrettyView: View {
                                 viewStore.send(.copyToClipboard)
                             } label: {
                                 Text("\(Image(systemName: "doc.on.clipboard")) Copy")
-                                    
                             }
                             .foregroundColor(viewStore.copyButtonAnimating ? .green : Color(nsColor: .textColor))
                             .keyboardShortcut("c", modifiers: [.command, .shift])
                             .help("Copy rich text ⌘ ⇧ c")
                             .animation(.default, value: viewStore.copyButtonAnimating)
-                            
+
                             Button {
                                 viewStore.send(.saveAsImage)
                             } label: {
                                 Text("\(Image(systemName: "text.below.photo")) as png")
-                                    
                             }
                             .foregroundColor(viewStore.copyButtonAnimating ? .green : Color(nsColor: .textColor))
                             .keyboardShortcut("s", modifiers: [.command, .shift])
@@ -161,7 +171,6 @@ struct SwiftPrettyView: View {
                         } label: {
                             Text("<html>")
                         }
-
                     }
                     .padding(.trailing, 18).padding().padding(.top, 8)
                 }
@@ -181,7 +190,7 @@ struct SwiftPrettyView: View {
 
 struct HtmlView: View {
     let text: String
-    
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             ZStack(alignment: .leading) {
