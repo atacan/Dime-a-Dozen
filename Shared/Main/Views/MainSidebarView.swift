@@ -6,7 +6,7 @@ import SwiftUI
 
 struct MainSidebarView: View {
     #if DEBUG
-        @State private var selectedTool: Tool? = toolPrefixSuffix
+        @State private var selectedTool: Tool? = swiftPrettifyTool
     #else
         @State private var selectedTool: Tool?
     #endif
