@@ -1,5 +1,44 @@
 # Dime-a-Dozen
-Download the release build on https://github.com/atacan/Dime-a-Dozen/releases. The `.app` file is in "DimeADozen.macOS.*[...]*.zip"
+
+> [!IMPORTANT]
+> **Dime-a-Dozen has evolved into [Blissum](https://github.com/atacan/DevBliss).**
+>
+> This repository contains the original version of the project and is no longer the main version under active development.
+
+## 🚀 Looking for the current version?
+
+Development continues in the **[DevBliss repository](https://github.com/atacan/DevBliss)**.
+
+The new version has grown considerably beyond Dime-a-Dozen, with many more developer tools, support for **macOS and iOS**, and continued improvements.
+
+### Download Blissum
+
+Blissum is available on the **Mac App Store and iOS App Store**:
+
+**[Download Blissum on the App Store →](https://apps.apple.com/us/app/blissum/id6464085978)**
+
+For source code, documentation, issues, feature requests, and contributions, please use:
+
+**[github.com/atacan/DevBliss](https://github.com/atacan/DevBliss)**
+
+---
+
+## About Dime-a-Dozen
+
+Dime-a-Dozen was the original version of what later became Blissum. This repository is kept available for historical reference.
+
+The original version included tools such as:
+
+* HTML to Swift conversion
+* Vapor code generation
+* Regex match extraction
+* Text case conversion
+* Prefix/suffix manipulation
+* Swift formatting and syntax highlighting
+* JSON formatting and syntax highlighting
+* File content search
+
+For the current and expanded toolset, see **[DevBliss](https://github.com/atacan/DevBliss)**.
 
 # Tools
 
